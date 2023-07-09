@@ -11,6 +11,8 @@ public class DaytimeEnvironmentManagerBehaviour : MonoBehaviour
     public AnimationCurve fillerIntensityCurve;
     public Gradient sunColorGradient;
     public Gradient fillerColorGradient;
+    public Gradient fogColorGradient;
+    
     void FixedUpdate() {
         float daytimeRatio = daytimeManager.daytimeRatio;
         float nighttimeRatio = daytimeManager.nighttimeRatio;
@@ -20,5 +22,6 @@ public class DaytimeEnvironmentManagerBehaviour : MonoBehaviour
         sunLight.color = sunColorGradient.Evaluate(nighttimeRatio);
         fillerLight.intensity = fillerIntensityCurve.Evaluate(nighttimeRatio);
         fillerLight.color = fillerColorGradient.Evaluate(nighttimeRatio);
+        RenderSettings.fogColor = fogColorGradient.Evaluate(nighttimeRatio);
     }
 }
