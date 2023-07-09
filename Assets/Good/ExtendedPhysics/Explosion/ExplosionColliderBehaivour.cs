@@ -6,7 +6,7 @@ namespace ExtendedPhysics.Explosion
 {
     public class ExplosionColliderBehaivour : MonoBehaviour
     {
-        private float force = 500;
+        public float force = 300;
         void OnTriggerStay(Collider other)
         {
             if (other.attachedRigidbody != null)
