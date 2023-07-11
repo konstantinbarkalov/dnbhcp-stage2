@@ -10,7 +10,6 @@ namespace ExtendedPhysics.Explosion
         void OnTriggerStay(Collider other)
         {
             if (other.attachedRigidbody != null)
-            if (other.attachedRigidbody.name == "Helicopter") { Debug.Log(other.attachedRigidbody.name +" " + other.name); }
             {
                 ExtendedPhysics.Damage.Receiver.ExplosionReceiverBehaviour explosionReceiver;
                 if (other.attachedRigidbody.TryGetComponent<ExtendedPhysics.Damage.Receiver.ExplosionReceiverBehaviour>(out explosionReceiver))

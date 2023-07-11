@@ -25,6 +25,9 @@ namespace ExtendedPhysics.Explosion
                 if (Time.fixedTime > startExplodeTime + explodeDuration)
                 {
                     isExploded = true;
+                    Destroy(light.gameObject);
+                    Destroy(explosionSphere.gameObject);
+                    Destroy(this.gameObject, particleDuration - explodeDuration);
                 }
                 else
                 {
@@ -35,11 +38,6 @@ namespace ExtendedPhysics.Explosion
                     float flashRatio = Mathf.Pow(1 - explodeLinearRatio, 2f);
                     explosionSphere.transform.localScale = Vector3.one * explodeScale;
                     light.intensity = flashRatio * maxLightIntensity;
-                }
-                if (isExploded)
-                {
-                    Destroy(light.gameObject);
-                    Destroy(this.gameObject, particleDuration - explodeDuration);
                 }
             }
         }
