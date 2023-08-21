@@ -7,4 +7,5 @@ public class MetaManagerBehaviour : MonoBehaviour
     //public GameManagerBehaviour gameManager;
     public HypertrackManagerBehaviour hypertrackManager;
     public DaytimeManagerBehaviour daytimeManager;
+    public DaytimeEnvironmentManagerBehaviour daytimeEnvironmentManager;
 }
