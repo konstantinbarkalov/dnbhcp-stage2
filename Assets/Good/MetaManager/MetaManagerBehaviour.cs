@@ -8,4 +8,8 @@ public class MetaManagerBehaviour : MonoBehaviour
     public HypertrackManagerBehaviour hypertrackManager;
     public DaytimeManagerBehaviour daytimeManager;
     public DaytimeEnvironmentManagerBehaviour daytimeEnvironmentManager;
+    static public MetaManagerBehaviour metaManager;
+    private void Awake() {
+        MetaManagerBehaviour.metaManager = this;
+    }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 [RequireComponent(typeof(BalloonBehaviour))]
-public class BalloonTorchAnimatorBehaviour : MetaManagerSourceBehaviour
+public class BalloonTorchAnimatorBehaviour : MonoBehaviour
 {
     public int shift = 0;
     public int mod = 3;
@@ -15,7 +15,7 @@ public class BalloonTorchAnimatorBehaviour : MetaManagerSourceBehaviour
     }
     void FixedUpdate()
     {
-        BombtrackEntity newBomb = metaManager.hypertrackManager.GetNewBomb();
+        BombtrackEntity newBomb = MetaManagerBehaviour.metaManager.hypertrackManager.GetNewBomb();
         if (newBomb != null)
         {
             int modBombIdx = (bombIdx + shift) % mod;
@@ -31,16 +31,16 @@ public class BalloonTorchAnimatorBehaviour : MetaManagerSourceBehaviour
     {
         bool hasBomb = (bomb != null);
         if (hasBomb) {
-            bool isExploded = bomb.explodeTime <= metaManager.hypertrackManager.source.time;
-            bool isEnded = bomb.explodeTime + 1 <= metaManager.hypertrackManager.source.time;
+            bool isExploded = bomb.explodeTime <= MetaManagerBehaviour.metaManager.hypertrackManager.source.time;
+            bool isEnded = bomb.explodeTime + 1 <= MetaManagerBehaviour.metaManager.hypertrackManager.source.time;
             balloon.isFullThrottleEnabled = (isExploded && !isEnded);
             balloon.isTorchEnabled = isExploded;
         } else {
             balloon.isFullThrottleEnabled = false;
             //balloon.isTorchEnabled = true;
         }
-        //balloon.isStartFly = metaManager.hypertrackManager.source.time > 64 + 8 + 2;
-        balloon.isStartFly = metaManager.hypertrackManager.source.time > 64; 
+        //balloon.isStartFly = MetaManagerBehaviour.metaManager.hypertrackManager.source.time > 64 + 8 + 2;
+        balloon.isStartFly = MetaManagerBehaviour.metaManager.hypertrackManager.source.time > 64; 
         
     }
 }

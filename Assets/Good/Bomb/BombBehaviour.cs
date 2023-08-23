@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BombBehaviour : MetaManagerSourceBehaviour
+public class BombBehaviour : MonoBehaviour
 {
     public ExtendedPhysics.Explosion.ExplosionBehaviour explosionPrefab;
     public float force = 300;

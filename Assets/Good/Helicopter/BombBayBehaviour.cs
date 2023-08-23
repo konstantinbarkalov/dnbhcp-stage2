@@ -19,7 +19,7 @@ public class BombBayBehaviour : MonoBehaviour
   // Update is called once per frame
   void FixedUpdate()
   {
-    BombtrackEntity newBomb = helicopter.metaManager.hypertrackManager.GetNewBomb();
+    BombtrackEntity newBomb = MetaManagerBehaviour.metaManager.hypertrackManager.GetNewBomb();
     if (newBomb != null) {
       int bombPrefabIdx = ((newBomb.type - 1) + bombPrefabs.Length) % bombPrefabs.Length;
       DropBomb(newBomb.explodeTime-newBomb.dropTime, bombPrefabIdx);
@@ -30,7 +30,6 @@ public class BombBayBehaviour : MonoBehaviour
     BombBehaviour bombPrefab = bombPrefabs[bombPrefabIdx];
     BombBehaviour newBombInstance = Instantiate<BombBehaviour>(bombPrefab, bombSpawnAnchor.position, bombSpawnAnchor.rotation);
     newBombInstance.exlpodeTime = Time.fixedTime + bombExplodeTimeout;
-    newBombInstance.metaManager = helicopter.metaManager;
     Vector3 bombInertiaVelocity = helicopter.rigidBody.GetPointVelocity(bombSpawnAnchor.position);
     Rigidbody bombRigidbody = newBombInstance.GetComponent<Rigidbody>();
     bombRigidbody.AddForce(bombInertiaVelocity, ForceMode.VelocityChange);

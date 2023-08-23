@@ -192,7 +192,7 @@ public class VectoredFan2Behaviour : MonoBehaviour
         mainSpinningFan.angleVelocity = 360 * 4 * patternFactor * powerSign; 
     }
     private void UpdateParticles() {
-        Color dustColor = helicopter.metaManager.daytimeEnvironmentManager.GetDustColor();
+        Color dustColor = MetaManagerBehaviour.metaManager.daytimeEnvironmentManager.GetDustColor();
         var mainA = particleSystemA.main;
         mainA.startSpeed = 2000 * powerABratio;
         mainA.startColor = dustColor;

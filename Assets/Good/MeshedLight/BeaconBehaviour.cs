@@ -10,7 +10,6 @@ public enum BeaconMode {
 }
 public class BeaconBehaviour : MonoBehaviour
 {
-    public MetaManagerSourceBehaviour metaManagerSource;
     public MeshedLightBehaviour meshedLight;
     public BeaconMode mode = BeaconMode.Flash;
     public float phaseRatio = 0;
@@ -28,7 +27,7 @@ public class BeaconBehaviour : MonoBehaviour
         if (mode == BeaconMode.On) {
             isBeaconEnabled = true;
         } else if (mode == BeaconMode.Flash) {
-            float beat = metaManagerSource.metaManager.hypertrackManager.source.time / 60 * 180 * speedFactor;
+            float beat = MetaManagerBehaviour.metaManager.hypertrackManager.source.time / 60 * 180 * speedFactor;
             isBeaconEnabled = (beat + phaseRatio * 4) % 4 < 1;
         } else if (mode == BeaconMode.Off) {
             isBeaconEnabled = false;

@@ -1,5 +1,336 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &124196508506241672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4034337167882349431}
+  m_Layer: 0
+  m_Name: Roadlamps Line Start
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4034337167882349431
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124196508506241672}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -80, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5366570578581367167}
+  m_Father: {fileID: 8816316637736858986}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &243014540299926476
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3242368894032998089}
+  m_Layer: 0
+  m_Name: Roadlamps Line Start
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3242368894032998089
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243014540299926476}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -80, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4709866119615361612}
+  m_Father: {fileID: 4929091542703206028}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &737072940900534101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5595756433490250634}
+  m_Layer: 0
+  m_Name: Roadmaps Line (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5595756433490250634
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737072940900534101}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 80, y: 0, z: 4.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2388415919518483306}
+  m_Father: {fileID: 799135461015918743}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1043591632093862820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3403267127755918364}
+  m_Layer: 0
+  m_Name: Roadmaps Line
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3403267127755918364
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043591632093862820}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 101, y: 0, z: -8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6230199020343338785}
+  m_Father: {fileID: 3557550771400166688}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1456242120787488892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8663103413771603297}
+  m_Layer: 0
+  m_Name: Roadlamps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8663103413771603297
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456242120787488892}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3557550771400166688}
+  - {fileID: 3364750260971148035}
+  - {fileID: 2559397640730125838}
+  - {fileID: 799612530508357796}
+  - {fileID: 799135461015918743}
+  m_Father: {fileID: 603173550127844500}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1472615959197817870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 246136025673332364}
+  m_Layer: 0
+  m_Name: Roadmaps Line
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &246136025673332364
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472615959197817870}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 101, y: 0, z: -8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2625740518932908035}
+  m_Father: {fileID: 3364750260971148035}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1741990940762778338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3034726506074036321}
+  m_Layer: 0
+  m_Name: Roadmaps Line (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3034726506074036321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741990940762778338}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 101, y: 0, z: 8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1337663375167047075}
+  m_Father: {fileID: 2559397640730125838}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2479745549793838559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2625740518932908035}
+  m_Layer: 0
+  m_Name: Roadlamps Line Start
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2625740518932908035
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2479745549793838559}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -80, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7080155193566862973}
+  - {fileID: 8572952052204874734}
+  - {fileID: 1058218811030263888}
+  - {fileID: 7218293185520413305}
+  m_Father: {fileID: 246136025673332364}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2680845472553411443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7706365431673049460}
+  m_Layer: 0
+  m_Name: Roadlamps Line Start
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7706365431673049460
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2680845472553411443}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -80, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2431891391122053346}
+  - {fileID: 6019175954074504469}
+  - {fileID: 5211061826668345257}
+  - {fileID: 716959159131873384}
+  - {fileID: 1122129569395471173}
+  m_Father: {fileID: 5406878473969157747}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2853501170592691928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8816316637736858986}
+  m_Layer: 0
+  m_Name: Roadmaps Line
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8816316637736858986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2853501170592691928}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 101, y: 0, z: -8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4034337167882349431}
+  m_Father: {fileID: 799612530508357796}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2865244091773162622
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,6 +361,74 @@ Transform:
   m_Children:
   - {fileID: 5988028194245125713}
   m_Father: {fileID: 603173550127844500}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4318268489559595247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 799135461015918743}
+  m_Layer: 0
+  m_Name: Roadmaps Lines (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &799135461015918743
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4318268489559595247}
+  m_LocalRotation: {x: 0, y: 0.3826836, z: -0, w: -0.92387944}
+  m_LocalPosition: {x: 3, y: 0, z: 67.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5595756433490250634}
+  m_Father: {fileID: 8663103413771603297}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 315, z: 0}
+--- !u!1 &4361399880930383418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6787043639339838217}
+  m_Layer: 0
+  m_Name: Roadlamps Line Start
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6787043639339838217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4361399880930383418}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -80, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6727195225261902687}
+  - {fileID: 3948278357062002575}
+  - {fileID: 3753351464686713243}
+  - {fileID: 8041625676650736346}
+  - {fileID: 2217605118595963663}
+  m_Father: {fileID: 2710946280767794023}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4963288099095731433
@@ -72,6 +471,168 @@ Transform:
   m_Father: {fileID: 603173550127844500}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5142031516001216961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7919499586941858126}
+  m_Layer: 0
+  m_Name: Roadlamps Line Start
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7919499586941858126
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5142031516001216961}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -80, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1007898377575495245}
+  m_Father: {fileID: 1526411165186925347}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5156564627791197212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1337663375167047075}
+  m_Layer: 0
+  m_Name: Roadlamps Line Start
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1337663375167047075
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5156564627791197212}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -80, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6556625857406566542}
+  m_Father: {fileID: 3034726506074036321}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5233867833872043246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2559397640730125838}
+  m_Layer: 0
+  m_Name: Roadmaps Lines (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2559397640730125838
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5233867833872043246}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -6, y: 0, z: 6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1526411165186925347}
+  - {fileID: 3034726506074036321}
+  m_Father: {fileID: 8663103413771603297}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &5465565284327258786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4929091542703206028}
+  m_Layer: 0
+  m_Name: Roadmaps Line (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4929091542703206028
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5465565284327258786}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 101, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3242368894032998089}
+  m_Father: {fileID: 799612530508357796}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5630808910099925371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3364750260971148035}
+  m_Layer: 0
+  m_Name: Roadmaps Lines (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3364750260971148035
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5630808910099925371}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -6, y: 0, z: 6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 246136025673332364}
+  - {fileID: 2710946280767794023}
+  m_Father: {fileID: 8663103413771603297}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &6092364340889873557
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,8 +663,243 @@ Transform:
   m_Children:
   - {fileID: 5193484677404596897}
   - {fileID: 4722675314722490484}
+  - {fileID: 8663103413771603297}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6174455048112380483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1526411165186925347}
+  m_Layer: 0
+  m_Name: Roadmaps Line
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1526411165186925347
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6174455048112380483}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 101, y: 0, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7919499586941858126}
+  m_Father: {fileID: 2559397640730125838}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6911244133227968907
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3557550771400166688}
+  m_Layer: 0
+  m_Name: Roadmaps Lines
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3557550771400166688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6911244133227968907}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6, y: 0, z: 6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3403267127755918364}
+  - {fileID: 5406878473969157747}
+  m_Father: {fileID: 8663103413771603297}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7304858789690223438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5406878473969157747}
+  m_Layer: 0
+  m_Name: Roadmaps Line (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5406878473969157747
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7304858789690223438}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 101, y: 0, z: 8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7706365431673049460}
+  m_Father: {fileID: 3557550771400166688}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8056331139063808472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 799612530508357796}
+  m_Layer: 0
+  m_Name: Roadmaps Lines (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &799612530508357796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8056331139063808472}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: -6, y: 0, z: 6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8816316637736858986}
+  - {fileID: 4929091542703206028}
+  m_Father: {fileID: 8663103413771603297}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
+--- !u!1 &8817330342396971921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6230199020343338785}
+  m_Layer: 0
+  m_Name: Roadlamps Line Start
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6230199020343338785
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8817330342396971921}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -80, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8063385198137113850}
+  - {fileID: 5639658671455615837}
+  - {fileID: 4668550253804807793}
+  - {fileID: 4224965831289865290}
+  - {fileID: 6681867021921656713}
+  m_Father: {fileID: 3403267127755918364}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8882835466001807041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2710946280767794023}
+  m_Layer: 0
+  m_Name: Roadmaps Line (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2710946280767794023
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8882835466001807041}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 101, y: 0, z: 8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6787043639339838217}
+  m_Father: {fileID: 3364750260971148035}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9074764242866318971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2388415919518483306}
+  m_Layer: 0
+  m_Name: Roadlamps Line Start
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2388415919518483306
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9074764242866318971}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -80, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1352912527480190882}
+  - {fileID: 6267166177291626794}
+  - {fileID: 3795624080031201382}
+  - {fileID: 7757761537232984735}
+  - {fileID: 521952685462737523}
+  m_Father: {fileID: 5595756433490250634}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &27060110147425163
 PrefabInstance:
@@ -199,6 +995,85 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 27060110147425163}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &32952578080150937
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6787043639339838217}
+    m_Modifications:
+    - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3e6e543b01db4d4b937d36a44f43a53, type: 3}
+--- !u!4 &8041625676650736346 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+    type: 3}
+  m_PrefabInstance: {fileID: 32952578080150937}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &146382973220252319
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -292,6 +1167,164 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5190862167804051578, guid: c473f4debc8eaf44e9bdce0dd7385e4b,
     type: 3}
   m_PrefabInstance: {fileID: 146382973220252319}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &307826729789826524
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2388415919518483306}
+    m_Modifications:
+    - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3e6e543b01db4d4b937d36a44f43a53, type: 3}
+--- !u!4 &7757761537232984735 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+    type: 3}
+  m_PrefabInstance: {fileID: 307826729789826524}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &537345825521906833
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7706365431673049460}
+    m_Modifications:
+    - target: {fileID: 1927963614641131339, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp With Phore
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 40df4ac2ff85d45479e0e7b615cac6e3, type: 3}
+--- !u!4 &2431891391122053346 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 537345825521906833}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &828669284204514010
 PrefabInstance:
@@ -387,6 +1420,85 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 828669284204514010}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &846679666899735866
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2625740518932908035}
+    m_Modifications:
+    - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3e6e543b01db4d4b937d36a44f43a53, type: 3}
+--- !u!4 &7218293185520413305 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+    type: 3}
+  m_PrefabInstance: {fileID: 846679666899735866}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1019252805109747138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -481,6 +1593,243 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1019252805109747138}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1807557241380492461
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2625740518932908035}
+    m_Modifications:
+    - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3e6e543b01db4d4b937d36a44f43a53, type: 3}
+--- !u!4 &8572952052204874734 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+    type: 3}
+  m_PrefabInstance: {fileID: 1807557241380492461}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2425349399696360478
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6230199020343338785}
+    m_Modifications:
+    - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3e6e543b01db4d4b937d36a44f43a53, type: 3}
+--- !u!4 &5639658671455615837 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+    type: 3}
+  m_PrefabInstance: {fileID: 2425349399696360478}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2863705370375866602
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7706365431673049460}
+    m_Modifications:
+    - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3e6e543b01db4d4b937d36a44f43a53, type: 3}
+--- !u!4 &5211061826668345257 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+    type: 3}
+  m_PrefabInstance: {fileID: 2863705370375866602}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2903201983355192428
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -570,6 +1919,243 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2903201983355192428}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3113710554040556094
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7919499586941858126}
+    m_Modifications:
+    - target: {fileID: 1927963614641131339, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp With Phore
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 40df4ac2ff85d45479e0e7b615cac6e3, type: 3}
+--- !u!4 &1007898377575495245 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 3113710554040556094}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3397544235230271794
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6230199020343338785}
+    m_Modifications:
+    - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3e6e543b01db4d4b937d36a44f43a53, type: 3}
+--- !u!4 &4668550253804807793 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+    type: 3}
+  m_PrefabInstance: {fileID: 3397544235230271794}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3699222639315935434
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6230199020343338785}
+    m_Modifications:
+    - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3e6e543b01db4d4b937d36a44f43a53, type: 3}
+--- !u!4 &6681867021921656713 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+    type: 3}
+  m_PrefabInstance: {fileID: 3699222639315935434}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3953692340573298713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -653,6 +2239,322 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5190862167804051578, guid: 8fd5f60c83e06f2409ddd751b0878f8c,
     type: 3}
   m_PrefabInstance: {fileID: 3953692340573298713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4113466158521554537
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2388415919518483306}
+    m_Modifications:
+    - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3e6e543b01db4d4b937d36a44f43a53, type: 3}
+--- !u!4 &6267166177291626794 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+    type: 3}
+  m_PrefabInstance: {fileID: 4113466158521554537}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4351864136530195030
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7706365431673049460}
+    m_Modifications:
+    - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3e6e543b01db4d4b937d36a44f43a53, type: 3}
+--- !u!4 &6019175954074504469 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+    type: 3}
+  m_PrefabInstance: {fileID: 4351864136530195030}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4939070937478476302
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2625740518932908035}
+    m_Modifications:
+    - target: {fileID: 1927963614641131339, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp With Phore
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 40df4ac2ff85d45479e0e7b615cac6e3, type: 3}
+--- !u!4 &7080155193566862973 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 4939070937478476302}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5272658972035666057
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6230199020343338785}
+    m_Modifications:
+    - target: {fileID: 1927963614641131339, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp With Phore
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 40df4ac2ff85d45479e0e7b615cac6e3, type: 3}
+--- !u!4 &8063385198137113850 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5272658972035666057}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5525690337899526993
 PrefabInstance:
@@ -911,6 +2813,1033 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6094221969891017146}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6147024033620294409
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6230199020343338785}
+    m_Modifications:
+    - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3e6e543b01db4d4b937d36a44f43a53, type: 3}
+--- !u!4 &4224965831289865290 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+    type: 3}
+  m_PrefabInstance: {fileID: 6147024033620294409}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6424279300639348940
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6787043639339838217}
+    m_Modifications:
+    - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3e6e543b01db4d4b937d36a44f43a53, type: 3}
+--- !u!4 &3948278357062002575 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+    type: 3}
+  m_PrefabInstance: {fileID: 6424279300639348940}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6575332689013262117
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2388415919518483306}
+    m_Modifications:
+    - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3e6e543b01db4d4b937d36a44f43a53, type: 3}
+--- !u!4 &3795624080031201382 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+    type: 3}
+  m_PrefabInstance: {fileID: 6575332689013262117}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6627627972668688088
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6787043639339838217}
+    m_Modifications:
+    - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3e6e543b01db4d4b937d36a44f43a53, type: 3}
+--- !u!4 &3753351464686713243 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+    type: 3}
+  m_PrefabInstance: {fileID: 6627627972668688088}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6953029123854601222
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7706365431673049460}
+    m_Modifications:
+    - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3e6e543b01db4d4b937d36a44f43a53, type: 3}
+--- !u!4 &1122129569395471173 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+    type: 3}
+  m_PrefabInstance: {fileID: 6953029123854601222}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7008456050493073171
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2625740518932908035}
+    m_Modifications:
+    - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3e6e543b01db4d4b937d36a44f43a53, type: 3}
+--- !u!4 &1058218811030263888 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+    type: 3}
+  m_PrefabInstance: {fileID: 7008456050493073171}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7358779870896152363
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7706365431673049460}
+    m_Modifications:
+    - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3e6e543b01db4d4b937d36a44f43a53, type: 3}
+--- !u!4 &716959159131873384 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+    type: 3}
+  m_PrefabInstance: {fileID: 7358779870896152363}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7464178943055011391
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3242368894032998089}
+    m_Modifications:
+    - target: {fileID: 1927963614641131339, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp With Phore
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 40df4ac2ff85d45479e0e7b615cac6e3, type: 3}
+--- !u!4 &4709866119615361612 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 7464178943055011391}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7553342448690965808
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2388415919518483306}
+    m_Modifications:
+    - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3e6e543b01db4d4b937d36a44f43a53, type: 3}
+--- !u!4 &521952685462737523 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+    type: 3}
+  m_PrefabInstance: {fileID: 7553342448690965808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7832669020356281612
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4034337167882349431}
+    m_Modifications:
+    - target: {fileID: 1927963614641131339, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp With Phore
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 40df4ac2ff85d45479e0e7b615cac6e3, type: 3}
+--- !u!4 &5366570578581367167 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 7832669020356281612}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8154332104772805708
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6787043639339838217}
+    m_Modifications:
+    - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3e6e543b01db4d4b937d36a44f43a53, type: 3}
+--- !u!4 &2217605118595963663 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+    type: 3}
+  m_PrefabInstance: {fileID: 8154332104772805708}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8903921104395708204
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6787043639339838217}
+    m_Modifications:
+    - target: {fileID: 1927963614641131339, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp With Phore
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 40df4ac2ff85d45479e0e7b615cac6e3, type: 3}
+--- !u!4 &6727195225261902687 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 8903921104395708204}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8950632684794719485
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1337663375167047075}
+    m_Modifications:
+    - target: {fileID: 1927963614641131339, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp With Phore
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 40df4ac2ff85d45479e0e7b615cac6e3, type: 3}
+--- !u!4 &6556625857406566542 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2795285643455671411, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 8950632684794719485}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8982311957201608732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -999,4 +3928,83 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5190862167804051578, guid: 5e990e576ca0ec54296a448c0f385022,
     type: 3}
   m_PrefabInstance: {fileID: 8982311957201608732}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &9019028922677463265
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2388415919518483306}
+    m_Modifications:
+    - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_Name
+      value: Roadlamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3e6e543b01db4d4b937d36a44f43a53, type: 3}
+--- !u!4 &1352912527480190882 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8064968108089802563, guid: b3e6e543b01db4d4b937d36a44f43a53,
+    type: 3}
+  m_PrefabInstance: {fileID: 9019028922677463265}
   m_PrefabAsset: {fileID: 0}
