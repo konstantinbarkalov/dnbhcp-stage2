@@ -34,7 +34,7 @@ public class VectoredFan2Behaviour : MonoBehaviour
         bool isPausePressed = Input.GetKey(KeyCode.Space);
         bool isBrakePressed = Input.GetKey(KeyCode.Return);
         if (isPausePressed) {    
-            UnityEditor.EditorApplication.isPaused = true;
+            //UnityEditor.EditorApplication.isPaused = true;
         }
         Assist(horizontalInput, verticalInput, isBrakePressed);
     }
