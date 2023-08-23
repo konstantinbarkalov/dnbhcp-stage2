@@ -35,9 +35,8 @@ public class PhoreBehaviour : MonoBehaviour
         ResolveState__Update();
     }
     private void ResolveState__Update() {
-        float bpm = 180;
-        float beat = MetaManagerBehaviour.metaManager.hypertrackManager.source.time / 60 * bpm; 
-        bool blink = beat % 2 < 1;
+        float beat = MetaManagerBehaviour.metaManager.hypertrackManager.GetBeat(); 
+        bool blink = (beat * 2) % 2 < 1;
         switch (state)
         {
             case PhoreState.Go:

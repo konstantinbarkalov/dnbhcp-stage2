@@ -14,8 +14,13 @@ public class HypertrackManagerBehaviour : MonoBehaviour
   public BombtrackEntity GetNewBomb() {
     return newBomb;
   }
-
-void Start()
+  public float GetBeat() {
+    float bpm = 180;
+    float beat = MetaManagerBehaviour.metaManager.hypertrackManager.source.time / 60 * bpm;
+    return beat;
+  }
+  
+  void Start()
   {
     newBomb = null;
     bombtrackCursor = -1;
