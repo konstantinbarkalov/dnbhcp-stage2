@@ -11,6 +11,7 @@ public enum PhoreState {
     Off,
     Full,
     Alarm,
+    Error,
     Disco
 }
 public class PhoreBehaviour : MonoBehaviour
@@ -19,9 +20,11 @@ public class PhoreBehaviour : MonoBehaviour
     public Renderer g;
     public Renderer y;
     public Renderer r;
-    public Material gMaterial;
-    public Material yMaterial;
-    public Material rMaterial;
+    public new Light light;
+    public float lightIntensity;
+    private Material gMaterial;
+    private Material yMaterial;
+    private Material rMaterial;
 
     private void Start()
     {
@@ -33,6 +36,28 @@ public class PhoreBehaviour : MonoBehaviour
     private void Update()
     {
         ResolveState__Update();
+        ResolveLight__Update();
+    }
+    private void ResolveLight__Update()
+    {
+        Color compositeColor = Color.black;
+        float intensityFactor = 0;
+        if (g.enabled) {
+            compositeColor.g += 0.75f;
+            intensityFactor++;
+        }
+        if (y.enabled) {
+            compositeColor.r += 1;
+            compositeColor.g += 0.75f;
+            intensityFactor++;
+        }
+        if (r.enabled) {
+            compositeColor.r += 1;
+            intensityFactor++;
+        }
+        light.color = compositeColor / intensityFactor;
+        light.intensity = intensityFactor * lightIntensity;
+        light.enabled = intensityFactor > 0;
     }
     private void ResolveState__Update() {
         float beat = MetaManagerBehaviour.metaManager.hypertrackManager.GetBeat(); 
@@ -74,6 +99,11 @@ public class PhoreBehaviour : MonoBehaviour
                 g.enabled = blink;
                 y.enabled = blink;
                 r.enabled = blink;
+                break; 
+            case PhoreState.Error:
+                g.enabled = Random.value < 0.5;
+                y.enabled = Random.value < 0.5;
+                r.enabled = Random.value < 0.5;
                 break; 
             case PhoreState.Disco:
                 g.enabled = (beat + 1) % 4 < 1;

@@ -1255,6 +1255,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7706365431673049460}
     m_Modifications:
+    - target: {fileID: 200246646229585254, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672166868834609198, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1927963614641131339, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
         type: 3}
       propertyPath: m_Name
@@ -1314,6 +1324,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3919124990080429238, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211978171523169637, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459263363060259862, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1680,6 +1705,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6230199020343338785}
     m_Modifications:
+    - target: {fileID: 2646592117547401060, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
         type: 3}
       propertyPath: m_Name
@@ -1759,6 +1789,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7706365431673049460}
     m_Modifications:
+    - target: {fileID: 2646592117547401060, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
         type: 3}
       propertyPath: m_Name
@@ -1927,6 +1962,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7919499586941858126}
     m_Modifications:
+    - target: {fileID: 200246646229585254, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672166868834609198, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1927963614641131339, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
         type: 3}
       propertyPath: m_Name
@@ -1987,6 +2032,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3919124990080429238, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211978171523169637, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459263363060259862, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2006,6 +2066,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6230199020343338785}
     m_Modifications:
+    - target: {fileID: 2646592117547401060, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
         type: 3}
       propertyPath: m_Name
@@ -2085,6 +2150,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6230199020343338785}
     m_Modifications:
+    - target: {fileID: 2646592117547401060, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
         type: 3}
       propertyPath: m_Name
@@ -2327,6 +2397,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7706365431673049460}
     m_Modifications:
+    - target: {fileID: 2646592117547401060, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
         type: 3}
       propertyPath: m_Name
@@ -2406,6 +2481,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2625740518932908035}
     m_Modifications:
+    - target: {fileID: 200246646229585254, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672166868834609198, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1927963614641131339, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
         type: 3}
       propertyPath: m_Name
@@ -2465,6 +2550,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211978171523169637, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459263363060259862, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2485,6 +2580,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6230199020343338785}
     m_Modifications:
+    - target: {fileID: 200246646229585254, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672166868834609198, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1927963614641131339, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
         type: 3}
       propertyPath: m_Name
@@ -2544,6 +2649,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3919124990080429238, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211978171523169637, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459263363060259862, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2805,7 +2925,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 85d851da762bc9144b52183a6605ee9a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7832924811251277152}
   m_SourcePrefab: {fileID: 100100000, guid: 85d851da762bc9144b52183a6605ee9a, type: 3}
 --- !u!4 &5988028194245125713 stripped
 Transform:
@@ -2813,6 +2937,33 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6094221969891017146}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6364271570767150315 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 85d851da762bc9144b52183a6605ee9a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6094221969891017146}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &7832924811251277152
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6364271570767150315}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 384, y: 384, z: 10}
+  m_Center: {x: 0, y: 0, z: -5}
 --- !u!1001 &6147024033620294409
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2821,6 +2972,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6230199020343338785}
     m_Modifications:
+    - target: {fileID: 2646592117547401060, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
         type: 3}
       propertyPath: m_Name
@@ -3137,6 +3293,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7706365431673049460}
     m_Modifications:
+    - target: {fileID: 2646592117547401060, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
         type: 3}
       propertyPath: m_Name
@@ -3295,6 +3456,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7706365431673049460}
     m_Modifications:
+    - target: {fileID: 2646592117547401060, guid: b3e6e543b01db4d4b937d36a44f43a53,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7252859661160523257, guid: b3e6e543b01db4d4b937d36a44f43a53,
         type: 3}
       propertyPath: m_Name
@@ -3374,6 +3540,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3242368894032998089}
     m_Modifications:
+    - target: {fileID: 200246646229585254, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672166868834609198, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1927963614641131339, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
         type: 3}
       propertyPath: m_Name
@@ -3433,6 +3609,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211978171523169637, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459263363060259862, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3532,6 +3718,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4034337167882349431}
     m_Modifications:
+    - target: {fileID: 200246646229585254, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672166868834609198, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1927963614641131339, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
         type: 3}
       propertyPath: m_Name
@@ -3591,6 +3787,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211978171523169637, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459263363060259862, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3690,6 +3896,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6787043639339838217}
     m_Modifications:
+    - target: {fileID: 200246646229585254, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672166868834609198, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1927963614641131339, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
         type: 3}
       propertyPath: m_Name
@@ -3749,6 +3965,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211978171523169637, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459263363060259862, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3769,6 +3995,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1337663375167047075}
     m_Modifications:
+    - target: {fileID: 200246646229585254, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672166868834609198, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1927963614641131339, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
         type: 3}
       propertyPath: m_Name
@@ -3828,6 +4064,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3919124990080429238, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211978171523169637, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459263363060259862, guid: 40df4ac2ff85d45479e0e7b615cac6e3,
+        type: 3}
+      propertyPath: electricLaneIdx
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

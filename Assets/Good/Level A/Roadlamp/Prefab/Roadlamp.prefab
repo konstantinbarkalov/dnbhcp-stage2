@@ -44,8 +44,8 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 100
+  m_Color: {r: 1, g: 0.96596843, b: 0.83396226, a: 1}
+  m_Intensity: 75
   m_Range: 20
   m_SpotAngle: 150
   m_InnerSpotAngle: 130
@@ -184,7 +184,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c94a235723fefbe418282baf937e23c5,
         type: 3}
       propertyPath: m_Name
-      value: Roadlamp Variant
+      value: Roadlamp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -193,8 +193,102 @@ PrefabInstance:
         type: 3}
       insertIndex: 0
       addedObject: {fileID: 605088131188108617}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c94a235723fefbe418282baf937e23c5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2646592117547401060}
+    - targetCorrespondingSourceObject: {fileID: 8934777400606672865, guid: c94a235723fefbe418282baf937e23c5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8507573260615695852}
+    - targetCorrespondingSourceObject: {fileID: 8934777400606672865, guid: c94a235723fefbe418282baf937e23c5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6549775366188142309}
   m_SourcePrefab: {fileID: 100100000, guid: c94a235723fefbe418282baf937e23c5, type: 3}
+--- !u!23 &290214930943769452 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1413795688090934332, guid: c94a235723fefbe418282baf937e23c5,
+    type: 3}
+  m_PrefabInstance: {fileID: 7522767017954678952}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1412028067486883657 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8934777400606672865, guid: c94a235723fefbe418282baf937e23c5,
+    type: 3}
+  m_PrefabInstance: {fileID: 7522767017954678952}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8507573260615695852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412028067486883657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd3c7630af0f3714aa15ed04a42b8809, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mesh: {fileID: 5817029036402440614}
+  light: {fileID: 1660695186760950310}
+  isEnabled: 1
+--- !u!114 &6549775366188142309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412028067486883657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 561101560e0dbf04e958283706e0bca1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialSetups:
+  - mesh: {fileID: 5817029036402440614}
+    materialIdx: 0
+    emission: 0.005
+    useAlpha: 1
+    material: {fileID: 0}
+  - mesh: {fileID: 290214930943769452}
+    materialIdx: 1
+    emission: 1
+    useAlpha: 1
+    material: {fileID: 0}
+  meshSetups:
+  - {fileID: 5817029036402440614}
+  lightSetups:
+  - light: {fileID: 1660695186760950310}
+    intensity: 75
+  ratio: 0
+--- !u!23 &5817029036402440614 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4097151583875293454, guid: c94a235723fefbe418282baf937e23c5,
+    type: 3}
+  m_PrefabInstance: {fileID: 7522767017954678952}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7252859661160523257 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c94a235723fefbe418282baf937e23c5,
+    type: 3}
+  m_PrefabInstance: {fileID: 7522767017954678952}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2646592117547401060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7252859661160523257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077b4bb44dce5c9428493fd28f615a2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  electricLaneIdx: 0
+  superMeshedLight: {fileID: 6549775366188142309}
 --- !u!4 &8367521133934031020 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7171607895111325692, guid: c94a235723fefbe418282baf937e23c5,
