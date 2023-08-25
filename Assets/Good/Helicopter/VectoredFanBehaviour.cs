@@ -14,7 +14,7 @@ public class VectoredFan2Behaviour : MonoBehaviour
     public Transform fakeInclinedFan;
     public Transform fanForceAAnchor;
     public Transform fanForceBAnchor;
-    public Rigidbody helicopter;
+    public HelicopterBehaivour helicopter;
     public AudioSource audioSource;
     public float maxFakeInclinedForewardAngle = 12;
     public float maxFakeInclinedBackwardAngle = 12;
@@ -67,7 +67,7 @@ public class VectoredFan2Behaviour : MonoBehaviour
         //     // verticalInput = moveDirection.y;
             // AxisControl xAxisControl = Gamepad.current.leftStick.x;
             // AxisControl yAxisControl = Gamepad.current.leftStick.y;
-            
+
             // if (xAxisControl != null) {
             //     horizontalInput = xAxisControl.value;
             // }
@@ -85,32 +85,32 @@ public class VectoredFan2Behaviour : MonoBehaviour
         // float horizontalInput = Input.GetAxis("Horizontal");
         // float verticalInput = Input.GetAxis("Vertical");
         // var moveDirection = metaManagerBehaviour.inputManagerBehaviour.MoveInput.normalized;
-        
+
         // bool isPausePressed = Input.GetKey(KeyCode.Space);
         bool isPausePressed = Keyboard.current.spaceKey.isPressed;
         // bool isBrakePressed = Input.GetKey(KeyCode.Return);
         bool isBrakePressed = Keyboard.current.enterKey.isPressed;
         if (isPausePressed) {    
-            // UnityEditor.EditorApplication.isPaused = true;
+            //UnityEditor.EditorApplication.isPaused = true;
         }
         debugTextKeeper += "Input H: " + horizontalInput + " V: " + verticalInput + "\r\n";
         Assist(horizontalInput, verticalInput, isBrakePressed);
     }
     private void Assist(float horizontalInputBratio, float verticalInputBratio, bool isBrakePressed) 
     {
-        float stabilizationAngularCorrectionBudgetRatio = GlobalVariables.Get<float>("stabilization-angular-correction-budget-ratio", 0.000005f);
-        float stabilizationGravityCorrectionBudgetRatio = GlobalVariables.Get<float>("stabilization-gravity-correction-budget-ratio", 0.000005f);
-        float horizontalInputBudgetRatio = GlobalVariables.Get<float>("horizontal-input-budget-ratio", 0.25f);
+        float stabilizationAngularCorrectionBudgetRatio = GlobalVariables.Get<float>("stabilization-angular-correction-budget-ratio", 0.05f);
+        float stabilizationGravityCorrectionBudgetRatio = GlobalVariables.Get<float>("stabilization-gravity-correction-budget-ratio", 0.3f);
+        float horizontalInputBudgetRatio = GlobalVariables.Get<float>("horizontal-input-budget-ratio", 0.10f);
         float verticalInputBudgetRatio = 1 - stabilizationAngularCorrectionBudgetRatio - stabilizationGravityCorrectionBudgetRatio - horizontalInputBudgetRatio;
 
         
         float targetPitchAngle = AssistCalculateTargetPitchAngle(horizontalInputBratio, verticalInputBratio, isBrakePressed);
         Vector3 unitTorque = CalculateUnitTorque();
-        float stabilizationCorrectionAngularAccelerationBudget =  maxPower / 2 * stabilizationAngularCorrectionBudgetRatio * unitTorque.z / helicopter.inertiaTensor.z;
+        float stabilizationCorrectionAngularAccelerationBudget =  maxPower / 2 * stabilizationAngularCorrectionBudgetRatio * unitTorque.z / helicopter.rigidBody.inertiaTensor.z;
         float stabilizationAngularCorrectionBratio = AssistStabilizationAngularCorrection(targetPitchAngle, stabilizationCorrectionAngularAccelerationBudget);
         // maxPower divide by 2 because of unitTorque that converts both engines as 1 single input
         
-        float stabilizationGravityCorrectionAccelerationBudget =  maxPower * stabilizationGravityCorrectionBudgetRatio / helicopter.mass;        
+        float stabilizationGravityCorrectionAccelerationBudget =  maxPower * stabilizationGravityCorrectionBudgetRatio / helicopter.rigidBody.mass;
         float stabilizationGravityCorrectionBratio = AssistStabilizationGravityCorrection(stabilizationGravityCorrectionAccelerationBudget);
         
         powerABratio = 0 + 
@@ -135,8 +135,8 @@ public class VectoredFan2Behaviour : MonoBehaviour
 
     }
     private Vector3 CalculateUnitTorque() {
-        Vector3 unitTorqueA = ExtendedPhysics.Utils.ForceAtPositionToTorque(helicopter, helicopter.transform.up, fanForceAAnchor.position);
-        Vector3 unitTorqueB = ExtendedPhysics.Utils.ForceAtPositionToTorque(helicopter, -helicopter.transform.up, fanForceBAnchor.position);
+        Vector3 unitTorqueA = ExtendedPhysics.Utils.ForceAtPositionToTorque(helicopter.rigidBody, helicopter.rigidBody.transform.up, fanForceAAnchor.position);
+        Vector3 unitTorqueB = ExtendedPhysics.Utils.ForceAtPositionToTorque(helicopter.rigidBody, -helicopter.rigidBody.transform.up, fanForceBAnchor.position);
         Vector3 unitTorque = unitTorqueA + unitTorqueB;
         return unitTorque;
     }
@@ -158,7 +158,7 @@ public class VectoredFan2Behaviour : MonoBehaviour
         
     }
     private float AssistCalculateTargetPitchAngle__Horizontal(float horizontalInputBratio) {
-        float actualHorizontalVelocity = helicopter.velocity.x;
+        float actualHorizontalVelocity = helicopter.rigidBody.velocity.x;
         float targetMaxHorizontalVelocity = 50;
         float targetHorizontalVelocity = targetMaxHorizontalVelocity * horizontalInputBratio;
         float horizontalVelocityDifference = targetHorizontalVelocity - actualHorizontalVelocity;
@@ -174,7 +174,7 @@ public class VectoredFan2Behaviour : MonoBehaviour
         return targetPitchAngle;
     }
     private float AssistCalculateTargetPitchAngle__Brake() {
-        float targetPitchAngle = -Vector3.SignedAngle(helicopter.velocity, Vector3.down, Vector3.forward);             
+        float targetPitchAngle = -Vector3.SignedAngle(helicopter.rigidBody.velocity, Vector3.down, Vector3.forward);
         return targetPitchAngle;
         
     }
@@ -182,8 +182,8 @@ public class VectoredFan2Behaviour : MonoBehaviour
 
 
     private float AssistStabilizationGravityCorrection(float stabilizationGravityCorrectionAccelerationBudget) {
-        float actualVelocity = helicopter.velocity.y;
-        float actualPitchAngle = helicopter.rotation.eulerAngles.z;
+        float actualVelocity = helicopter.rigidBody.velocity.y;
+        float actualPitchAngle = helicopter.rigidBody.rotation.eulerAngles.z;
         float maxAcceleration = stabilizationGravityCorrectionAccelerationBudget;
         float maxYAcceleration = maxAcceleration * Mathf.Cos(actualPitchAngle * Mathf.Deg2Rad);
 
@@ -197,8 +197,8 @@ public class VectoredFan2Behaviour : MonoBehaviour
         return stabilizationCorrectionBratio;
     }
     private float AssistStabilizationAngularCorrection(float targetPitchAngle, float stabilizationCorrectionAngularAccelerationBudget) {
-        float actualPitchAngle = helicopter.rotation.eulerAngles.z;
-        float actualPitchVelocity = helicopter.angularVelocity.z;
+        float actualPitchAngle = helicopter.rigidBody.rotation.eulerAngles.z;
+        float actualPitchVelocity = helicopter.rigidBody.angularVelocity.z;
         float directionSign = OptimalControl.CalculateSimpleAngularControl(targetPitchAngle, actualPitchAngle, actualPitchVelocity, stabilizationCorrectionAngularAccelerationBudget);
         float stabilizationCorrectionBratio = directionSign;
         return stabilizationCorrectionBratio;
@@ -229,14 +229,14 @@ public class VectoredFan2Behaviour : MonoBehaviour
         float powerA = powerABratio * maxPower / 2;
         float powerB = powerBBratio * maxPower / 2;
         
-        Vector3 direction = helicopter.transform.up;
+        Vector3 direction = helicopter.rigidBody.transform.up;
         Vector3 forceA = powerA * direction;
         Vector3 forceB = powerB * direction;
 
-        //helicopter.AddForceAtPosition(forceA, fanForceAAnchor.position, ForceMode.Force);
-        //helicopter.AddForceAtPosition(forceB, fanForceBAnchor.position, ForceMode.Force);
-        ExtendedPhysics.Utils.AddForceAtPosition(helicopter, forceA, fanForceAAnchor.position, ForceMode.Force);
-        ExtendedPhysics.Utils.AddForceAtPosition(helicopter, forceB, fanForceBAnchor.position, ForceMode.Force);
+        //helicopter.rigidBody.AddForceAtPosition(forceA, fanForceAAnchor.position, ForceMode.Force);
+        //helicopter.rigidBody.AddForceAtPosition(forceB, fanForceBAnchor.position, ForceMode.Force);
+        ExtendedPhysics.Utils.AddForceAtPosition(helicopter.rigidBody, forceA, fanForceAAnchor.position, ForceMode.Force);
+        ExtendedPhysics.Utils.AddForceAtPosition(helicopter.rigidBody, forceB, fanForceBAnchor.position, ForceMode.Force);
 
     }
     private void UpdateAudio() {
@@ -250,23 +250,25 @@ public class VectoredFan2Behaviour : MonoBehaviour
         mainSpinningFan.angleVelocity = 360 * 4 * patternFactor * powerSign; 
     }
     private void UpdateParticles() {
+        Color dustColor = MetaManagerBehaviour.metaManager.daytimeEnvironmentManager.GetDustColor();
         var mainA = particleSystemA.main;
         mainA.startSpeed = 2000 * powerABratio;
+        mainA.startColor = dustColor;
         var emissionA = particleSystemA.emission;
         emissionA.rateOverTime = 75 * powerABratio;
-        
         var mainB = particleSystemB.main;
         mainB.startSpeed = 2000 * powerBBratio;
+        mainB.startColor = dustColor;
         var emissionB = particleSystemB.emission;
         emissionB.rateOverTime = 75 * powerBBratio;
     }
     private void UpdateGauges() {
         powerGauge.bratio = (Mathf.Abs(powerABratio) + Mathf.Abs(powerBBratio)) / 2;
-        debugText.text = 
-"hele pitch angle: " + helicopter.rotation.eulerAngles.z + "\r\n" +
-                        "hele vel x: " + helicopter.velocity.x +
-                            "y: " + helicopter.velocity.y + "\r\n" +
-                        "" + debugTextKeeper;
+        debugText.text = "hele pitch angle: " + helicopter.rigidBody.rotation.eulerAngles.z + "\r\n" +
+                         "hele vel x: " + helicopter.rigidBody.velocity.x +
+                                 " y: " + helicopter.rigidBody.velocity.y + "\r\n" +
+                                 "" + debugTextKeeper;
+
         if (navigationManager != null) {
             navigationManager.bratio = powerGauge.bratio;
         } else {

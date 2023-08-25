@@ -19651,7 +19651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   metaManager: {fileID: 0}
-  explosionSphere: {fileID: 8565759467942295421}
+  explosionSphere: {fileID: 7449589093232768330}
   light: {fileID: 1185915986274975162}
   explodeDuration: 0.1
   particleDuration: 1
@@ -19776,6 +19776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3623d9e63ee1f5448785b14ea49c760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  force: 300
 --- !u!1 &8596489183189883886
 GameObject:
   m_ObjectHideFlags: 0

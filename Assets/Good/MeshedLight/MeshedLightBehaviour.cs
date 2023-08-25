@@ -14,6 +14,7 @@ public class MeshedLightBehaviour : MonoBehaviour
         mesh.enabled = isEnabled;
         light.enabled = isEnabled;
     }
+    
     void Start() {
         Switch(isEnabled);
     }

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace ExtendedPhysics.Explosion
 {
-    public class ExplosionBehaviour : MetaManagerSourceBehaviour
+    public class ExplosionBehaviour : MonoBehaviour
     {
-        public GameObject explosionSphere;
+        public ExplosionColliderBehaivour explosionSphere;
         public new Light light;
         public float explodeDuration = 0.25f;
         public float particleDuration = 1f;
         public float maxSphereScale = 20;
-        public float maxLightIntensity = 250;
+        public float maxLightIntensity = 3000;
         public bool isExploded = false;
         private float startExplodeTime;
         void Start()
@@ -25,6 +25,9 @@ namespace ExtendedPhysics.Explosion
                 if (Time.fixedTime > startExplodeTime + explodeDuration)
                 {
                     isExploded = true;
+                    Destroy(light.gameObject);
+                    Destroy(explosionSphere.gameObject);
+                    Destroy(this.gameObject, particleDuration - explodeDuration);
                 }
                 else
                 {
@@ -36,13 +39,6 @@ namespace ExtendedPhysics.Explosion
                     explosionSphere.transform.localScale = Vector3.one * explodeScale;
                     light.intensity = flashRatio * maxLightIntensity;
                 }
-            }
-            if (isExploded)
-            {
-                Destroy(gameObject);
-                Destroy(light.gameObject);
-                Destroy(this.gameObject, particleDuration - explodeDuration);
-
             }
         }
 

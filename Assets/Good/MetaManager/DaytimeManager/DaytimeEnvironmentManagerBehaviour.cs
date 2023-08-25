@@ -11,8 +11,12 @@ public class DaytimeEnvironmentManagerBehaviour : MonoBehaviour
     public AnimationCurve fillerIntensityCurve;
     public Gradient sunColorGradient;
     public Gradient fillerColorGradient;
-    void FixedUpdate() 
-    {
+    public Gradient dustColorGradient;
+    public Gradient fogColorGradient;
+    public AnimationCurve fogStartCurve;
+    public AnimationCurve fogEndCurve;
+
+    void FixedUpdate() {
         float daytimeRatio = daytimeManager.daytimeRatio;
         float nighttimeRatio = daytimeManager.nighttimeRatio;
         float sunAngle = Mathf.Lerp(0, 360, daytimeRatio) + 270; 
@@ -21,5 +25,16 @@ public class DaytimeEnvironmentManagerBehaviour : MonoBehaviour
         sunLight.color = sunColorGradient.Evaluate(nighttimeRatio);
         fillerLight.intensity = fillerIntensityCurve.Evaluate(nighttimeRatio);
         fillerLight.color = fillerColorGradient.Evaluate(nighttimeRatio);
+        RenderSettings.fogColor = fogColorGradient.Evaluate(nighttimeRatio);
+        RenderSettings.fogStartDistance = fogStartCurve.Evaluate(nighttimeRatio) * 1000;
+        RenderSettings.fogEndDistance = fogEndCurve.Evaluate(nighttimeRatio) * 1000;
+    }
+
+    public Color GetDustColor() {
+        Color dustColor = fogColorGradient.Evaluate(daytimeManager.nighttimeRatio);
+        dustColor.r = Mathf.Pow(dustColor.r*0.9f +  + 0.1f, 1/2f);
+        dustColor.g = Mathf.Pow(dustColor.g*0.9f +  + 0.1f, 1/2f);
+        dustColor.b = Mathf.Pow(dustColor.b*0.9f +  + 0.1f, 1/2f);
+        return dustColor;
     }
 }
