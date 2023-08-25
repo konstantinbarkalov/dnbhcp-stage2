@@ -17,7 +17,8 @@ public class VectoredFan2Behaviour : MonoBehaviour
     public float maxFakeInclinedForewardAngle = 12;
     public float maxFakeInclinedBackwardAngle = 12;
     private float smoothInclinedAngle = 0;
-    public float maxPower = 3000;
+    public float maxPower = 30000;
+    public float maxHeight = 50;
     public GaugeUIBehaviour powerGauge;
     public TMPro.TMP_Text debugText;
     private string debugTextKeeper;
@@ -28,7 +29,14 @@ public class VectoredFan2Behaviour : MonoBehaviour
     {
         
     }
-    private void GetControl() {
+    private float CalculateMaxPowerAtHeight() {
+        float linearHeightRatio = 1 - Mathf.Clamp01(helicopter.transform.position.y / maxHeight);
+        float heightRatio = Mathf.Pow(linearHeightRatio, 1/2f);
+        float maxPowerAtHeight = maxPower * heightRatio;
+        return maxPowerAtHeight;
+    }
+
+    private void ProcessControl() {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
         bool isPausePressed = Input.GetKey(KeyCode.Space);
@@ -41,18 +49,19 @@ public class VectoredFan2Behaviour : MonoBehaviour
     private void Assist(float horizontalInputBratio, float verticalInputBratio, bool isBrakePressed) 
     {
         float stabilizationAngularCorrectionBudgetRatio = 0.05f;
-        float stabilizationGravityCorrectionBudgetRatio = 0.3f;
+        float stabilizationGravityCorrectionBudgetRatio = 0.4f;
         float horizontalInputBudgetRatio = 0.10f;
         float verticalInputBudgetRatio = 1 - stabilizationAngularCorrectionBudgetRatio - stabilizationGravityCorrectionBudgetRatio - horizontalInputBudgetRatio;
 
         
         float targetPitchAngle = AssistCalculateTargetPitchAngle(horizontalInputBratio, verticalInputBratio, isBrakePressed);
         Vector3 unitTorque = CalculateUnitTorque();
-        float stabilizationCorrectionAngularAccelerationBudget =  maxPower / 2 * stabilizationAngularCorrectionBudgetRatio * unitTorque.z / helicopter.rigidBody.inertiaTensor.z;
+        float maxPowerAtHeight = CalculateMaxPowerAtHeight();
+        float stabilizationCorrectionAngularAccelerationBudget =  maxPowerAtHeight / 2 * stabilizationAngularCorrectionBudgetRatio * unitTorque.z / helicopter.rigidBody.inertiaTensor.z;
         float stabilizationAngularCorrectionBratio = AssistStabilizationAngularCorrection(targetPitchAngle, stabilizationCorrectionAngularAccelerationBudget);
-        // maxPower divide by 2 because of unitTorque that converts both engines as 1 single input
+        // maxPowerAtHeight divide by 2 because of unitTorque that converts both engines as 1 single input
         
-        float stabilizationGravityCorrectionAccelerationBudget =  maxPower * stabilizationGravityCorrectionBudgetRatio / helicopter.rigidBody.mass;        
+        float stabilizationGravityCorrectionAccelerationBudget =  maxPowerAtHeight * stabilizationGravityCorrectionBudgetRatio / helicopter.rigidBody.mass;        
         float stabilizationGravityCorrectionBratio = AssistStabilizationGravityCorrection(stabilizationGravityCorrectionAccelerationBudget);
         
         powerABratio = 0 + 
@@ -65,15 +74,6 @@ public class VectoredFan2Behaviour : MonoBehaviour
             + stabilizationGravityCorrectionBratio * stabilizationGravityCorrectionBudgetRatio 
             + horizontalInputBratio * horizontalInputBudgetRatio 
             - stabilizationAngularCorrectionBratio * stabilizationAngularCorrectionBudgetRatio;
-
-
-        // powerABratio = 0 + 
-        //     + verticalInputBratio * 0.8f 
-        //     - horizontalInputBratio * 0.2f; 
-        // powerBBratio = 0 +
-        //     + verticalInputBratio * 0.8f 
-        //     + horizontalInputBratio * 0.2f;
-
 
     }
     private Vector3 CalculateUnitTorque() {
@@ -106,7 +106,7 @@ public class VectoredFan2Behaviour : MonoBehaviour
         float horizontalVelocityDifference = targetHorizontalVelocity - actualHorizontalVelocity;
         
         float horizontalVelocityDifferenceBratio = horizontalVelocityDifference / targetMaxHorizontalVelocity;
-        horizontalVelocityDifferenceBratio = horizontalVelocityDifferenceBratio = Mathf.Clamp(horizontalVelocityDifferenceBratio, -1, 1);
+        horizontalVelocityDifferenceBratio = Mathf.Clamp(horizontalVelocityDifferenceBratio, -1, 1);
         
         float targetPitchAngle = (-horizontalVelocityDifferenceBratio * 90 + 360 + 180) % 360 - 180;
         return targetPitchAngle;
@@ -168,8 +168,9 @@ public class VectoredFan2Behaviour : MonoBehaviour
     }
 
     private void AddForces() {
-        float powerA = powerABratio * maxPower / 2;
-        float powerB = powerBBratio * maxPower / 2;
+        float maxPowerAtHeight = CalculateMaxPowerAtHeight();
+        float powerA = powerABratio * maxPowerAtHeight / 2;
+        float powerB = powerBBratio * maxPowerAtHeight / 2;
         
         Vector3 direction = helicopter.rigidBody.transform.up;
         Vector3 forceA = powerA * direction;
@@ -215,7 +216,7 @@ public class VectoredFan2Behaviour : MonoBehaviour
     
     void FixedUpdate()
     {       
-        GetControl();
+        ProcessControl();
         UpdateFakeInclinedFan();
         AddForces();
         UpdateAudio();

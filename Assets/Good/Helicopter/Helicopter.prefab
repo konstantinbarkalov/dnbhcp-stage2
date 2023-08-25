@@ -5430,7 +5430,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e061b36cb637d8246bf654f658fd4cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metaManagerSource: {fileID: 1250224013591867927}
   meshedLight: {fileID: 2763994742740818646}
   mode: 1
   phaseRatio: 0
@@ -5698,7 +5697,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e061b36cb637d8246bf654f658fd4cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metaManagerSource: {fileID: 1250224013591867927}
   meshedLight: {fileID: 1520705841163994377}
   mode: 1
   phaseRatio: 0.5
@@ -5989,7 +5987,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e061b36cb637d8246bf654f658fd4cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metaManagerSource: {fileID: 1250224013591867927}
   meshedLight: {fileID: 4171033078178622384}
   mode: 0
   phaseRatio: 0.5
@@ -6714,7 +6711,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e061b36cb637d8246bf654f658fd4cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metaManagerSource: {fileID: 1250224013591867927}
   meshedLight: {fileID: 1255738640155281907}
   mode: 0
   phaseRatio: 0.5
@@ -6782,7 +6778,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e061b36cb637d8246bf654f658fd4cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metaManagerSource: {fileID: 1250224013591867927}
   meshedLight: {fileID: 8389471358453460172}
   mode: 0
   phaseRatio: 0.5
@@ -12691,7 +12686,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb00287ae4587eb4281d68d794a67c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metaManager: {fileID: 0}
   rigidBody: {fileID: 8611096115922431630}
 --- !u!114 &8290313907126548850
 MonoBehaviour:
@@ -13460,7 +13454,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e061b36cb637d8246bf654f658fd4cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metaManagerSource: {fileID: 1250224013591867927}
   meshedLight: {fileID: 3529809895455870633}
   mode: 0
   phaseRatio: 0.5
@@ -13476,7 +13469,7 @@ GameObject:
   - component: {fileID: 6200709287055858998}
   - component: {fileID: 6130475533823084787}
   m_Layer: 0
-  m_Name: VectoredFan2
+  m_Name: VectoredFan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13526,6 +13519,7 @@ MonoBehaviour:
   maxFakeInclinedForewardAngle: 12
   maxFakeInclinedBackwardAngle: 12
   maxPower: 30000
+  maxHeight: 75
   powerGauge: {fileID: 0}
   debugText: {fileID: 0}
 --- !u!1 &7187481039719127937
