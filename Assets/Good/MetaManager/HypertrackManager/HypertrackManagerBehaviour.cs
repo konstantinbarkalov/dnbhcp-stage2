@@ -15,7 +15,7 @@ public class HypertrackManagerBehaviour : MonoBehaviour
     return newBomb;
   }
 
-void Start()
+  void Start()
   {
     newBomb = null;
     bombtrackCursor = -1;

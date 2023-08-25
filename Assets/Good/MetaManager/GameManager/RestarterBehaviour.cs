@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class RestarterBehaviour : MonoBehaviour
@@ -14,7 +13,8 @@ public class RestarterBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var isRestartPressed = Input.GetKeyDown(KeyCode.R);
+        var isRestartPressed = Keyboard.current.rKey.isPressed;
+        // var isRestartPressed = Input.GetKeyDown(KeyCode.R);
         if (isRestartPressed) {
             SceneManager.LoadScene( SceneManager.GetActiveScene().name );
         }

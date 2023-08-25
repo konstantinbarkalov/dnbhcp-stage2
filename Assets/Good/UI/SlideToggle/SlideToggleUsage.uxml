@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Good/UI/SlideToggle/SlideToggle.uss?fileID=7433441132597879392&amp;guid=c7ce509ae1b709731a7e532b92af8e97&amp;type=3#SlideToggle" />
+    <Good.UI.SlideToggle.SlideToggle name="SlideToggle" label="label" value="false" style="flex-direction: row; flex-wrap: nowrap; justify-content: space-between;" />
+</ui:UXML>

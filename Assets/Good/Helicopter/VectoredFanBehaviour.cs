@@ -1,6 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+using Good;
+using Good.UI;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 public class VectoredFan2Behaviour : MonoBehaviour
 {
@@ -19,30 +21,86 @@ public class VectoredFan2Behaviour : MonoBehaviour
     private float smoothInclinedAngle = 0;
     public float maxPower = 3000;
     public GaugeUIBehaviour powerGauge;
+    public NavigationManager navigationManager;
+    public GameManager gameManager;
     public TMPro.TMP_Text debugText;
     private string debugTextKeeper;
+
+    // private MetaManagerBehaviour metaManagerBehaviour;
+    public InputManagerBehaviour inputManagerBehaviour;
+
+    public InputAction playerControls;
+
+    public Vector2 MovementAmount;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
+
+    void OnEnable()
+    {
+        playerControls.Enable();
+    }
+
+    void OnDisable()
+    {
+        playerControls.Disable();
+    }
+
     private void GetControl() {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-        bool isPausePressed = Input.GetKey(KeyCode.Space);
-        bool isBrakePressed = Input.GetKey(KeyCode.Return);
+        // float horizontalInput = MovementAmount.x;
+        // float verticalInput = MovementAmount.y;
+        // var moveDirection = playerControls.ReadValue<Vector2>();
+        // float horizontalInput = moveDirection.x;
+        // float verticalInput = moveDirection.y;
+        // if (inputManagerBehaviour == null) {
+        //     horizontalInput = Input.GetAxis("Horizontal");
+        //     verticalInput = Input.GetAxis("Vertical");
+        //     debugTextKeeper += "Keyboard input H: " + horizontalInput + " V: " + verticalInput + "\r\n";
+        // } else {
+        //     // var moveDirection = inputManagerBehaviour.MoveInput.normalized;
+        //     // horizontalInput = moveDirection.x;
+        //     // verticalInput = moveDirection.y;
+            // AxisControl xAxisControl = Gamepad.current.leftStick.x;
+            // AxisControl yAxisControl = Gamepad.current.leftStick.y;
+            
+            // if (xAxisControl != null) {
+            //     horizontalInput = xAxisControl.value;
+            // }
+
+            // if (yAxisControl != null) {
+            //     verticalInput = yAxisControl.value;
+            // }
+
+        //     // horizontalInput = Gamepad.current.leftStick.x.clamp;
+        //     // verticalInput = Gamepad.current.leftStick.y.ReadValue();
+        //     // horizontalInput = Gamepad.current.leftStick.x.ReadValue();
+        //     // verticalInput = Gamepad.current.leftStick.y.ReadValue(); ;
+        //     debugTextKeeper += "JoyStick input H: " + horizontalInput + " V: " + verticalInput + "\r\n";
+        // }
+        // float horizontalInput = Input.GetAxis("Horizontal");
+        // float verticalInput = Input.GetAxis("Vertical");
+        // var moveDirection = metaManagerBehaviour.inputManagerBehaviour.MoveInput.normalized;
+        
+        // bool isPausePressed = Input.GetKey(KeyCode.Space);
+        bool isPausePressed = Keyboard.current.spaceKey.isPressed;
+        // bool isBrakePressed = Input.GetKey(KeyCode.Return);
+        bool isBrakePressed = Keyboard.current.enterKey.isPressed;
         if (isPausePressed) {    
-            UnityEditor.EditorApplication.isPaused = true;
+            // UnityEditor.EditorApplication.isPaused = true;
         }
+        debugTextKeeper += "Input H: " + horizontalInput + " V: " + verticalInput + "\r\n";
         Assist(horizontalInput, verticalInput, isBrakePressed);
     }
     private void Assist(float horizontalInputBratio, float verticalInputBratio, bool isBrakePressed) 
     {
-        float stabilizationAngularCorrectionBudgetRatio = 0.05f;
-        float stabilizationGravityCorrectionBudgetRatio = 0.3f;
-        float horizontalInputBudgetRatio = 0.10f;
+        float stabilizationAngularCorrectionBudgetRatio = GlobalVariables.Get<float>("stabilization-angular-correction-budget-ratio", 0.000005f);
+        float stabilizationGravityCorrectionBudgetRatio = GlobalVariables.Get<float>("stabilization-gravity-correction-budget-ratio", 0.000005f);
+        float horizontalInputBudgetRatio = GlobalVariables.Get<float>("horizontal-input-budget-ratio", 0.25f);
         float verticalInputBudgetRatio = 1 - stabilizationAngularCorrectionBudgetRatio - stabilizationGravityCorrectionBudgetRatio - horizontalInputBudgetRatio;
 
         
@@ -94,7 +152,7 @@ public class VectoredFan2Behaviour : MonoBehaviour
             float hvRatio = hvBratio / 2f +0.5f;
             //targetPitchAngle = Mathf.LerpAngle(targetPitchAngleHorizontal, targetPitchAngleVertical, hvRatio);
             targetPitchAngle = targetPitchAngleHorizontal;
-            debugTextKeeper = "targetPitchAngle: " + targetPitchAngle + "  hvBratio: " + hvBratio;
+            debugTextKeeper += "targetPitchAngle: " + targetPitchAngle + "  hvBratio: " + hvBratio;
         }
         return targetPitchAngle;
         
@@ -204,23 +262,29 @@ public class VectoredFan2Behaviour : MonoBehaviour
     }
     private void UpdateGauges() {
         powerGauge.bratio = (Mathf.Abs(powerABratio) + Mathf.Abs(powerBBratio)) / 2;
-        debugText.text = "hele pitch angle: " + helicopter.rotation.eulerAngles.z + "\r\n" +
-                         "hele vel x: " + helicopter.velocity.x + 
-                                 " y: " + helicopter.velocity.y + "\r\n" +
-                                 "" + debugTextKeeper;
-
+        debugText.text = 
+"hele pitch angle: " + helicopter.rotation.eulerAngles.z + "\r\n" +
+                        "hele vel x: " + helicopter.velocity.x +
+                            "y: " + helicopter.velocity.y + "\r\n" +
+                        "" + debugTextKeeper;
+        if (navigationManager != null) {
+            navigationManager.bratio = powerGauge.bratio;
+        } else {
+            gameManager.bratio = powerGauge.bratio;
+            gameManager.debugInfo = debugText.text;
+        }
     }
     
     void FixedUpdate()
-    {       
+    {
+        debugTextKeeper = "";
+
         GetControl();
         UpdateFakeInclinedFan();
         AddForces();
         UpdateAudio();
         UpdateParticles();
         UpdateGauges();
-
-        
     }
 
 

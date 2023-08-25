@@ -11,7 +11,8 @@ public class DaytimeEnvironmentManagerBehaviour : MonoBehaviour
     public AnimationCurve fillerIntensityCurve;
     public Gradient sunColorGradient;
     public Gradient fillerColorGradient;
-    void FixedUpdate() {
+    void FixedUpdate() 
+    {
         float daytimeRatio = daytimeManager.daytimeRatio;
         float nighttimeRatio = daytimeManager.nighttimeRatio;
         float sunAngle = Mathf.Lerp(0, 360, daytimeRatio) + 270; 
