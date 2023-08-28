@@ -7444,8 +7444,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hypertrackManager: {fileID: 1129162957}
-  daytimeManager: {fileID: 0}
+  daytimeManager: {fileID: 714881070}
   inputManagerBehaviour: {fileID: 0}
+  daytimeEnvironmentManager: {fileID: 714881069}
+  electricNetworkManager: {fileID: 856879879}
 --- !u!4 &658027529
 Transform:
   m_ObjectHideFlags: 0
@@ -7461,6 +7463,7 @@ Transform:
   - {fileID: 1604990718}
   - {fileID: 1129162956}
   - {fileID: 714881068}
+  - {fileID: 856879880}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8195,7 +8198,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696587188}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8654,6 +8657,150 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 8
     m_NumAlphaKeys: 2
+  dustColorGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  fogColorGradient:
+    serializedVersion: 2
+    key0: {r: 0, g: 0.7058824, b: 1, a: 1}
+    key1: {r: 0.7773941, g: 0.7926538, b: 0.8207547, a: 1}
+    key2: {r: 1, g: 0.92967814, b: 0.45660377, a: 0}
+    key3: {r: 0.41509432, g: 0.14986837, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0.0130624175, b: 0.16981131, a: 0}
+    key6: {r: 0.5188679, g: 0.10242487, b: 0, a: 0}
+    key7: {r: 0, g: 0.7058824, b: 1, a: 0}
+    ctime0: 9830
+    ctime1: 11796
+    ctime2: 13107
+    ctime3: 16384
+    ctime4: 19661
+    ctime5: 45875
+    ctime6: 50999
+    ctime7: 65535
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 2
+    m_ColorSpace: -1
+    m_NumColorKeys: 8
+    m_NumAlphaKeys: 2
+  fogStartCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1
+      value: 0.2
+      inSlope: 0.125
+      outSlope: 0.125
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5
+      value: -0.1
+      inSlope: 0.000000029802322
+      outSlope: 0.000000029802322
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9
+      value: 0.2
+      inSlope: -0.12499985
+      outSlope: -0.12499985
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 1
+    m_RotationOrder: 4
+  fogEndCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 1
+    m_RotationOrder: 4
 --- !u!114 &714881070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8666,7 +8813,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95aa85e2e85bc104b99c515d17d6d00b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metaManagerBehaviour: {fileID: 658027528}
   nonlinearity:
     serializedVersion: 2
     m_Curve:
@@ -10122,6 +10268,50 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e479ecdefa37104695fb9a6d291e8a9, type: 3}
+--- !u!1 &856879878
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 856879880}
+  - component: {fileID: 856879879}
+  m_Layer: 0
+  m_Name: ElectricNetworkManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &856879879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856879878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59d273ef5e738094db8490f26caf4683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &856879880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856879878}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 658027529}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &861518637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17257,7 +17447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1313157742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17503,7 +17693,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338753363}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -18367,6 +18557,11 @@ PrefabInstance:
       propertyPath: playerControls.m_Id
       value: f59ec9d8-7c68-479b-9426-c7e8cdde6b73
       objectReference: {fileID: 0}
+    - target: {fileID: 6130475533823084787, guid: abba61c3bbfbebf4bb755049292a5d03,
+        type: 3}
+      propertyPath: metaManagerBehaviour
+      value: 
+      objectReference: {fileID: 658027528}
     - target: {fileID: 6130475533823084787, guid: abba61c3bbfbebf4bb755049292a5d03,
         type: 3}
       propertyPath: playerControls.m_Name
@@ -26747,7 +26942,7 @@ GameObject:
   - component: {fileID: 2067225626}
   m_Layer: 5
   m_Name: UI
-  m_TagString: Untagged
+  m_TagString: ui_root
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26800,6 +26995,7 @@ MonoBehaviour:
   MainScreen: {fileID: 1338753364}
   GameScreen: {fileID: 696587189}
   bratio: 0
+  debugInfo: 
 --- !u!1 &2076433826
 GameObject:
   m_ObjectHideFlags: 0

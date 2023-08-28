@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Good/UI/Components/Screens/Main/Main.uss?fileID=7433441132597879392&amp;guid=65c333cd2a5ae545793b72a97de320e8&amp;type=3#Main" />
-    <ui:VisualElement name="main-container" class="main-container">
-        <ui:VisualElement name="main-app-bar" class="main-container main-app-bar" style="padding-left: 32px; padding-right: 32px; padding-top: 32px; padding-bottom: 32px;">
+    <ui:VisualElement name="main-container" class="main-container" style="position: relative; flex-shrink: 1; flex-grow: 1; width: 100%; height: 100%;">
+        <ui:VisualElement name="main-app-bar" class="main-container main-app-bar" style="padding-left: 32px; padding-right: 32px; padding-top: 32px; padding-bottom: 32px; flex-grow: 0;">
             <ui:Button text="M" display-tooltip-when-elided="true" name="app-bar-menu-button" class="action-button" />
             <ui:Button text="GM" display-tooltip-when-elided="true" name="app-bar-game-menu-button" class="action-button" />
         </ui:VisualElement>

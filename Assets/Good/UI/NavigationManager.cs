@@ -17,6 +17,8 @@ namespace Good.UI {
 
         [Range(-1,1)]
         public float bratio;
+
+        public string debugInfo;
         // public RectTransform positivePlate;
         // public RectTransform negativePlate;
         // public RectTransform neutralPlate;
@@ -24,6 +26,8 @@ namespace Good.UI {
 
         private void Awake()
         {
+            DontDestroyOnLoadManager.DontDestroyOnLoad(this.gameObject);
+
             mainRoot = MainScreen?.rootVisualElement;
             gameRoot = GameScreen?.rootVisualElement;
 
@@ -35,8 +39,9 @@ namespace Good.UI {
                     playButton.clicked += () => 
                     {
                         Debug.Log("Play Button Clicked");
-                        SceneManager.LoadScene("Level0");
-                        // GoToGameScreen();
+                        // SceneManager.LoadScene("Level0");
+                        SceneManager.LoadScene("Level A");
+                        GoToGameScreen();
                     };
                 }
 
@@ -64,8 +69,10 @@ namespace Good.UI {
                     });
                 }
 
-                GoToMainScreen();
-            } else if (gameRoot != null) {
+                // GoToMainScreen();
+            }
+            
+            if (gameRoot != null) {
                 var toMenuButton = gameRoot.Q<Button>("to-menu-button");
                 if (toMenuButton != null)
                 {
@@ -73,12 +80,14 @@ namespace Good.UI {
                     {
                         Debug.Log("To Menu Button Clicked");
                         SceneManager.LoadScene("Main");
-                        // GoToMainScreen();
+                        GoToMainScreen();
                     };
                 }
                 
-                GoToGameScreen();
+                // GoToGameScreen();
             }
+
+            GoToMainScreen();
         }
         
         // private void Start()
@@ -94,7 +103,8 @@ namespace Good.UI {
             UpdateGauge();
         }
 
-        void UpdateGauge() {
+        void UpdateGauge()
+        {
             // float positiveRatio = Mathf.Max(0, bratio);
             // float negatveRatio = Mathf.Max(0, -bratio);
             // float neutralRatio = 1 - positiveRatio - negatveRatio;
@@ -125,6 +135,12 @@ namespace Good.UI {
                 if (gauge != null)
                 {
                     gauge.value = bratio + 1f;
+                }
+
+                var debugTextArea = root.Q<Label>("debug-text-area");
+                if (debugTextArea != null)
+                {
+                    debugTextArea.text = debugInfo;
                 }
             }
         }

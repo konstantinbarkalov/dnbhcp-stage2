@@ -7,7 +7,7 @@ public class RestarterBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -15,8 +15,9 @@ public class RestarterBehaviour : MonoBehaviour
     {
         var isRestartPressed = Keyboard.current.rKey.isPressed;
         // var isRestartPressed = Input.GetKeyDown(KeyCode.R);
-        if (isRestartPressed) {
-            SceneManager.LoadScene( SceneManager.GetActiveScene().name );
+        if (isRestartPressed)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

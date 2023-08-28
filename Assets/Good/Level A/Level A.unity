@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1587562212}
-  m_IndirectSpecularColor: {r: 0.000018298517, g: 0.000000033020562, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.000018298471, g: 0.000000033020562, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -581,6 +581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hypertrackManager: {fileID: 1879734183}
   daytimeManager: {fileID: 409660882}
+  inputManagerBehaviour: {fileID: 0}
   daytimeEnvironmentManager: {fileID: 409660880}
   electricNetworkManager: {fileID: 1857676877}
 --- !u!4 &116037815
@@ -22856,6 +22857,26 @@ PrefabInstance:
       propertyPath: powerGauge
       value: 
       objectReference: {fileID: 1817978447}
+    - target: {fileID: 6130475533823084787, guid: abba61c3bbfbebf4bb755049292a5d03,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130475533823084787, guid: abba61c3bbfbebf4bb755049292a5d03,
+        type: 3}
+      propertyPath: navigationManager
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130475533823084787, guid: abba61c3bbfbebf4bb755049292a5d03,
+        type: 3}
+      propertyPath: playerControls.m_Id
+      value: 14977a85-410d-406e-a43d-2f7caf3b3b30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130475533823084787, guid: abba61c3bbfbebf4bb755049292a5d03,
+        type: 3}
+      propertyPath: playerControls.m_Name
+      value: Player Controls
+      objectReference: {fileID: 0}
     - target: {fileID: 6387464885171381324, guid: abba61c3bbfbebf4bb755049292a5d03,
         type: 3}
       propertyPath: m_RootOrder

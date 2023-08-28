@@ -26,13 +26,17 @@ public class VectoredFan2Behaviour : MonoBehaviour
     public TMPro.TMP_Text debugText;
     private string debugTextKeeper;
 
-    // private MetaManagerBehaviour metaManagerBehaviour;
+    public MetaManagerBehaviour metaManagerBehaviour;
     public InputManagerBehaviour inputManagerBehaviour;
 
     public InputAction playerControls;
 
     public Vector2 MovementAmount;
 
+    void Awake()
+    {
+        DontDestroyOnLoadManager.DontDestroyOnLoad(gameObject);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -271,6 +275,7 @@ public class VectoredFan2Behaviour : MonoBehaviour
 
         if (navigationManager != null) {
             navigationManager.bratio = powerGauge.bratio;
+            navigationManager.debugInfo = debugText.text;
         } else {
             gameManager.bratio = powerGauge.bratio;
             gameManager.debugInfo = debugText.text;
