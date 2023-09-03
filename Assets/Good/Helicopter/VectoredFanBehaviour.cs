@@ -3,6 +3,7 @@ using Good.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
+using UnityEngine.SceneManagement;
 
 public class VectoredFan2Behaviour : MonoBehaviour
 {
@@ -35,12 +36,49 @@ public class VectoredFan2Behaviour : MonoBehaviour
 
     void Awake()
     {
-        DontDestroyOnLoadManager.DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoadManager.DontDestroyOnLoad(gameObject);
+        // if (navigationManager == null)
+        // {
+        //     Scene uiScene = SceneManager.GetSceneByName("Root");
+        //     GameObject[] uiSceneGameObjects = uiScene.GetRootGameObjects();
+        //     foreach (var gameObject in uiSceneGameObjects)
+        //     {
+        //         if (gameObject.tag == "ui_root")
+        //         {
+        //             gameObject.transform.SetSiblingIndex(10);
+        //             navigationManager = gameObject.GetComponent<NavigationManager>();
+        //         }
+        //     }
+        // }
+        // GameObject UIRootGameObject = GameObject.FindWithTag("ui_root");
+        // navigationManager = UIRootGameObject.GetComponent<NavigationManager>();
+        // navigationManager.Init();
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        // if (navigationManager == null) {
+        //     Scene uiScene = SceneManager.GetSceneByName("Root");
+        //     GameObject[] uiSceneGameObjects = uiScene.GetRootGameObjects();
+        //     foreach (var gameObject in uiSceneGameObjects)
+        //     {
+        //         if (gameObject.tag == "ui_root") {
+        //             gameObject.transform.SetSiblingIndex(10);
+        //             navigationManager = gameObject.GetComponent<NavigationManager>();
+        //         }
+        //     }
+        //     // GameObject UIRootGameObject = GameObject.FindWithTag("ui_root");
+        //     // UIRootGameObject.transform.SetSiblingIndex(10);
+        //     // navigationManager = UIRootGameObject.GetComponent<NavigationManager>();
+        //     // navigationManager.Init();
+        // }
+        if (navigationManager == null)
+        {
+            GameObject UIRootGameObject = GameObject.FindWithTag("ui_root");
+            navigationManager = UIRootGameObject.GetComponent<NavigationManager>();
+            navigationManager.Init();
+        }
     }
 
     void OnEnable()
@@ -102,9 +140,9 @@ public class VectoredFan2Behaviour : MonoBehaviour
     }
     private void Assist(float horizontalInputBratio, float verticalInputBratio, bool isBrakePressed) 
     {
-        float stabilizationAngularCorrectionBudgetRatio = GlobalVariables.Get<float>("stabilization-angular-correction-budget-ratio", 0.05f);
-        float stabilizationGravityCorrectionBudgetRatio = GlobalVariables.Get<float>("stabilization-gravity-correction-budget-ratio", 0.3f);
-        float horizontalInputBudgetRatio = GlobalVariables.Get<float>("horizontal-input-budget-ratio", 0.10f);
+        float stabilizationAngularCorrectionBudgetRatio = PlayerPrefs.GetFloat("stabilization-angular-correction-budget-ratio", 0.05f);
+        float stabilizationGravityCorrectionBudgetRatio = PlayerPrefs.GetFloat("stabilization-gravity-correction-budget-ratio", 0.3f);
+        float horizontalInputBudgetRatio = PlayerPrefs.GetFloat("horizontal-input-budget-ratio", 0.10f);
         float verticalInputBudgetRatio = 1 - stabilizationAngularCorrectionBudgetRatio - stabilizationGravityCorrectionBudgetRatio - horizontalInputBudgetRatio;
 
         
@@ -276,10 +314,10 @@ public class VectoredFan2Behaviour : MonoBehaviour
         if (navigationManager != null) {
             navigationManager.bratio = powerGauge.bratio;
             navigationManager.debugInfo = debugText.text;
-        } else {
+        }/*  else {
             gameManager.bratio = powerGauge.bratio;
             gameManager.debugInfo = debugText.text;
-        }
+        } */
     }
     
     void FixedUpdate()

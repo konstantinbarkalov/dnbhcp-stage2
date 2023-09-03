@@ -44,4 +44,14 @@
     border-right-color: rgba(149, 149, 149, 0);
     border-top-color: rgba(149, 149, 149, 0);
     border-bottom-color: rgba(149, 149, 149, 0);
+    transition-timing-function: ease-in;
+    transition-duration: 333ms;
+}
+
+.selectable-button {
+    background-color: rgba(0, 0, 0, 0.33);
+}
+
+.selectable-button.selected {
+    background-color: rgba(0, 0, 0, 0.67);
 }

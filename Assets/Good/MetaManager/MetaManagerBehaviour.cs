@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +15,7 @@ public class MetaManagerBehaviour : MonoBehaviour
 
     private void Awake()
     {
-        MetaManagerBehaviour.metaManager = this;
+        metaManager = this;
     }
 
 }
@@ -28,7 +27,7 @@ public static class DontDestroyOnLoadManager
 
     public static void DontDestroyOnLoad(this GameObject go)
     {
-        UnityEngine.Object.DontDestroyOnLoad(go);
+        Object.DontDestroyOnLoad(go);
         _ddolObjects.Add(go);
     }
 
@@ -38,7 +37,7 @@ public static class DontDestroyOnLoadManager
         {
             if (go != null)
             {
-                UnityEngine.Object.Destroy(go);
+                Object.Destroy(go);
             }
         }
 
