@@ -18,7 +18,7 @@ public class FollowCameraBehaviour : MonoBehaviour
     // stupid code TODO: need to rewrite from scratch
 
     void Start() {
-        Vector3 currentPosition = pov.transform.position;
+        currentPosition = pov.transform.position;
         smartPovPosition = currentPosition;
         smoothSmartPovPosition = currentPosition;
         previousPosition = currentPosition;

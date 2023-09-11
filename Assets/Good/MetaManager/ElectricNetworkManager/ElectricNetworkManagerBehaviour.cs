@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public enum LaneState
@@ -47,6 +48,7 @@ public class ElectricNetworkManagerBehaviour : MonoBehaviour
             float beatShift = laneIdx % 4;
             bool isNightLight = laneIdx < 4;
             LaneState laneState;
+            float overvoltageFactor = 1;
             if (beat >= nightElectricEndBeat - beatShift)
             {
                 laneState = isNightLight ? LaneState.Off : LaneState.On;
@@ -58,6 +60,8 @@ public class ElectricNetworkManagerBehaviour : MonoBehaviour
             else if (beat >= blackoutEndBeat) // no beatshift
             {
                 laneState = LaneState.On;
+                float overvoltageDuration = beat - blackoutEndBeat;
+                overvoltageFactor = 1 + 10 / overvoltageDuration;
             }
             else if (beat >= blackoutEndBeat - fullOffBeatDuration) // no beatshift
             {
@@ -93,7 +97,7 @@ public class ElectricNetworkManagerBehaviour : MonoBehaviour
             // laneState to actual ratio value 
             if (laneState == LaneState.On)
             {
-                lanes[laneIdx] = 1;
+                lanes[laneIdx] = overvoltageFactor;
             }
             else if (laneState == LaneState.Off)
             {
@@ -109,7 +113,7 @@ public class ElectricNetworkManagerBehaviour : MonoBehaviour
                 float unfadePerSec = 0.5f;
                 float unfadePerFrame = Mathf.Pow(unfadePerSec, Time.fixedDeltaTime);
                 lanes[laneIdx] *= unfadePerFrame;
-            } 
+            }
             else 
             {
                 throw new System.NotImplementedException();

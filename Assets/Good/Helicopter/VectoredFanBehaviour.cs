@@ -48,8 +48,8 @@ public class VectoredFan2Behaviour : MonoBehaviour
     }
     private void Assist(float horizontalInputBratio, float verticalInputBratio, bool isBrakePressed) 
     {
-        float stabilizationAngularCorrectionBudgetRatio = 0.05f;
-        float stabilizationGravityCorrectionBudgetRatio = 0.4f;
+        float stabilizationAngularCorrectionBudgetRatio = 0.05f; //0.000001f;
+        float stabilizationGravityCorrectionBudgetRatio = 0.4f; //0.000001f;
         float horizontalInputBudgetRatio = 0.10f;
         float verticalInputBudgetRatio = 1 - stabilizationAngularCorrectionBudgetRatio - stabilizationGravityCorrectionBudgetRatio - horizontalInputBudgetRatio;
 
@@ -186,7 +186,7 @@ public class VectoredFan2Behaviour : MonoBehaviour
         float powerRatioNonlinear = (Mathf.Abs(powerABratio) + Mathf.Abs(powerBBratio)) / 2 / 0.8f;
         float powerRatioNonlinear1 = Mathf.Pow(powerRatioNonlinear, 1/1f);
         float powerRatioNonlinear2 = Mathf.Pow(powerRatioNonlinear, 1/2f);
-        audioSource.volume = 0.25f + powerRatioNonlinear2 * 0.75f;
+        audioSource.volume = (0.25f + powerRatioNonlinear2 * 0.75f) * 1/2f;
         float powerSign = Mathf.Sign(powerBBratio + powerABratio);
         float patternFactor = powerRatioNonlinear1 < 1/4f ? 1/4f : powerRatioNonlinear1 < 1/3f ? 1/3f : powerRatioNonlinear1 < 1/2f ? 1/2f : powerRatioNonlinear1 < 2/3f ? 2/3f : powerRatioNonlinear1 < 3/4f ? 3/4f : 1;
         audioSource.pitch = patternFactor * powerSign;

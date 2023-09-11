@@ -1,0 +1,369 @@
+fileFormatVersion: 2
+guid: a0e38b62e5c6b6d41a677fa2af7b3acb
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane A Arrow Bottom Material
+    second: {fileID: 2100000, guid: dfba87f6749ea8c428df41984c22e062, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane A Arrow Side End Material
+    second: {fileID: 2100000, guid: dfbdabe36376cdd4090075ea46dafd25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane A Arrow Side Material
+    second: {fileID: 2100000, guid: 588a967ed76892340ab86a52ae21da78, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane A Arrow Tip Material
+    second: {fileID: 2100000, guid: 3414a5e05ad03614f91eec1d7b7461f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane A Arrow Top Material
+    second: {fileID: 2100000, guid: 03a7f29b842bea24490aca7a0a2b5b00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane A Basket Bottom Material
+    second: {fileID: 2100000, guid: 31ce3693c8441064abdf83a75f21442e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane A Basket Front Material
+    second: {fileID: 2100000, guid: b5f40860c56b263458ab8a3b9854cabb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane A Basket Side Material
+    second: {fileID: 2100000, guid: eb9867bd3b0132b47a3160ef023e1c88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane A Cabin Bottom Material
+    second: {fileID: 2100000, guid: 08f8d893fddbd7f43865e6c0b77dfa37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane A Cabin Front Material
+    second: {fileID: 2100000, guid: aeeeb7fbd1b14e64b8e82eb461e032b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane A Cabin Plane Material
+    second: {fileID: 2100000, guid: 858d566203027a34dae8a008b76897c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane A Cabin Side Material
+    second: {fileID: 2100000, guid: 810e9e7940b738b49a664b168ab693ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane A Caret Side Material
+    second: {fileID: 2100000, guid: f1c167ef229d7a64d9c4e3f3a078767b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane A Fence Material
+    second: {fileID: 2100000, guid: 5dc16f65a788aa04d9c58498c3ade5d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane A Hard Material
+    second: {fileID: 2100000, guid: 16c5bc8b00da3a34aa6494088e5b4d40, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane A Ladder Cage Material
+    second: {fileID: 2100000, guid: af9b3bf2e69ddb848bbc9762bca00e86, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane A Ladder Material
+    second: {fileID: 2100000, guid: 36f480ee15ba65944b35e2c598f698f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane A Low Material
+    second: {fileID: 2100000, guid: 09b89c87fda990443bb7867ead179bf2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane A Mast Material
+    second: {fileID: 2100000, guid: 939a8acb8902b3b42a2ec39f6c306b61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane A Sprocket Plate Material
+    second: {fileID: 2100000, guid: cfa70364123ccac4dbaf631f7b2d0bd6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane A Steel A Material
+    second: {fileID: 2100000, guid: 4ad59dd38b9abee49aac44ee897471f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane A Steel B Material
+    second: {fileID: 2100000, guid: b68564449bacf9041878ce8f3d92f788, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane A Tail Material
+    second: {fileID: 2100000, guid: 83a662d8ed817ec438f52ac4dc91e24b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane Cable Material
+    second: {fileID: 2100000, guid: 457f8aeb02ee6434081b810bbcf66ff0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane Motor Back Material
+    second: {fileID: 2100000, guid: fe7f09a6ed0b8f7439e06cdf1111afa4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crane Motor Side Material
+    second: {fileID: 2100000, guid: 40596cb4e5e7760498be82d2d98472bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mass Edge Material
+    second: {fileID: 2100000, guid: 391f2dad6cdbe3742941aab082797186, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mass Plane Material
+    second: {fileID: 2100000, guid: 7549babbca573574ebad932614753487, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Crane A Arrow Albedo Alpha
+    second: {fileID: 2800000, guid: ae6807acc88a05342b2382e49d7ffb54, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Crane A Arrow Bottom Albedo Alpha
+    second: {fileID: 2800000, guid: 58d3ad73f2bca6b45b7d97b0fd1b5595, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Crane A Arrow Side End Albedo Alpha
+    second: {fileID: 2800000, guid: c21333d178ad75a4e822a5b45c17b0d8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Crane A Arrow Tip Albedo Alpha
+    second: {fileID: 2800000, guid: 9a230aa41f193ed4686e4349f2873800, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Crane A Arrow Top Albedo Alpha
+    second: {fileID: 2800000, guid: 5bd49689903e9af48a7fc9371cba3718, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Crane A Basket Bottom Albedo Alpha
+    second: {fileID: 2800000, guid: b232c08bd964d4f43bf845e7e89a0b99, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Crane A Basket Front Albedo Alpha
+    second: {fileID: 2800000, guid: bbaa5fcc3370a2b4598d4bed6f650e5c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Crane A Basket Side Albedo Alpha
+    second: {fileID: 2800000, guid: 730296194852b2142b713bf57238118a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Crane A Cabin Bottom Albedo Alpha
+    second: {fileID: 2800000, guid: 37d39463da3433445999e6e5989c66f2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Crane A Cabin Front Albedo Alpha
+    second: {fileID: 2800000, guid: e0ffad6038593f6419651369bae346ae, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Crane A Cabin Side Albedo Alpha
+    second: {fileID: 2800000, guid: 485db47b2c115e2458cd2d43b9a79a20, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Crane A Caret Side Albedo Alpha
+    second: {fileID: 2800000, guid: a59800edbb421d0418427b390fd3f868, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Crane A Fence Albedo Alpha
+    second: {fileID: 2800000, guid: 3f2f61ce8ba2b0949b3694e9899f8efd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Crane A Hard Albedo Alpha
+    second: {fileID: 2800000, guid: c30870a34b0b6274181023e8fdc47c98, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Crane A Ladder Albedo Alpha
+    second: {fileID: 2800000, guid: aab553fa7b8690c43b50b85d4af31060, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Crane A Ladder Cage Albedo Alpha
+    second: {fileID: 2800000, guid: 9abc4ceeeac7acb43b231b4c6e4b284a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Crane A Low Albedo Alpha
+    second: {fileID: 2800000, guid: ed24dbdb057b91e4d8f3dffd79f6f3ae, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Crane A Mass Depth
+    second: {fileID: 2800000, guid: a03ca3984c14dd340aea99cd07a74d52, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Crane A Mast Albedo Alpha
+    second: {fileID: 2800000, guid: 26bb854b2b2ea954c9e8bff005bd6729, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Crane A Motor Back Albedo
+    second: {fileID: 2800000, guid: 4603e3130b3318941a668cec0a8715af, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Crane A Motor Back Depth
+    second: {fileID: 2800000, guid: b188f294ae346324fb8c14d2c1cfe92b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Crane A Motor Side Albedo
+    second: {fileID: 2800000, guid: 5b65eecf478a56a4084ff05d20ff46ed, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Crane A Motor Side Depth
+    second: {fileID: 2800000, guid: c25a7056575a8b54fb4c0bb97b8dabbe, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Crane A Tail Albedo Alpha
+    second: {fileID: 2800000, guid: 6bfdc5f011988f440b0de53c9d5f25be, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

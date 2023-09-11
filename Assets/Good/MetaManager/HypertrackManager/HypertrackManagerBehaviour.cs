@@ -26,7 +26,8 @@ public class HypertrackManagerBehaviour : MonoBehaviour
     bombtrackCursor = -1;
     bombtrackJson = JsonUtility.FromJson<Bombtrack>(bombtrackJsonFile.text);
     source.Play();
-    //source.time = 7;
+    source.time = 7;
+    //source.time = 64;
   }
 
   void FixedUpdate()
