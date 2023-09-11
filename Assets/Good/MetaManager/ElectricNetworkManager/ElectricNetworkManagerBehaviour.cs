@@ -10,6 +10,7 @@ public enum LaneState
     Off,
     Fluctuate
 }
+
 public class ElectricNetworkManagerBehaviour : MonoBehaviour
 {
     private float[] lanes = new float[8];
@@ -36,11 +37,11 @@ public class ElectricNetworkManagerBehaviour : MonoBehaviour
         float blackoutBeginBeat = 128 + 64;
         float blackoutEndBeat = blackoutBeginBeat + 32;
         float nightElectricEndBeat = blackoutEndBeat + 64;
-        
+
         float fluctuationBeatDuration = 4;
         float fullOffBeatDuration = 2;
-        
-        
+
+
         for (int laneIdx = 0; laneIdx < lanes.Length; laneIdx++)
         {
             // Part 1
@@ -91,8 +92,8 @@ public class ElectricNetworkManagerBehaviour : MonoBehaviour
             {
                 laneState = isNightLight ? LaneState.Off : LaneState.On;
             };
-            
-            
+
+
             // Part 2
             // laneState to actual ratio value 
             if (laneState == LaneState.On)
@@ -114,7 +115,7 @@ public class ElectricNetworkManagerBehaviour : MonoBehaviour
                 float unfadePerFrame = Mathf.Pow(unfadePerSec, Time.fixedDeltaTime);
                 lanes[laneIdx] *= unfadePerFrame;
             }
-            else 
+            else
             {
                 throw new System.NotImplementedException();
             }

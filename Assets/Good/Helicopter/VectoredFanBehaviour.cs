@@ -1,6 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
+using Good;
+using Good.UI;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
+using UnityEngine.SceneManagement;
 
 public class VectoredFan2Behaviour : MonoBehaviour
 {
@@ -20,14 +23,63 @@ public class VectoredFan2Behaviour : MonoBehaviour
     public float maxPower = 30000;
     public float maxHeight = 50;
     public GaugeUIBehaviour powerGauge;
+    public NavigationManager navigationManager;
+    public GameManager gameManager;
     public TMPro.TMP_Text debugText;
     private string debugTextKeeper;
 
+    public MetaManagerBehaviour metaManagerBehaviour;
+    public InputManagerBehaviour inputManagerBehaviour;
+
+    public InputAction playerControls;
+
+    public Vector2 MovementAmount;
+
+    void Awake()
+    {
+        // DontDestroyOnLoadManager.DontDestroyOnLoad(gameObject);
+        // if (navigationManager == null)
+        // {
+        //     Scene uiScene = SceneManager.GetSceneByName("Root");
+        //     GameObject[] uiSceneGameObjects = uiScene.GetRootGameObjects();
+        //     foreach (var gameObject in uiSceneGameObjects)
+        //     {
+        //         if (gameObject.tag == "ui_root")
+        //         {
+        //             gameObject.transform.SetSiblingIndex(10);
+        //             navigationManager = gameObject.GetComponent<NavigationManager>();
+        //         }
+        //     }
+        // }
+        // GameObject UIRootGameObject = GameObject.FindWithTag("ui_root");
+        // navigationManager = UIRootGameObject.GetComponent<NavigationManager>();
+        // navigationManager.Init();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        // if (navigationManager == null) {
+        //     Scene uiScene = SceneManager.GetSceneByName("Root");
+        //     GameObject[] uiSceneGameObjects = uiScene.GetRootGameObjects();
+        //     foreach (var gameObject in uiSceneGameObjects)
+        //     {
+        //         if (gameObject.tag == "ui_root") {
+        //             gameObject.transform.SetSiblingIndex(10);
+        //             navigationManager = gameObject.GetComponent<NavigationManager>();
+        //         }
+        //     }
+        //     // GameObject UIRootGameObject = GameObject.FindWithTag("ui_root");
+        //     // UIRootGameObject.transform.SetSiblingIndex(10);
+        //     // navigationManager = UIRootGameObject.GetComponent<NavigationManager>();
+        //     // navigationManager.Init();
+        // }
+        if (navigationManager == null)
+        {
+            GameObject UIRootGameObject = GameObject.FindWithTag("ui_root");
+            navigationManager = UIRootGameObject.GetComponent<NavigationManager>();
+            navigationManager.Init();
+        }
     }
     private float CalculateMaxPowerAtHeight() {
         float linearHeightRatio = 1 - Mathf.Clamp01(helicopter.transform.position.y / maxHeight);
@@ -36,21 +88,69 @@ public class VectoredFan2Behaviour : MonoBehaviour
         return maxPowerAtHeight;
     }
 
+
+    void OnEnable()
+    {
+        playerControls.Enable();
+    }
+
+    void OnDisable()
+    {
+        playerControls.Disable();
+    }
     private void ProcessControl() {
+
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-        bool isPausePressed = Input.GetKey(KeyCode.Space);
-        bool isBrakePressed = Input.GetKey(KeyCode.Return);
+        // float horizontalInput = MovementAmount.x;
+        // float verticalInput = MovementAmount.y;
+        // var moveDirection = playerControls.ReadValue<Vector2>();
+        // float horizontalInput = moveDirection.x;
+        // float verticalInput = moveDirection.y;
+        // if (inputManagerBehaviour == null) {
+        //     horizontalInput = Input.GetAxis("Horizontal");
+        //     verticalInput = Input.GetAxis("Vertical");
+        //     debugTextKeeper += "Keyboard input H: " + horizontalInput + " V: " + verticalInput + "\r\n";
+        // } else {
+        //     // var moveDirection = inputManagerBehaviour.MoveInput.normalized;
+        //     // horizontalInput = moveDirection.x;
+        //     // verticalInput = moveDirection.y;
+            // AxisControl xAxisControl = Gamepad.current.leftStick.x;
+            // AxisControl yAxisControl = Gamepad.current.leftStick.y;
+
+            // if (xAxisControl != null) {
+            //     horizontalInput = xAxisControl.value;
+            // }
+
+            // if (yAxisControl != null) {
+            //     verticalInput = yAxisControl.value;
+            // }
+
+        //     // horizontalInput = Gamepad.current.leftStick.x.clamp;
+        //     // verticalInput = Gamepad.current.leftStick.y.ReadValue();
+        //     // horizontalInput = Gamepad.current.leftStick.x.ReadValue();
+        //     // verticalInput = Gamepad.current.leftStick.y.ReadValue(); ;
+        //     debugTextKeeper += "JoyStick input H: " + horizontalInput + " V: " + verticalInput + "\r\n";
+        // }
+        // float horizontalInput = Input.GetAxis("Horizontal");
+        // float verticalInput = Input.GetAxis("Vertical");
+        // var moveDirection = metaManagerBehaviour.inputManagerBehaviour.MoveInput.normalized;
+
+        // bool isPausePressed = Input.GetKey(KeyCode.Space);
+        bool isPausePressed = Keyboard.current.spaceKey.isPressed;
+        // bool isBrakePressed = Input.GetKey(KeyCode.Return);
+        bool isBrakePressed = Keyboard.current.enterKey.isPressed;
         if (isPausePressed) {    
             //UnityEditor.EditorApplication.isPaused = true;
         }
+        debugTextKeeper += "Input H: " + horizontalInput + " V: " + verticalInput + "\r\n";
         Assist(horizontalInput, verticalInput, isBrakePressed);
     }
     private void Assist(float horizontalInputBratio, float verticalInputBratio, bool isBrakePressed) 
     {
-        float stabilizationAngularCorrectionBudgetRatio = 0.05f; //0.000001f;
-        float stabilizationGravityCorrectionBudgetRatio = 0.4f; //0.000001f;
-        float horizontalInputBudgetRatio = 0.10f;
+        float stabilizationAngularCorrectionBudgetRatio = PlayerPrefs.GetFloat("stabilization-angular-correction-budget-ratio", 0.05f);
+        float stabilizationGravityCorrectionBudgetRatio = PlayerPrefs.GetFloat("stabilization-gravity-correction-budget-ratio", 0.3f);
+        float horizontalInputBudgetRatio = PlayerPrefs.GetFloat("horizontal-input-budget-ratio", 0.10f);
         float verticalInputBudgetRatio = 1 - stabilizationAngularCorrectionBudgetRatio - stabilizationGravityCorrectionBudgetRatio - horizontalInputBudgetRatio;
 
         
@@ -94,7 +194,7 @@ public class VectoredFan2Behaviour : MonoBehaviour
             float hvRatio = hvBratio / 2f +0.5f;
             //targetPitchAngle = Mathf.LerpAngle(targetPitchAngleHorizontal, targetPitchAngleVertical, hvRatio);
             targetPitchAngle = targetPitchAngleHorizontal;
-            debugTextKeeper = "targetPitchAngle: " + targetPitchAngle + "  hvBratio: " + hvBratio;
+            debugTextKeeper += "targetPitchAngle: " + targetPitchAngle + "  hvBratio: " + hvBratio;
         }
         return targetPitchAngle;
         
@@ -116,7 +216,7 @@ public class VectoredFan2Behaviour : MonoBehaviour
         return targetPitchAngle;
     }
     private float AssistCalculateTargetPitchAngle__Brake() {
-        float targetPitchAngle = -Vector3.SignedAngle(helicopter.rigidBody.velocity, Vector3.down, Vector3.forward);             
+        float targetPitchAngle = -Vector3.SignedAngle(helicopter.rigidBody.velocity, Vector3.down, Vector3.forward);
         return targetPitchAngle;
         
     }
@@ -208,22 +308,28 @@ public class VectoredFan2Behaviour : MonoBehaviour
     private void UpdateGauges() {
         powerGauge.bratio = (Mathf.Abs(powerABratio) + Mathf.Abs(powerBBratio)) / 2;
         debugText.text = "hele pitch angle: " + helicopter.rigidBody.rotation.eulerAngles.z + "\r\n" +
-                         "hele vel x: " + helicopter.rigidBody.velocity.x + 
+                         "hele vel x: " + helicopter.rigidBody.velocity.x +
                                  " y: " + helicopter.rigidBody.velocity.y + "\r\n" +
                                  "" + debugTextKeeper;
 
+        if (navigationManager != null) {
+            navigationManager.bratio = powerGauge.bratio;
+            navigationManager.debugInfo = debugText.text;
+        }/*  else {
+            gameManager.bratio = powerGauge.bratio;
+            gameManager.debugInfo = debugText.text;
+        } */
     }
     
     void FixedUpdate()
-    {       
+    {
+        debugTextKeeper = "";
         ProcessControl();
         UpdateFakeInclinedFan();
         AddForces();
         UpdateAudio();
         UpdateParticles();
         UpdateGauges();
-
-        
     }
 
 
