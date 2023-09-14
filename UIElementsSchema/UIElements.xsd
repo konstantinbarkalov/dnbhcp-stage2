@@ -5,6 +5,10 @@
   <xs:import schemaLocation="UnityEditor.Rendering.LookDev.xsd" namespace="UnityEditor.Rendering.LookDev" />
   <xs:include schemaLocation="GlobalNamespace.xsd" />
   <xs:import schemaLocation="UnityEditor.ShaderGraph.Drawing.xsd" namespace="UnityEditor.ShaderGraph.Drawing" />
+  <xs:import schemaLocation="Good.UI.SlideToggle.xsd" namespace="Good.UI.SlideToggle" />
+  <xs:import schemaLocation="Good.UI.Gauge.xsd" namespace="Good.UI.Gauge" />
+  <xs:import schemaLocation="Good.UI.ProgressFooBar.xsd" namespace="Good.UI.ProgressFooBar" />
+  <xs:import schemaLocation="Good.UI.Core.Buttons.xsd" namespace="Good.UI.Core.Buttons" />
   <xs:import schemaLocation="UnityEditor.UIElements.Debugger.xsd" namespace="UnityEditor.UIElements.Debugger" />
   <xs:import schemaLocation="Unity.UI.Builder.xsd" namespace="Unity.UI.Builder" />
   <xs:import schemaLocation="UnityEditor.Search.xsd" namespace="UnityEditor.Search" />
