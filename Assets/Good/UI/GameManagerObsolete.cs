@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 namespace Good.UI
 {
 
-    public class GameManager : MonoBehaviour
+    public class GameManagerObsolete
     {
         public UIDocument GameScreen;
 

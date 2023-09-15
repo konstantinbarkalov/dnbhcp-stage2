@@ -8,7 +8,7 @@ namespace Good.UI.Core.JoyStick
 
     public class JoyStick : VisualElement
     {
-        // Start is called before the first frame update
+        
         void Start()
         {
             

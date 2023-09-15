@@ -27,7 +27,7 @@ public class BeaconBehaviour : MonoBehaviour
         if (mode == BeaconMode.On) {
             isBeaconEnabled = true;
         } else if (mode == BeaconMode.Flash) {
-            float beat = MetaManagerBehaviour.metaManager.hypertrackManager.GetBeat() * speedFactor;
+            float beat = MetaManagerBehaviour.instance.hypertrackManager.GetBeat() * speedFactor;
             isBeaconEnabled = (beat + phaseRatio * 4) % 4 < 1;
         } else if (mode == BeaconMode.Off) {
             isBeaconEnabled = false;

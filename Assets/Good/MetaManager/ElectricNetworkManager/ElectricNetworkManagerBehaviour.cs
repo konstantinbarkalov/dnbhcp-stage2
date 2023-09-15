@@ -32,7 +32,7 @@ public class ElectricNetworkManagerBehaviour : MonoBehaviour
     private void UpdateLanes__FixedUpdate()
     {
 
-        float beat = MetaManagerBehaviour.metaManager.hypertrackManager.GetBeat();
+        float beat = MetaManagerBehaviour.instance.hypertrackManager.GetBeat();
         float nightElectricBeginBeat = 64 + 16;
         float blackoutBeginBeat = 128 + 64;
         float blackoutEndBeat = blackoutBeginBeat + 32;

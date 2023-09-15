@@ -9,7 +9,7 @@ public class DaytimeManagerBehaviour : MonoBehaviour
     public float nighttimeRatio = 0;
     void FixedUpdate()
     {
-        float linearRatio = MetaManagerBehaviour.metaManager.hypertrackManager.source.time / MetaManagerBehaviour.metaManager.hypertrackManager.source.clip.length;
+        float linearRatio = MetaManagerBehaviour.instance.hypertrackManager.source.time / MetaManagerBehaviour.instance.hypertrackManager.source.clip.length;
         linearRatio *= 0.8f;
         linearRatio += 0.75f - 0.2f;
         linearRatio %= 1;

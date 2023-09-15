@@ -54,10 +54,14 @@ public class FollowCameraBehaviour : MonoBehaviour
         cameraPosition.y = baselineY * 0.75f - smoothSmartPovPosition.y / 7.5f;
         camera.transform.position = cameraPosition;
         camera.transform.LookAt(shiftedPovPosition);
-
-        cursor1.transform.position = smoothSmartPovPosition;
-        cursor2.transform.position = shiftedPovPosition;
-
+        if (cursor1) {
+            cursor1.transform.position = smoothSmartPovPosition;
+        }
+        if (cursor2) {
+            cursor2.transform.position = shiftedPovPosition;
+        }
+        
+        
         // var a = camera.transform.rotation.eulerAngles;
         // a.z = pov.transform.rotation.eulerAngles.z;
         // Quaternion rotation = Quaternion.Euler(a);

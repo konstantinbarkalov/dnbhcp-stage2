@@ -60,7 +60,7 @@ public class PhoreBehaviour : MonoBehaviour
         light.enabled = intensityFactor > 0;
     }
     private void ResolveState__Update() {
-        float beat = MetaManagerBehaviour.metaManager.hypertrackManager.GetBeat(); 
+        float beat = MetaManagerBehaviour.instance.hypertrackManager.GetBeat(); 
         bool blink = (beat * 2) % 2 < 1;
         switch (state)
         {

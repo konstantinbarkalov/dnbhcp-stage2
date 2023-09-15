@@ -22,15 +22,8 @@ public class VectoredFan2Behaviour : MonoBehaviour
     public float maxPower = 30000;
     public float maxHeight = 50;
     public GaugeUIBehaviour powerGauge;
-    public NavigationManager navigationManager;
-    public GameManager gameManager;
-    public TMPro.TMP_Text debugText;
-    private string debugTextKeeper;
 
-    public MetaManagerBehaviour metaManagerBehaviour;
-
-
-    public Vector2 MovementAmount;
+    public Vector2 MovementAmount; // TODO: remove
 
     void Awake()
     {
@@ -53,7 +46,7 @@ public class VectoredFan2Behaviour : MonoBehaviour
         // navigationManager.Init();
     }
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         // if (navigationManager == null) {
@@ -71,12 +64,9 @@ public class VectoredFan2Behaviour : MonoBehaviour
         //     // navigationManager = UIRootGameObject.GetComponent<NavigationManager>();
         //     // navigationManager.Init();
         // }
-        if (navigationManager == null)
-        {
             GameObject UIRootGameObject = GameObject.FindWithTag("ui_root");
-            navigationManager = UIRootGameObject.GetComponent<NavigationManager>();
-            navigationManager.Init();
-        }
+            MetaManagerBehaviour.instance.navigationManager = UIRootGameObject.GetComponent<NavigationManager>();
+            MetaManagerBehaviour.instance.navigationManager.Init();        
     }
     public float CalculateMaxPowerAtHeight() {
         float linearHeightRatio = 1 - Mathf.Clamp01(helicopter.transform.position.y / maxHeight);
@@ -134,7 +124,7 @@ public class VectoredFan2Behaviour : MonoBehaviour
         mainSpinningFan.angleVelocity = 360 * 4 * patternFactor * powerSign; 
     }
     private void UpdateParticles() {
-        Color dustColor = MetaManagerBehaviour.metaManager.daytimeEnvironmentManager.GetDustColor();
+        Color dustColor = MetaManagerBehaviour.instance.daytimeEnvironmentManager.GetDustColor();
         var mainA = particleSystemA.main;
         mainA.startSpeed = 2000 * powerBratios.a;
         mainA.startColor = dustColor;
@@ -147,24 +137,21 @@ public class VectoredFan2Behaviour : MonoBehaviour
         emissionB.rateOverTime = 75 * powerBratios.b;
     }
     private void UpdateGauges() {
-        powerGauge.bratio = (Mathf.Abs(powerBratios.a) + Mathf.Abs(powerBratios.b)) / 2;
-        debugText.text = "hele pitch angle: " + helicopter.rigidBody.rotation.eulerAngles.z + "\r\n" +
+        float powerBratio = (Mathf.Abs(powerBratios.a) + Mathf.Abs(powerBratios.b)) / 2;
+        string debugText = "hele pitch angle: " + helicopter.rigidBody.rotation.eulerAngles.z + "\r\n" +
                          "hele vel x: " + helicopter.rigidBody.velocity.x +
-                                 " y: " + helicopter.rigidBody.velocity.y + "\r\n" +
-                                 "" + debugTextKeeper;
+                                 " y: " + helicopter.rigidBody.velocity.y + "\r\n";
 
-        if (navigationManager != null) {
-            navigationManager.bratio = powerGauge.bratio;
-            navigationManager.debugInfo = debugText.text;
-        }/*  else {
-            gameManager.bratio = powerGauge.bratio;
-            gameManager.debugInfo = debugText.text;
-        } */
+        // oldschool
+        powerGauge.bratio = powerBratio;
+        MetaManagerBehaviour.instance.navigationManager.debugInfo = debugText;
+        // newschool
+        MetaManagerBehaviour.instance.navigationManager.bratio = powerBratio;
+        MetaManagerBehaviour.instance.debugManager.text = debugText;
     }
     
     void FixedUpdate()
     {
-        debugTextKeeper = "";
         UpdateFakeInclinedFan();
         AddForces();
         UpdateAudio();

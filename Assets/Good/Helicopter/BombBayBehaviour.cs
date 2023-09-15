@@ -6,7 +6,7 @@ public class BombBayBehaviour : MonoBehaviour
 {
   public HelicopterBehaivour helicopter;
   public BombBehaviour[] bombPrefabs;
-  // Start is called before the first frame update
+  
   public float shootPower = 10000;
   public Transform bombSpawnAnchor;
   
@@ -19,7 +19,7 @@ public class BombBayBehaviour : MonoBehaviour
   // Update is called once per frame
   void FixedUpdate()
   {
-    BombtrackEntity newBomb = MetaManagerBehaviour.metaManager.hypertrackManager.GetNewBomb();
+    BombtrackEntity newBomb = MetaManagerBehaviour.instance.hypertrackManager.GetNewBomb();
     if (newBomb != null) {
       int bombPrefabIdx = ((newBomb.type - 1) + bombPrefabs.Length) % bombPrefabs.Length;
       DropBomb(newBomb.explodeTime-newBomb.dropTime, bombPrefabIdx);

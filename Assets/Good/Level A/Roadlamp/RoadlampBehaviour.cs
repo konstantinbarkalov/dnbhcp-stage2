@@ -6,10 +6,10 @@ public class RoadlampBehaviour : MonoBehaviour
 {
     public int electricLaneIdx;
     public SuperMeshedLightBehaviour superMeshedLight;
-    // Start is called before the first frame update    
+        
     // Update is called once per frame
     void Update()
     {
-        superMeshedLight.ratio = MetaManagerBehaviour.metaManager.electricNetworkManager.GetLaneRatio(electricLaneIdx);
+        superMeshedLight.ratio = MetaManagerBehaviour.instance.electricNetworkManager.GetLaneRatio(electricLaneIdx);
     }
 }

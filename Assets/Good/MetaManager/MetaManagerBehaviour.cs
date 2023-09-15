@@ -1,47 +1,32 @@
 using System.Collections.Generic;
+using Good.UI;
 using UnityEngine;
 
 public class MetaManagerBehaviour : MonoBehaviour
 {
-
-    //public GameManagerBehaviour gameManager;
-    // public DontDestroyOnLoadManager dontDestroyOnLoadManager = DontDestroyOnLoadManager;
+    public NavigationManager navigationManager;
     public HypertrackManagerBehaviour hypertrackManager;
     public DaytimeManagerBehaviour daytimeManager;
     public InputManagerBehaviour inputManagerBehaviour;
     public DaytimeEnvironmentManagerBehaviour daytimeEnvironmentManager;
     public ElectricNetworkManagerBehaviour electricNetworkManager;
-    static public MetaManagerBehaviour metaManager;
+    public DebugManagerBehaviour debugManager;
+
+    static public MetaManagerBehaviour instance;
 
     private void Awake()
     {
-        metaManager = this;
-    }
-
-}
-
-public static class DontDestroyOnLoadManager
-{
-
-    static List<GameObject> _ddolObjects = new List<GameObject>();
-
-    public static void DontDestroyOnLoad(this GameObject go)
-    {
-        Object.DontDestroyOnLoad(go);
-        _ddolObjects.Add(go);
-    }
-
-    public static void DestroyAll()
-    {
-        foreach (var go in _ddolObjects)
+        if (instance)
         {
-            if (go != null)
+            if (instance != this)
             {
-                Object.Destroy(go);
+                Destroy(this);
             }
         }
-
-        _ddolObjects.Clear();
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(this);
+        }
     }
-
 }

@@ -18,7 +18,7 @@ public class HypertrackManagerBehaviour : MonoBehaviour
   public float GetBeat()
   {
     float bpm = 180;
-    float beat = MetaManagerBehaviour.metaManager.hypertrackManager.source.time / 60 * bpm;
+    float beat = MetaManagerBehaviour.instance.hypertrackManager.source.time / 60 * bpm;
     return beat;
   }
 

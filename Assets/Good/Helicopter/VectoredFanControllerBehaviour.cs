@@ -10,6 +10,7 @@ public class VectoredFanControllerBehaviour : MonoBehaviour
 {   
     private VectoredFan2Behaviour vectoredFan;
     public InputAction playerControls;
+    private float smoothСontrolActivityRatio = 1;
 
     void Awake()
     {
@@ -41,10 +42,20 @@ public class VectoredFanControllerBehaviour : MonoBehaviour
     }
     private VectoredFanPowerBratios Assist(float horizontalInputBratio, float verticalInputBratio, bool isBrakePressed) 
     {
-        float stabilizationAngularCorrectionBudgetRatio = PlayerPrefs.GetFloat("stabilization-angular-correction-budget-ratio", 0.05f);
-        float stabilizationGravityCorrectionBudgetRatio = PlayerPrefs.GetFloat("stabilization-gravity-correction-budget-ratio", 0.3f);
-        float horizontalInputBudgetRatio = PlayerPrefs.GetFloat("horizontal-input-budget-ratio", 0.10f);
+        //Vector2 input = new Vector2(horizontalInputBratio, verticalInputBratio);
+        float controlActivityRatio = Mathf.Abs(horizontalInputBratio);
+        smoothСontrolActivityRatio = smoothСontrolActivityRatio * 0.99f + controlActivityRatio * 0.01f; 
+        
+        float stabilizationAngularCorrectionBudgetRatio = 0.1f * (1 - smoothСontrolActivityRatio);
+        float stabilizationGravityCorrectionBudgetRatio = 0.3f * (1 - smoothСontrolActivityRatio);
+        float horizontalInputBudgetRatio = 0.3f * smoothСontrolActivityRatio;
         float verticalInputBudgetRatio = 1 - stabilizationAngularCorrectionBudgetRatio - stabilizationGravityCorrectionBudgetRatio - horizontalInputBudgetRatio;
+        //Debug.Log(smoothСontrolActivityRatio);
+
+        //float stabilizationAngularCorrectionBudgetRatio = PlayerPrefs.GetFloat("stabilization-angular-correction-budget-ratio", 0.05f);
+        //float stabilizationGravityCorrectionBudgetRatio = PlayerPrefs.GetFloat("stabilization-gravity-correction-budget-ratio", 0.3f);
+        //float horizontalInputBudgetRatio = PlayerPrefs.GetFloat("horizontal-input-budget-ratio", 0.10f);
+        //float verticalInputBudgetRatio = 1 - stabilizationAngularCorrectionBudgetRatio - stabilizationGravityCorrectionBudgetRatio - horizontalInputBudgetRatio;
 
         
         float targetPitchAngle = AssistCalculateTargetPitchAngle(horizontalInputBratio, verticalInputBratio, isBrakePressed);

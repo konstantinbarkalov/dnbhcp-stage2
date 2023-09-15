@@ -136,13 +136,13 @@ namespace Good.UI {
             }
         }
 
-        private bool Initialized = false; // TODO это норм?
+        private bool isInitialized = false; // TODO это норм?
 
         public void Init()
         {
-            if (!Initialized)
+            if (!isInitialized)
             {
-                Initialized = true;
+                isInitialized = true;
                 Debug.Log("INIT NavigationManager");
                 InitMain();
                 InitGame();
@@ -151,31 +151,12 @@ namespace Good.UI {
 
         private void Awake()
         {
-            GameObject[] objs = GameObject.FindGameObjectsWithTag("ui_root");
-
-            if (objs.Length > 1)
-            {
-                GameObject[] gameObjectsToDestroy = objs.SubArray(0, objs.Length - 1);
-                foreach (GameObject _gameObject in gameObjectsToDestroy)
-                {
-                    Destroy(_gameObject);
-                }
-            }
-
-            DontDestroyOnLoadManager.DontDestroyOnLoad(gameObject);
-
-            mainRoot = MainScreen != null ? MainScreen.rootVisualElement : null;
-            gameRoot = GameScreen != null ? GameScreen.rootVisualElement : null;
-
+            mainRoot = MainScreen.rootVisualElement;
+            gameRoot = GameScreen.rootVisualElement;
             Init();
-
             GoToMainScreen();
         }
         
-        // private void Start()
-        // {
-            // GoToMainScreen();
-        // }
 
         void OnValidate() {
             UpdateGauge();
