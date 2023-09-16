@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputManagerBehaviour : MonoBehaviour
+public class InputManagerBehaviour : AbstractAppManagerBehaviour
 {
     // TODO: 
     // public Vector2 MoveInput;

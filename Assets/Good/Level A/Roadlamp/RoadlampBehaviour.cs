@@ -10,6 +10,6 @@ public class RoadlampBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        superMeshedLight.ratio = MetaManagerBehaviour.instance.electricNetworkManager.GetLaneRatio(electricLaneIdx);
+        superMeshedLight.ratio = MetaManager.level.electricNetworkManager.GetLaneRatio(electricLaneIdx);
     }
 }

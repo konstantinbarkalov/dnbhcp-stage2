@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GaugeUIBehaviour : MonoBehaviour
+public class GaugeUIBehaviourOld : MonoBehaviour
 {
     [Range(-1,1)]
     public float bratio;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DaytimeEnvironmentManagerBehaviour : MonoBehaviour
+public class DaytimeEnvironmentManagerBehaviour : AbstractLevelManagerBehaviour
 {
     public Light sunLight;
     public Light fillerLight;
@@ -17,8 +17,8 @@ public class DaytimeEnvironmentManagerBehaviour : MonoBehaviour
 
     void FixedUpdate()
     {
-        float daytimeRatio = MetaManagerBehaviour.instance.daytimeManager.daytimeRatio;
-        float nighttimeRatio = MetaManagerBehaviour.instance.daytimeManager.nighttimeRatio;
+        float daytimeRatio = MetaManager.level.daytimeManager.daytimeRatio;
+        float nighttimeRatio = MetaManager.level.daytimeManager.nighttimeRatio;
         float sunAngle = Mathf.Lerp(0, 360, daytimeRatio) + 270;
         sunLight.transform.rotation = Quaternion.Euler(sunAngle, 0, 0);
         sunLight.intensity = sunIntensityCurve.Evaluate(nighttimeRatio) * 2f;
@@ -32,7 +32,7 @@ public class DaytimeEnvironmentManagerBehaviour : MonoBehaviour
 
     public Color GetDustColor()
     {
-        float nighttimeRatio = MetaManagerBehaviour.instance.daytimeManager.nighttimeRatio;
+        float nighttimeRatio = MetaManager.level.daytimeManager.nighttimeRatio;
         Color dustColor = fogColorGradient.Evaluate(nighttimeRatio);
         dustColor.r = Mathf.Pow(dustColor.r * 0.9f + +0.1f, 1 / 2f);
         dustColor.g = Mathf.Pow(dustColor.g * 0.9f + +0.1f, 1 / 2f);

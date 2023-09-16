@@ -21,8 +21,6 @@ public class VectoredFan2Behaviour : MonoBehaviour
     private float smoothInclinedAngle = 0;
     public float maxPower = 30000;
     public float maxHeight = 50;
-    public GaugeUIBehaviour powerGauge;
-
     public Vector2 MovementAmount; // TODO: remove
 
     void Awake()
@@ -45,7 +43,6 @@ public class VectoredFan2Behaviour : MonoBehaviour
         // navigationManager = UIRootGameObject.GetComponent<NavigationManager>();
         // navigationManager.Init();
     }
-
     
     void Start()
     {
@@ -65,8 +62,8 @@ public class VectoredFan2Behaviour : MonoBehaviour
         //     // navigationManager.Init();
         // }
             GameObject UIRootGameObject = GameObject.FindWithTag("ui_root");
-            MetaManagerBehaviour.instance.navigationManager = UIRootGameObject.GetComponent<NavigationManager>();
-            MetaManagerBehaviour.instance.navigationManager.Init();        
+            MetaManager.app.navigationManager = UIRootGameObject.GetComponent<NavigationManager>();
+            MetaManager.app.navigationManager.Init();        
     }
     public float CalculateMaxPowerAtHeight() {
         float linearHeightRatio = 1 - Mathf.Clamp01(helicopter.transform.position.y / maxHeight);
@@ -124,7 +121,7 @@ public class VectoredFan2Behaviour : MonoBehaviour
         mainSpinningFan.angleVelocity = 360 * 4 * patternFactor * powerSign; 
     }
     private void UpdateParticles() {
-        Color dustColor = MetaManagerBehaviour.instance.daytimeEnvironmentManager.GetDustColor();
+        Color dustColor = MetaManager.level.daytimeEnvironmentManager.GetDustColor();
         var mainA = particleSystemA.main;
         mainA.startSpeed = 2000 * powerBratios.a;
         mainA.startColor = dustColor;
@@ -142,12 +139,8 @@ public class VectoredFan2Behaviour : MonoBehaviour
                          "hele vel x: " + helicopter.rigidBody.velocity.x +
                                  " y: " + helicopter.rigidBody.velocity.y + "\r\n";
 
-        // oldschool
-        powerGauge.bratio = powerBratio;
-        MetaManagerBehaviour.instance.navigationManager.debugInfo = debugText;
-        // newschool
-        MetaManagerBehaviour.instance.navigationManager.bratio = powerBratio;
-        MetaManagerBehaviour.instance.debugManager.text = debugText;
+        MetaManager.app.navigationManager.bratio = powerBratio;
+        MetaManager.app.debugManager.text = debugText;
     }
     
     void FixedUpdate()

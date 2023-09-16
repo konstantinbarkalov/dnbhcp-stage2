@@ -10,7 +10,7 @@ public class VectoredFanControllerBehaviour : MonoBehaviour
 {   
     private VectoredFan2Behaviour vectoredFan;
     public InputAction playerControls;
-    private float smoothСontrolActivityRatio = 1;
+    private float smoothСontrolActivityRatio = 0;
 
     void Awake()
     {
@@ -27,6 +27,7 @@ public class VectoredFanControllerBehaviour : MonoBehaviour
     {
         playerControls.Disable();
     }
+    
     private void ProcessControl() {
 
         float horizontalInput = Input.GetAxis("Horizontal");

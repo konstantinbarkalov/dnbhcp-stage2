@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 
 namespace Good.UI {
     
-    public class NavigationManager : MonoBehaviour
+    public class NavigationManager : AbstractAppManagerBehaviour
     {
         // TODO надо переместить его ко всем остальным менеджерам или вообще как-то иначе сделать
         

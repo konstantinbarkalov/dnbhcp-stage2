@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HypertrackManagerBehaviour : MonoBehaviour
+public class HypertrackManagerBehaviour : AbstractLevelManagerBehaviour
 {
   public AudioSource source;
   public TextAsset bombtrackJsonFile;
@@ -18,7 +18,7 @@ public class HypertrackManagerBehaviour : MonoBehaviour
   public float GetBeat()
   {
     float bpm = 180;
-    float beat = MetaManagerBehaviour.instance.hypertrackManager.source.time / 60 * bpm;
+    float beat = MetaManager.level.hypertrackManager.source.time / 60 * bpm;
     return beat;
   }
 

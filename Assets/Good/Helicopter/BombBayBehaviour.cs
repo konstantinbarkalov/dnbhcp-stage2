@@ -19,7 +19,7 @@ public class BombBayBehaviour : MonoBehaviour
   // Update is called once per frame
   void FixedUpdate()
   {
-    BombtrackEntity newBomb = MetaManagerBehaviour.instance.hypertrackManager.GetNewBomb();
+    BombtrackEntity newBomb = MetaManager.level.hypertrackManager.GetNewBomb();
     if (newBomb != null) {
       int bombPrefabIdx = ((newBomb.type - 1) + bombPrefabs.Length) % bombPrefabs.Length;
       DropBomb(newBomb.explodeTime-newBomb.dropTime, bombPrefabIdx);
