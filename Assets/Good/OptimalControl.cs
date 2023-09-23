@@ -16,8 +16,12 @@ static public class OptimalControl {
         float angleAtFatv = CalculateAngularFatv(actualAngle, actualAngularVelocity, maxAngularAcceleration);
         
         float actualToTargetAnglularDifference = AngleMod(targetAngle - actualAngle) * Mathf.Deg2Rad;        
-        float angleRatio = Mathf.Clamp01(Mathf.Abs(actualToTargetAnglularDifference) / maxAngularAcceleration / Time.fixedDeltaTime / 10); 
-        float angularVelocityRatio = Mathf.Clamp01(Mathf.Abs(actualAngularVelocity) / maxAngularAcceleration / Time.fixedDeltaTime / 10);
+        float angleRatio = (maxAngularAcceleration > 0) ? 
+                           Mathf.Clamp01(Mathf.Abs(actualToTargetAnglularDifference) / maxAngularAcceleration / Time.fixedDeltaTime / 10) :
+                           1; 
+        float angularVelocityRatio = (maxAngularAcceleration > 0) ?
+                                     Mathf.Clamp01(Mathf.Abs(actualAngularVelocity) / maxAngularAcceleration / Time.fixedDeltaTime / 10) :
+                                     1;
         // TODO: WTF??? / 10
         float ratio = Mathf.Clamp01(angleRatio + angularVelocityRatio);
         //Debug.Log(angleRatio +" " + angularVelocityRatio);
@@ -41,7 +45,9 @@ static public class OptimalControl {
         float targetVelocity = 0;
         float velocityDifference = actualVelocity - targetVelocity;
 
-        float signedTimeToFatv = velocityDifference / maxAcceleration;
+        float signedTimeToFatv = (maxAcceleration > 0) ? 
+                                 velocityDifference / maxAcceleration : 
+                                 velocityDifference * float.PositiveInfinity;
         float timeToFatv = Mathf.Abs(signedTimeToFatv);
         
         float velocityIntegrationError = (maxAcceleration * Time.fixedDeltaTime * Mathf.Sign(actualVelocity) / 2);

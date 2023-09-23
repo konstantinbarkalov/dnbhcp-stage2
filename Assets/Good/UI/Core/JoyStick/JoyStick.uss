@@ -1,0 +1,12 @@
+.joy-stick {
+    flex-grow: 0;
+    background-color: rgba(0, 0, 0, 0);
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    align-self: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    background-image: url('project://database/Assets/Good/UI/Core/JoyStick/transparentDark05.png?fileID=2800000&guid=e4219f5afc358ad3ba7a73095b98510f&type=3#transparentDark05');
+}

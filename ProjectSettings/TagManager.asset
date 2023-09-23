@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlayerProjection
+  - ui_root
   layers:
   - Default
   - TransparentFX

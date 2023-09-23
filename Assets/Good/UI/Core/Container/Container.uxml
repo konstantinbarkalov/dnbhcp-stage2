@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Good/UI/Core/Container.uss?fileID=7433441132597879392&amp;guid=3d9f4f6b5830474ca54437ff0b78d4b2&amp;type=3#Container" />
+    <ui:VisualElement name="Container" class="container col br-1" />
+</ui:UXML>

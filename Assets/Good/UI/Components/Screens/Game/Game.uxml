@@ -1,0 +1,30 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="JoyStick" src="project://database/Assets/Good/UI/Core/JoyStick/JoyStick.uxml?fileID=9197481963319205126&amp;guid=efe4ca0f9478918b2bc0239cb8dabe70&amp;type=3#JoyStick" />
+    <Style src="project://database/Assets/Good/UI/Components/Screens/Game/Game.uss?fileID=7433441132597879392&amp;guid=acf61608d7f7a5d11a7f1dbea75e502f&amp;type=3#Game" />
+    <Style src="project://database/Assets/Good/UI/Components/Screens/Main/Main.uss?fileID=7433441132597879392&amp;guid=65c333cd2a5ae545793b72a97de320e8&amp;type=3#Main" />
+    <ui:VisualElement name="main-game-container" class="main-game-container">
+        <ui:VisualElement name="header" style="flex-direction: row;">
+            <ui:VisualElement name="column" style="flex-grow: 1;">
+                <ui:VisualElement name="row" class="main-game-container-row">
+                    <ui:ProgressBar value="0.5" name="helicopter-power-gauge" high-value="1" low-value="0" title="power" class="gauge" style="flex-direction: column; align-items: stretch; justify-content: space-between; align-self: auto;" />
+                    <ui:ProgressBar value="0.5" name="helicopter-stunt-gauge" high-value="1" low-value="0" title="stunt" class="gauge" style="flex-direction: column; align-items: stretch; justify-content: space-between; align-self: auto;" />
+                    <ui:ProgressBar value="0.5" name="helicopter-travel-gauge" high-value="1" low-value="0" title="travel" class="gauge" style="flex-direction: column; align-items: stretch; justify-content: space-between; align-self: auto;" />
+                    <ui:ProgressBar value="0.5" name="helicopter-brake-gauge" high-value="1" low-value="0" title="brake" class="gauge" style="flex-direction: column; align-items: stretch; justify-content: space-between; align-self: auto;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="row" class="main-game-container-row">
+                    <ui:EnumField focusable="false" type="VectoredFanControllerMode, Assembly-CSharp" name="control-mode" style="flex-direction: column; align-items: flex-start; align-self: flex-start; justify-content: flex-start;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="column">
+                <ui:Button text="X" display-tooltip-when-elided="true" name="to-menu-button" focusable="false" class="action-button" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="main" style="background-color: rgba(0, 0, 0, 0); flex-grow: 1;" />
+        <ui:VisualElement name="footer" style="background-color: rgba(0, 0, 0, 0);">
+            <ui:VisualElement name="row" class="main-game-container-row">
+                <ui:Instance template="JoyStick" name="joy-stick" style="padding-left: 32px; padding-right: 32px; padding-top: 32px; padding-bottom: 32px; display: flex; visibility: hidden;" />
+                <ui:Label tabindex="-1" display-tooltip-when-elided="true" name="debug-text-area" text="DEBUG HERE" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 16px; padding-right: 16px; padding-top: 16px; padding-bottom: 16px; background-color: rgba(0, 0, 0, 0.33); color: rgb(255, 255, 255); border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px; width: 384px; max-width: none; max-height: none; -unity-text-align: upper-left; height: 160px; align-self: auto; justify-content: flex-start; flex-grow: 1;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

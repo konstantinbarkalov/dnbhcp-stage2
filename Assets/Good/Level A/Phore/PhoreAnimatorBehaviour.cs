@@ -13,7 +13,7 @@ public class PhoreAnimatorBehaviour : MonoBehaviour
         phore = GetComponent<PhoreBehaviour>();
     }
     private PhoreState GetRegularState() {
-        float beat = MetaManagerBehaviour.metaManager.hypertrackManager.GetBeat();
+        float beat = MetaManager.level.hypertrackManager.GetBeat();
         bool isGo = (beat % 32 < 16);
         bool isWarn = (beat % 16 < 4);
         return (orientation ^ isGo) ? 
@@ -22,7 +22,7 @@ public class PhoreAnimatorBehaviour : MonoBehaviour
     }
     void Update()
     {
-        float laneRatio = MetaManagerBehaviour.metaManager.electricNetworkManager.GetLaneRatio(electricLaneIdx);
+        float laneRatio = MetaManager.level.electricNetworkManager.GetLaneRatio(electricLaneIdx);
         if (laneRatio == 0) {
             phore.state = PhoreState.Warn;
         } else if (laneRatio < 1) {

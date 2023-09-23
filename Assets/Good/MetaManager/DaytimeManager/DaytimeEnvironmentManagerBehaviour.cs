@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DaytimeEnvironmentManagerBehaviour : MonoBehaviour
+public class DaytimeEnvironmentManagerBehaviour : AbstractLevelManagerBehaviour
 {
-    public DaytimeManagerBehaviour daytimeManager;
     public Light sunLight;
     public Light fillerLight;
     public AnimationCurve sunIntensityCurve;
@@ -15,11 +14,12 @@ public class DaytimeEnvironmentManagerBehaviour : MonoBehaviour
     public Gradient fogColorGradient;
     public AnimationCurve fogStartCurve;
     public AnimationCurve fogEndCurve;
-    
-    void FixedUpdate() {
-        float daytimeRatio = daytimeManager.daytimeRatio;
-        float nighttimeRatio = daytimeManager.nighttimeRatio;
-        float sunAngle = Mathf.Lerp(0, 360, daytimeRatio) + 270; 
+
+    void FixedUpdate()
+    {
+        float daytimeRatio = MetaManager.level.daytimeManager.daytimeRatio;
+        float nighttimeRatio = MetaManager.level.daytimeManager.nighttimeRatio;
+        float sunAngle = Mathf.Lerp(0, 360, daytimeRatio) + 270;
         sunLight.transform.rotation = Quaternion.Euler(sunAngle, 0, 0);
         sunLight.intensity = sunIntensityCurve.Evaluate(nighttimeRatio) * 2f;
         sunLight.color = sunColorGradient.Evaluate(nighttimeRatio);
@@ -28,13 +28,15 @@ public class DaytimeEnvironmentManagerBehaviour : MonoBehaviour
         RenderSettings.fogColor = fogColorGradient.Evaluate(nighttimeRatio);
         RenderSettings.fogStartDistance = fogStartCurve.Evaluate(nighttimeRatio) * 1000;
         RenderSettings.fogEndDistance = fogEndCurve.Evaluate(nighttimeRatio) * 1000;
-        
     }
-    public Color GetDustColor() {
-        Color dustColor = fogColorGradient.Evaluate(daytimeManager.nighttimeRatio);
-        dustColor.r = Mathf.Pow(dustColor.r*0.9f +  + 0.1f, 1/2f);
-        dustColor.g = Mathf.Pow(dustColor.g*0.9f +  + 0.1f, 1/2f);
-        dustColor.b = Mathf.Pow(dustColor.b*0.9f +  + 0.1f, 1/2f);
+
+    public Color GetDustColor()
+    {
+        float nighttimeRatio = MetaManager.level.daytimeManager.nighttimeRatio;
+        Color dustColor = fogColorGradient.Evaluate(nighttimeRatio);
+        dustColor.r = Mathf.Pow(dustColor.r * 0.9f + +0.1f, 1 / 2f);
+        dustColor.g = Mathf.Pow(dustColor.g * 0.9f + +0.1f, 1 / 2f);
+        dustColor.b = Mathf.Pow(dustColor.b * 0.9f + +0.1f, 1 / 2f);
         return dustColor;
     }
 }

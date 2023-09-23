@@ -1,0 +1,57 @@
+.main-container {
+    flex-grow: 1;
+    align-items: auto;
+    justify-content: space-between;
+    flex-shrink: 1;
+}
+
+.main-app-bar {
+    flex-grow: 0;
+    background-color: rgba(0, 0, 0, 0);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    align-self: stretch;
+    flex-shrink: 1;
+}
+
+.main-content {
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-direction: row;
+    align-self: stretch;
+}
+
+.main-content-part {
+    flex-grow: 1;
+    background-color: rgba(0, 0, 0, 0);
+    align-self: auto;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 1;
+}
+
+.action-button {
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.67);
+    width: 64px;
+    height: 64px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-left-color: rgba(149, 149, 149, 0);
+    border-right-color: rgba(149, 149, 149, 0);
+    border-top-color: rgba(149, 149, 149, 0);
+    border-bottom-color: rgba(149, 149, 149, 0);
+    transition-timing-function: ease-in;
+    transition-duration: 333ms;
+}
+
+.selectable-button {
+    background-color: rgba(0, 0, 0, 0.33);
+}
+
+.selectable-button.selected {
+    background-color: rgba(0, 0, 0, 0.67);
+}

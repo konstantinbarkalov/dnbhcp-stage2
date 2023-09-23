@@ -5430,7 +5430,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e061b36cb637d8246bf654f658fd4cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metaManagerSource: {fileID: 1250224013591867927}
   meshedLight: {fileID: 2763994742740818646}
   mode: 1
   phaseRatio: 0
@@ -5486,7 +5485,7 @@ Light:
   m_InnerSpotAngle: 52
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -5698,7 +5697,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e061b36cb637d8246bf654f658fd4cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metaManagerSource: {fileID: 1250224013591867927}
   meshedLight: {fileID: 1520705841163994377}
   mode: 1
   phaseRatio: 0.5
@@ -5989,7 +5987,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e061b36cb637d8246bf654f658fd4cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metaManagerSource: {fileID: 1250224013591867927}
   meshedLight: {fileID: 4171033078178622384}
   mode: 0
   phaseRatio: 0.5
@@ -6714,7 +6711,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e061b36cb637d8246bf654f658fd4cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metaManagerSource: {fileID: 1250224013591867927}
   meshedLight: {fileID: 1255738640155281907}
   mode: 0
   phaseRatio: 0.5
@@ -6782,7 +6778,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e061b36cb637d8246bf654f658fd4cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metaManagerSource: {fileID: 1250224013591867927}
   meshedLight: {fileID: 8389471358453460172}
   mode: 0
   phaseRatio: 0.5
@@ -12691,7 +12686,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb00287ae4587eb4281d68d794a67c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metaManager: {fileID: 0}
   rigidBody: {fileID: 8611096115922431630}
 --- !u!114 &8290313907126548850
 MonoBehaviour:
@@ -13460,7 +13454,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e061b36cb637d8246bf654f658fd4cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metaManagerSource: {fileID: 1250224013591867927}
   meshedLight: {fileID: 3529809895455870633}
   mode: 0
   phaseRatio: 0.5
@@ -13475,8 +13468,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6200709287055858998}
   - component: {fileID: 6130475533823084787}
+  - component: {fileID: 6260503143763535048}
   m_Layer: 0
-  m_Name: VectoredFan2
+  m_Name: VectoredFan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13513,8 +13507,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01de90d2bdd86554081b39699d342e11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerABratio: 0
-  powerBBratio: 0
   particleSystemA: {fileID: 531254620853318646}
   particleSystemB: {fileID: 151776193081477511}
   mainSpinningFan: {fileID: 2579288674205613905}
@@ -13526,8 +13518,30 @@ MonoBehaviour:
   maxFakeInclinedForewardAngle: 12
   maxFakeInclinedBackwardAngle: 12
   maxPower: 30000
+  maxHeight: 75
   powerGauge: {fileID: 0}
-  debugText: {fileID: 0}
+  MovementAmount: {x: 0, y: 0}
+--- !u!114 &6260503143763535048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7089957320349878073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf067ea867a2194caf01ededdc91f1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerControls:
+    m_Name: Player Controls
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: ca904be4-d17a-47fc-987c-7bfcf423ff8e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!1 &7187481039719127937
 GameObject:
   m_ObjectHideFlags: 0

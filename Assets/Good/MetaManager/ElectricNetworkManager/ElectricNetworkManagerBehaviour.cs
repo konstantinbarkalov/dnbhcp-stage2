@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public enum LaneState
@@ -9,6 +10,7 @@ public enum LaneState
     Off,
     Fluctuate
 }
+
 public class ElectricNetworkManagerBehaviour : MonoBehaviour
 {
     private float[] lanes = new float[8];
@@ -30,16 +32,16 @@ public class ElectricNetworkManagerBehaviour : MonoBehaviour
     private void UpdateLanes__FixedUpdate()
     {
 
-        float beat = MetaManagerBehaviour.metaManager.hypertrackManager.GetBeat();
+        float beat = MetaManager.level.hypertrackManager.GetBeat();
         float nightElectricBeginBeat = 64 + 16;
         float blackoutBeginBeat = 128 + 64;
         float blackoutEndBeat = blackoutBeginBeat + 32;
         float nightElectricEndBeat = blackoutEndBeat + 64;
-        
+
         float fluctuationBeatDuration = 4;
         float fullOffBeatDuration = 2;
-        
-        
+
+
         for (int laneIdx = 0; laneIdx < lanes.Length; laneIdx++)
         {
             // Part 1
@@ -47,6 +49,7 @@ public class ElectricNetworkManagerBehaviour : MonoBehaviour
             float beatShift = laneIdx % 4;
             bool isNightLight = laneIdx < 4;
             LaneState laneState;
+            float overvoltageFactor = 1;
             if (beat >= nightElectricEndBeat - beatShift)
             {
                 laneState = isNightLight ? LaneState.Off : LaneState.On;
@@ -58,6 +61,8 @@ public class ElectricNetworkManagerBehaviour : MonoBehaviour
             else if (beat >= blackoutEndBeat) // no beatshift
             {
                 laneState = LaneState.On;
+                float overvoltageDuration = beat - blackoutEndBeat;
+                overvoltageFactor = 1 + 10 / overvoltageDuration;
             }
             else if (beat >= blackoutEndBeat - fullOffBeatDuration) // no beatshift
             {
@@ -87,13 +92,13 @@ public class ElectricNetworkManagerBehaviour : MonoBehaviour
             {
                 laneState = isNightLight ? LaneState.Off : LaneState.On;
             };
-            
-            
+
+
             // Part 2
             // laneState to actual ratio value 
             if (laneState == LaneState.On)
             {
-                lanes[laneIdx] = 1;
+                lanes[laneIdx] = overvoltageFactor;
             }
             else if (laneState == LaneState.Off)
             {
@@ -109,8 +114,8 @@ public class ElectricNetworkManagerBehaviour : MonoBehaviour
                 float unfadePerSec = 0.5f;
                 float unfadePerFrame = Mathf.Pow(unfadePerSec, Time.fixedDeltaTime);
                 lanes[laneIdx] *= unfadePerFrame;
-            } 
-            else 
+            }
+            else
             {
                 throw new System.NotImplementedException();
             }

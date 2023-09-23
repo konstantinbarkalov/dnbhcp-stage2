@@ -1,0 +1,41 @@
+.br-0 {
+    border-radius: 0;
+}
+
+.br-1 {
+    border-radius: 8px;
+}
+
+.br-2 {
+    border-radius: 16px;
+}
+
+.br-3 {
+    border-radius: 24px;
+}
+
+.br-4 {
+    border-radius: 32px;
+}
+
+
+
+.p-0 {
+    padding: 0;
+}
+
+.p-1 {
+    padding: 8px;
+}
+
+.p-2 {
+    padding: 16px;
+}
+
+.p-3 {
+    padding: 24px;
+}
+
+.p-4 {
+    padding: 32px;
+}
