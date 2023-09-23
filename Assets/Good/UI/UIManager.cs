@@ -7,27 +7,29 @@ using UnityEngine.UIElements;
 
 namespace Good.UI {
     
-    public class NavigationManager : AbstractAppManagerBehaviour
+    public class UIManager : AbstractAppManagerBehaviour
     {
-        // TODO надо переместить его ко всем остальным менеджерам или вообще как-то иначе сделать
-        
         public UIDocument MainScreen;
         public UIDocument GameScreen;
+        [Range(-1,1)]
+        public float helicopterPowerBratio;
+        public VectoredFanControllerModeRatios controlModeRatios;
+        public VectoredFanControllerMode controlMode;
+        
+        public string debugInfo;
 
         private VisualElement mainRoot;
         private VisualElement gameRoot;
-
-        [Range(-1,1)]
-        public float bratio;
-
-        public string debugInfo;
-        // public RectTransform positivePlate;
-        // public RectTransform negativePlate;
-        // public RectTransform neutralPlate;
-        // public TMPro.TMP_Text text;
+        private ProgressBar helicopterPowerGauge;
+        private ProgressBar helicopterStuntGauge;
+        private ProgressBar helicopterTravelGauge;
+        private ProgressBar helicopterBrakeGauge;
+        private Label debugTextArea;
+        private EnumField controlModeField;
 
         private void InitMain()
         {
+            // TODO: let's remove null checks, memorize nodes and become fail-fast instad of fail-safe
             if (mainRoot != null)
             {
                 var playButton = mainRoot.Q<Button>("content-play-button");
@@ -153,13 +155,20 @@ namespace Good.UI {
         {
             mainRoot = MainScreen.rootVisualElement;
             gameRoot = GameScreen.rootVisualElement;
+            helicopterPowerGauge = gameRoot.Q<ProgressBar>("helicopter-power-gauge");
+            helicopterStuntGauge = gameRoot.Q<ProgressBar>("helicopter-stunt-gauge");
+            helicopterTravelGauge = gameRoot.Q<ProgressBar>("helicopter-travel-gauge");
+            helicopterBrakeGauge = gameRoot.Q<ProgressBar>("helicopter-brake-gauge");
+            debugTextArea = gameRoot.Q<Label>("debug-text-area");
+            controlModeField = gameRoot.Q<EnumField>("control-mode");
             Init();
             GoToMainScreen();
         }
         
 
         void OnValidate() {
-            UpdateGauge();
+            // TODO: do we need UpdateGauge() here? 
+            //UpdateGauge();
         }
 
         void Update() {
@@ -168,44 +177,11 @@ namespace Good.UI {
 
         void UpdateGauge()
         {
-            // float positiveRatio = Mathf.Max(0, bratio);
-            // float negatveRatio = Mathf.Max(0, -bratio);
-            // float neutralRatio = 1 - positiveRatio - negatveRatio;
-            
-            // Vector2 positivePlateAnchorMax = positivePlate.anchorMax;
-            // positivePlateAnchorMax.x = positiveRatio;    
-            // positivePlate.anchorMax = positivePlateAnchorMax;
-            
-            // Vector2 negativePlateAnchorMin = negativePlate.anchorMin;
-            // negativePlateAnchorMin.x = 1 - negatveRatio;    
-            // negativePlate.anchorMin = negativePlateAnchorMin;
-            
-            // Vector2 neutralPlateAnchorMax = neutralPlate.anchorMax;
-            // neutralPlateAnchorMax.x = positiveRatio + neutralRatio;    
-            // neutralPlate.anchorMax = neutralPlateAnchorMax;
-            
-            // Vector2 neutralPlateAnchorMin = neutralPlate.anchorMin;
-            // neutralPlateAnchorMin.x = positiveRatio;    
-            // neutralPlate.anchorMin = neutralPlateAnchorMin;
-            
-            // text.text = Mathf.Round(bratio * 100).ToString() + "%";
-
-            var root = GameScreen.rootVisualElement;
-
-            if (root != null)
-            {
-                var gauge = root.Q<ProgressBar>("gauge");
-                if (gauge != null)
-                {
-                    gauge.value = bratio + 1f;
-                }
-
-                var debugTextArea = root.Q<Label>("debug-text-area");
-                if (debugTextArea != null)
-                {
-                    debugTextArea.text = debugInfo;
-                }
-            }
+            helicopterPowerGauge.value = Math.Abs(helicopterPowerBratio);
+            helicopterStuntGauge.value = controlModeRatios.stunt;
+            helicopterTravelGauge.value = controlModeRatios.travel;
+            helicopterBrakeGauge.value = controlModeRatios.brake;
+            controlModeField.value = controlMode;
         }
 
         void SetScreenEnableState(VisualElement root, bool finalState)

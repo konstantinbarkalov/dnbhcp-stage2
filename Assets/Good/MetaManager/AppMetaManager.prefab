@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39007d086fef5240ad80af166d59dc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navigationManager: {fileID: 1759963665884216042}
+  uIManager: {fileID: 1759963665884216042}
   inputManagerBehaviour: {fileID: 894384347964316046}
   debugManager: {fileID: 8299192384695555546}
 --- !u!1 &5813942254255005624
@@ -95,7 +95,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: yoyoyo
-  debugText: {fileID: 0}
 --- !u!1 &8990554488750818377
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,7 +205,7 @@ PrefabInstance:
     - target: {fileID: 4974940213136953924, guid: e64f9533e7ecb4c48a0a012476966b55,
         type: 3}
       propertyPath: m_Name
-      value: NavigationManager
+      value: UIManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

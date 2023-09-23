@@ -62,8 +62,8 @@ public class VectoredFan2Behaviour : MonoBehaviour
         //     // navigationManager.Init();
         // }
             GameObject UIRootGameObject = GameObject.FindWithTag("ui_root");
-            MetaManager.app.navigationManager = UIRootGameObject.GetComponent<NavigationManager>();
-            MetaManager.app.navigationManager.Init();        
+            MetaManager.app.uIManager = UIRootGameObject.GetComponent<UIManager>();
+            MetaManager.app.uIManager.Init();        
     }
     public float CalculateMaxPowerAtHeight() {
         float linearHeightRatio = 1 - Mathf.Clamp01(helicopter.transform.position.y / maxHeight);
@@ -135,13 +135,8 @@ public class VectoredFan2Behaviour : MonoBehaviour
     }
     private void UpdateGauges() {
         float powerBratio = (Mathf.Abs(powerBratios.a) + Mathf.Abs(powerBratios.b)) / 2;
-        string debugText = "hele pitch angle: " + helicopter.rigidBody.rotation.eulerAngles.z + "\r\n" +
-                         "hele vel x: " + helicopter.rigidBody.velocity.x +
-                                 " y: " + helicopter.rigidBody.velocity.y + "\r\n";
-
-        MetaManager.app.navigationManager.bratio = powerBratio;
-        MetaManager.app.debugManager.text = debugText;
-    }
+        MetaManager.app.uIManager.helicopterPowerBratio = powerBratio;
+     }
     
     void FixedUpdate()
     {
@@ -158,4 +153,3 @@ public struct VectoredFanPowerBratios {
     public float a;
     public float b;
 }
-

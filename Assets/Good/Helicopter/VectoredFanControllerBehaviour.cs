@@ -1,17 +1,17 @@
-using Good;
-using Good.UI;
+using System;
+using System.Data.Common;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Controls;
-using UnityEngine.SceneManagement;
+
 
 [RequireComponent(typeof(VectoredFan2Behaviour))]
 public class VectoredFanControllerBehaviour : MonoBehaviour
 {   
     private VectoredFan2Behaviour vectoredFan;
     public InputAction playerControls;
-    private float smoothСontrolActivityRatio = 0;
-
+    private InputState inputState;
+    private VectoredFanControllerMode mode;    
+    private VectoredFanControllerModeRatios modeRatios;    
     void Awake()
     {
         vectoredFan = this.GetComponent<VectoredFan2Behaviour>();
@@ -27,31 +27,114 @@ public class VectoredFanControllerBehaviour : MonoBehaviour
     {
         playerControls.Disable();
     }
-    
-    private void ProcessControl() {
-
+    private RawInputState GetRawInputState__Update() {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-        bool isPausePressed = Keyboard.current.spaceKey.isPressed;
-        bool isBrakePressed = Keyboard.current.enterKey.isPressed;
-        if (isPausePressed) {    
-            //UnityEditor.EditorApplication.isPaused = true;
-            // TODO: work standalone without editor
+        Vector2 hv = new Vector2(horizontalInput, verticalInput);
+        bool isPausePressed = Keyboard.current.pKey.wasPressedThisFrame;
+        bool isBrakePressed = Keyboard.current.spaceKey.isPressed;
+        bool isSwitchModePressed = Keyboard.current.eKey.wasPressedThisFrame;
+        bool isRestatPressed = Keyboard.current.rKey.wasPressedThisFrame;
+        
+        return new RawInputState() {
+            hv = hv,
+            brake = isBrakePressed,
+            pause = isPausePressed,
+            mode = isSwitchModePressed,
+            restart = isRestatPressed
+        };
+    }
+    private void UpdateRawInputState__Update() {
+        inputState.raw = GetRawInputState__Update();
+    }
+    private void UpdateInputState__FixedUpdate() {
+        inputState.rawActivity = new Vector2(Mathf.Abs(inputState.raw.hv.x), Mathf.Abs(inputState.raw.hv.y));
+        inputState.smoothHv.x = inputState.smoothHv.x * 0.75f + inputState.raw.hv.x * 0.25f; 
+        inputState.smoothHv.y = inputState.smoothHv.y * 0.75f + inputState.raw.hv.y * 0.25f; 
+        inputState.smoothActivity = new Vector2(Mathf.Abs(inputState.smoothHv.x), Mathf.Abs(inputState.smoothHv.y));
+        inputState.smoothActivityMax = Mathf.Max(inputState.smoothActivity.x, inputState.smoothActivity.y);
+        inputState.smootherHv.x = inputState.smootherHv.x * 0.95f + inputState.raw.hv.x * 0.05f; 
+        inputState.smootherHv.y = inputState.smootherHv.y * 0.95f + inputState.raw.hv.y * 0.05f; 
+        inputState.smootherActivity = new Vector2(Mathf.Abs(inputState.smootherHv.x), Mathf.Abs(inputState.smootherHv.y));
+        inputState.smootherActivityMax = Mathf.Max(inputState.smootherActivity.x, inputState.smootherActivity.y);
+        inputState.smoothestHv.x = inputState.smoothestHv.x * 0.995f + inputState.raw.hv.x * 0.005f; 
+        inputState.smoothestHv.y = inputState.smoothestHv.y * 0.995f + inputState.raw.hv.y * 0.005f; 
+        inputState.smoothestActivity = new Vector2(Mathf.Abs(inputState.smoothestHv.x), Mathf.Abs(inputState.smoothestHv.y));
+        inputState.smoothestActivityMax = Mathf.Max(inputState.smoothestActivity.x, inputState.smoothestActivity.y);           
+    }
+    private void UpdateMode__FixedUpdate() {
+        if (inputState.raw.mode) {
+            SwitchMode();
         }
-        VectoredFanPowerBratios powerBratios = Assist(horizontalInput, verticalInput, isBrakePressed);
+    }
+    private void SwitchMode() {
+        mode = (VectoredFanControllerMode)(((int)mode + 1) % 3);
+    }
+    
+    
+    private void UpdateModeRatios__FixedUpdate()
+    {
+        if (inputState.raw.brake) {
+            modeRatios.stunt = 0;
+            modeRatios.travel = 0;
+            modeRatios.brake = 1;
+        }
+        else {
+            if (mode == VectoredFanControllerMode.Auto) {
+                float activityRatio = inputState.smootherActivity.x; // Mathf.Max(inputState.smoothActivity.x, inputState.smootherActivity.x);
+                modeRatios.stunt = activityRatio;
+                modeRatios.travel = 1 - activityRatio;
+            } else if (mode == VectoredFanControllerMode.Stunt) {
+                modeRatios.stunt = 1;
+                modeRatios.travel = 0;
+            } else if (mode == VectoredFanControllerMode.Travel) {
+                modeRatios.stunt = 0;
+                modeRatios.travel = 1;
+            }
+            modeRatios.brake = 0;
+        }
+    }
+    private void ProcessControl__FixedUpdate() {
+        VectoredFanPowerBratios powerBratios = Assist__FixedUpdate();
         vectoredFan.powerBratios = powerBratios;
     }
-    private VectoredFanPowerBratios Assist(float horizontalInputBratio, float verticalInputBratio, bool isBrakePressed) 
+    
+    private VectoredFanPowerBratios Assist__FixedUpdate() 
     {
-        //Vector2 input = new Vector2(horizontalInputBratio, verticalInputBratio);
-        float controlActivityRatio = Mathf.Abs(horizontalInputBratio);
-        smoothСontrolActivityRatio = smoothСontrolActivityRatio * 0.99f + controlActivityRatio * 0.01f; 
+        float distanceToFloor = vectoredFan.helicopter.transform.position.y;
+        float attentionHvFactor = 4 / distanceToFloor;
+        float stabilizationAngularCorrectionBudget = 0.1f * (1 - inputState.smoothActivity.x);
+        float stabilizationGravityCorrectionBudget = 0.5f * (1 - inputState.smoothActivity.y) + 0.5f * inputState.smoothActivity.x;
+        float horizontalInputBudget = 0.3f * inputState.smoothActivity.x;
+        float verticalInputBudget = 0.5f * inputState.smoothActivity.y + 0.5f * (1 - inputState.smoothActivity.x);
+
+        stabilizationAngularCorrectionBudget *= modeRatios.travel;
+        stabilizationGravityCorrectionBudget *= modeRatios.travel;
+        horizontalInputBudget *= modeRatios.stunt;
+        verticalInputBudget *= Mathf.Max(modeRatios.travel, modeRatios.stunt);
+
+        // stabilizationAngularCorrectionBudget *= attentionHvFactor;
+        // stabilizationGravityCorrectionBudget /= attentionHvFactor;
+        // horizontalInputBudget *= modeRatios.stunt;
+        // verticalInputBudget *= Mathf.Max(modeRatios.travel, modeRatios.stunt);
         
-        float stabilizationAngularCorrectionBudgetRatio = 0.1f * (1 - smoothСontrolActivityRatio);
-        float stabilizationGravityCorrectionBudgetRatio = 0.3f * (1 - smoothСontrolActivityRatio);
-        float horizontalInputBudgetRatio = 0.3f * smoothСontrolActivityRatio;
-        float verticalInputBudgetRatio = 1 - stabilizationAngularCorrectionBudgetRatio - stabilizationGravityCorrectionBudgetRatio - horizontalInputBudgetRatio;
-        //Debug.Log(smoothСontrolActivityRatio);
+        float budgetSum = stabilizationAngularCorrectionBudget + stabilizationGravityCorrectionBudget + horizontalInputBudget + verticalInputBudget;
+
+        float stabilizationAngularCorrectionBudgetRatio = stabilizationAngularCorrectionBudget / budgetSum;
+        float stabilizationGravityCorrectionBudgetRatio = stabilizationGravityCorrectionBudget / budgetSum;
+        float horizontalInputBudgetRatio = horizontalInputBudget / budgetSum;
+        float verticalInputBudgetRatio = verticalInputBudget / budgetSum;
+
+        string debugText = "" + 
+            "budgetSum: " + Mathf.Round(budgetSum * 100) + "%\r\n" +
+            "stabilizationAngularCorrectionBudgetRatio: " + Mathf.Round(stabilizationAngularCorrectionBudgetRatio * 100) + "%\r\n" +
+            "stabilizationGravityCorrectionBudgetRatio: " + Mathf.Round(stabilizationGravityCorrectionBudgetRatio * 100) + "%\r\n" +
+            "horizontalInputBudgetRatio: " + Mathf.Round(horizontalInputBudgetRatio * 100) + "%\r\n" +
+            "verticalInputBudgetRatio: " + Mathf.Round(verticalInputBudgetRatio * 100) + "%\r\n" +
+            "inputState.smoothActivity.x: " + Mathf.Round(inputState.smoothActivity.x * 100) + "%\r\n" +
+            "inputState.smoothActivity.y: " + Mathf.Round(inputState.smoothActivity.y * 100) + "%\r\n" +
+            "inputState.smoothActivityMax: " + Mathf.Round(inputState.smoothActivityMax * 100) + "%\r\n";
+        MetaManager.app.debugManager.text = debugText;
 
         //float stabilizationAngularCorrectionBudgetRatio = PlayerPrefs.GetFloat("stabilization-angular-correction-budget-ratio", 0.05f);
         //float stabilizationGravityCorrectionBudgetRatio = PlayerPrefs.GetFloat("stabilization-gravity-correction-budget-ratio", 0.3f);
@@ -59,7 +142,7 @@ public class VectoredFanControllerBehaviour : MonoBehaviour
         //float verticalInputBudgetRatio = 1 - stabilizationAngularCorrectionBudgetRatio - stabilizationGravityCorrectionBudgetRatio - horizontalInputBudgetRatio;
 
         
-        float targetPitchAngle = AssistCalculateTargetPitchAngle(horizontalInputBratio, verticalInputBratio, isBrakePressed);
+        float targetPitchAngle = AssistCalculateTargetPitchAngle();
         Vector3 unitTorque = vectoredFan.CalculateUnitTorque();
         float maxPowerAtHeight = vectoredFan.CalculateMaxPowerAtHeight();
         float stabilizationCorrectionAngularAccelerationBudget =  maxPowerAtHeight / 2 * stabilizationAngularCorrectionBudgetRatio * unitTorque.z / vectoredFan.helicopter.rigidBody.inertiaTensor.z;
@@ -70,25 +153,25 @@ public class VectoredFanControllerBehaviour : MonoBehaviour
         float stabilizationGravityCorrectionBratio = AssistStabilizationGravityCorrection(stabilizationGravityCorrectionAccelerationBudget);
         VectoredFanPowerBratios powerBratios = new VectoredFanPowerBratios();
         powerBratios.a = 0 + 
-            + verticalInputBratio * verticalInputBudgetRatio 
+            + inputState.raw.hv.y * verticalInputBudgetRatio 
             + stabilizationGravityCorrectionBratio * stabilizationGravityCorrectionBudgetRatio 
-            - horizontalInputBratio * horizontalInputBudgetRatio 
+            - inputState.raw.hv.x * horizontalInputBudgetRatio 
             + stabilizationAngularCorrectionBratio * stabilizationAngularCorrectionBudgetRatio;
         powerBratios.b = 0 +
-            + verticalInputBratio * verticalInputBudgetRatio 
+            + inputState.raw.hv.y * verticalInputBudgetRatio 
             + stabilizationGravityCorrectionBratio * stabilizationGravityCorrectionBudgetRatio 
-            + horizontalInputBratio * horizontalInputBudgetRatio 
+            + inputState.raw.hv.x * horizontalInputBudgetRatio 
             - stabilizationAngularCorrectionBratio * stabilizationAngularCorrectionBudgetRatio;
         return powerBratios;
     }
-    private float AssistCalculateTargetPitchAngle(float horizontalInputBratio, float verticalInputBratio, bool isBrakePressed) {
+    private float AssistCalculateTargetPitchAngle() {
         float targetPitchAngle;
-        if (isBrakePressed) {
+        if (inputState.raw.brake) {
             targetPitchAngle = AssistCalculateTargetPitchAngle__Brake();
         } else {
-            float targetPitchAngleHorizontal = AssistCalculateTargetPitchAngle__Horizontal(horizontalInputBratio);
-            float targetPitchAngleVertical = AssistCalculateTargetPitchAngle__Vertical(verticalInputBratio);
-            float hvRatioLog = Mathf.Log(Mathf.Abs(verticalInputBratio) + 0.5f) - Mathf.Log(Mathf.Abs(horizontalInputBratio) + 0.5f);
+            float targetPitchAngleHorizontal = AssistCalculateTargetPitchAngle__Horizontal(inputState.raw.hv.x);
+            float targetPitchAngleVertical = AssistCalculateTargetPitchAngle__Vertical(inputState.raw.hv.y);
+            float hvRatioLog = Mathf.Log(Mathf.Abs(inputState.raw.hv.y) + 0.5f) - Mathf.Log(Mathf.Abs(inputState.raw.hv.x) + 0.5f);
             float hvBratio = Mathf.Clamp(hvRatioLog, -1, 1);
             float hvRatio = hvBratio / 2f +0.5f;
             //targetPitchAngle = Mathf.LerpAngle(targetPitchAngleHorizontal, targetPitchAngleVertical, hvRatio);
@@ -138,15 +221,65 @@ public class VectoredFanControllerBehaviour : MonoBehaviour
     private float AssistStabilizationAngularCorrection(float targetPitchAngle, float stabilizationCorrectionAngularAccelerationBudget) {
         float actualPitchAngle = vectoredFan.helicopter.rigidBody.rotation.eulerAngles.z;
         float actualPitchVelocity = vectoredFan.helicopter.rigidBody.angularVelocity.z;
-        float directionSign = OptimalControl.CalculateSimpleAngularControl(targetPitchAngle, actualPitchAngle, actualPitchVelocity, stabilizationCorrectionAngularAccelerationBudget);
-        float stabilizationCorrectionBratio = directionSign;
+        float vhSign = OptimalControl.CalculateSimpleAngularControl(targetPitchAngle, actualPitchAngle, actualPitchVelocity, stabilizationCorrectionAngularAccelerationBudget);
+        float stabilizationCorrectionBratio = vhSign;
         return stabilizationCorrectionBratio;
     }
 
+    void Update()
+    {
+        UpdateRawInputState__Update();
+    }
+    
     void FixedUpdate()
     {
-        ProcessControl();
+        UpdateInputState__FixedUpdate();
+        UpdateMode__FixedUpdate();
+        UpdateModeRatios__FixedUpdate();
+        ProcessControl__FixedUpdate();
+        UpdateGauges();
+    }
+
+    private void UpdateGauges() {
+        MetaManager.app.uIManager.controlModeRatios = modeRatios;
+        MetaManager.app.uIManager.controlMode = mode;
     }
 }
 
+public struct RawInputState {
+    public Vector2 hv;
+    public bool brake;
+    public bool pause;
+    public bool mode;
+    public bool restart;
 
+}
+
+public struct InputState {
+    public RawInputState raw;
+    public Vector2 rawActivity;
+    public Vector2 smoothHv;
+    public Vector2 smoothActivity;
+    public float smoothActivityMax;
+
+    public Vector2 smootherHv;
+    public Vector2 smootherActivity;
+    public float smootherActivityMax;
+    public Vector2 smoothestHv;
+    public Vector2 smoothestActivity;
+    public float smoothestActivityMax;
+
+}
+
+public enum VectoredFanControllerMode 
+{
+    Auto,
+    Stunt,
+    Travel,
+}
+
+public struct VectoredFanControllerModeRatios {
+    public float stunt;
+    public float travel;
+    public float brake;
+}

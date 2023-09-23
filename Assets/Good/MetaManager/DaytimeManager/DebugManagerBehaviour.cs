@@ -6,6 +6,6 @@ public class DebugManagerBehaviour : AbstractAppManagerBehaviour
 {
     public string text;
     void Update() {
-        MetaManager.app.navigationManager.debugInfo = text;
+        MetaManager.app.uIManager.debugInfo = text;
     }
 }

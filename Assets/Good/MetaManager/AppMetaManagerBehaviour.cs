@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AppMetaManagerBehaviour : MonoBehaviour
 {
-    public Good.UI.NavigationManager navigationManager;
+    public Good.UI.UIManager uIManager;
     public InputManagerBehaviour inputManagerBehaviour;
     public DebugManagerBehaviour debugManager;
 
