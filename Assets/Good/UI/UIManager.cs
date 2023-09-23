@@ -129,7 +129,7 @@ namespace Good.UI {
                     toMenuButton.clicked += () =>
                     {
                         // Debug.Log("To Menu Button Clicked");
-                        SceneManager.LoadScene("Main");
+                        SceneManager.LoadScene("Level S");
                         GoToMainScreen();
                     };
                 }
