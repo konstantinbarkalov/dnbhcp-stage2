@@ -1,18 +1,23 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/Good/UI/Core/Index.uss?fileID=7433441132597879392&amp;guid=d5968d3eb14b41fbaf71f1428eb053ea&amp;type=3#Index" />
-    <ui:VisualElement name="MainContainer" class="p-4" style="flex-direction: column; justify-content: space-between; flex-grow: 1; align-self: auto; align-items: stretch;">
-        <ui:VisualElement name="AppBarContainer" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; justify-content: space-between;">
-            <ui:Button display-tooltip-when-elided="true" enable-rich-text="false" text="M" name="MenuButton" class="container br-1" style="overflow: hidden; visibility: visible; width: 64px; height: 64px; align-items: stretch; align-self: stretch;">
-                <ui:VisualElement name="Icon" class="tint-white" style="flex-grow: 1; background-color: rgba(255, 255, 255, 0); background-image: url(&apos;project://database/Assets/Good/UI/Icons/menu.svg?fileID=7388822144124034973&amp;guid=6d472288162e0d6c49e3c27cd6509fc5&amp;type=3#menu&apos;); -unity-background-image-tint-color: rgb(255, 255, 255); visibility: hidden;" />
-            </ui:Button>
-            <ui:Button display-tooltip-when-elided="true" enable-rich-text="false" text="GM" name="GameMenuButton" class="container br-1" style="overflow: hidden; visibility: visible; width: 64px; height: 64px; align-items: stretch;">
-                <ui:VisualElement name="Icon" class="tint-white" style="flex-grow: 1; background-color: rgba(255, 255, 255, 0); background-image: url(&apos;project://database/Assets/Good/UI/Icons/tune.svg?fileID=7388822144124034973&amp;guid=14bc18e48edf6e4b4a7b7dd604aebe2b&amp;type=3#tune&apos;); -unity-background-image-tint-color: rgb(255, 255, 255); visibility: hidden;" />
-            </ui:Button>
+    <Style src="project://database/Assets/UI/Components/Screens/Main/Main.uss?fileID=7433441132597879392&amp;guid=65c333cd2a5ae545793b72a97de320e8&amp;type=3#Main" />
+    <ui:VisualElement name="main-container" class="main-container" style="position: relative; flex-shrink: 1; flex-grow: 1; width: 100%; height: 100%;">
+        <ui:VisualElement name="main-app-bar" class="main-container main-app-bar" style="padding-left: 32px; padding-right: 32px; padding-top: 32px; padding-bottom: 32px; flex-grow: 0;">
+            <ui:Button text="M" display-tooltip-when-elided="true" name="app-bar-menu-button" class="action-button" />
+            <ui:Button text="GM" display-tooltip-when-elided="true" name="app-bar-game-menu-button" class="action-button" />
         </ui:VisualElement>
-        <ui:VisualElement name="ContentContainer" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-shrink: 0; align-self: center;">
-            <ui:Button display-tooltip-when-elided="true" enable-rich-text="false" text="PLAY" name="PlayButton" class="container br-1" style="overflow: hidden; visibility: visible; width: 64px; height: 64px; align-items: stretch; align-self: stretch;">
-                <ui:VisualElement name="Icon" class="tint-white" style="flex-grow: 1; background-color: rgba(255, 255, 255, 0); background-image: url(&apos;project://database/Assets/Good/UI/Icons/menu.svg?fileID=7388822144124034973&amp;guid=6d472288162e0d6c49e3c27cd6509fc5&amp;type=3#menu&apos;); -unity-background-image-tint-color: rgb(255, 255, 255); visibility: hidden;" />
-            </ui:Button>
+        <ui:VisualElement name="main-content" class="main-content">
+            <ui:VisualElement name="content-part-start" class="main-content-part" />
+            <ui:VisualElement name="content-part-center" class="main-content-part" style="-unity-text-align: upper-center; justify-content: center;">
+                <ui:Button text="P" display-tooltip-when-elided="true" name="content-play-button" class="action-button" />
+                <ui:Slider picking-mode="Ignore" label="zombiesCount" value="100" high-value="200" name="zombies-count" style="text-overflow: ellipsis; flex-direction: column; flex-wrap: nowrap; align-items: stretch; justify-content: space-around; align-self: stretch; min-height: 48px;" />
+                <ui:VisualElement name="control-types" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; align-items: center; justify-content: space-around; flex-shrink: 0; width: auto;">
+                    <ui:Button text="K" display-tooltip-when-elided="true" name="keybord-control" class="action-button selectable-button" />
+                    <ui:Button text="J" display-tooltip-when-elided="true" name="joystick-control" class="action-button selectable-button" />
+                    <ui:Button text="S" display-tooltip-when-elided="true" name="sliders-control" class="action-button selectable-button" />
+                    <ui:Button text="A" display-tooltip-when-elided="true" name="arrows-control" class="action-button selectable-button" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="content-part-end" class="main-content-part" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

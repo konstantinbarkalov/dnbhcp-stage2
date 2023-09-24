@@ -7,7 +7,6 @@ namespace Crowd
 public class ZombieManager : MonoBehaviour
 {
     [SerializeField] private GameObject zombiePrefab; // To add prefab, maybe change to Resources later;
-    [SerializeField] private TMP_InputField input; // To add inputField, for changing maxZombie at the screen
     private int zombiesCount; 
     private Zombie.ZombieBrain[] zombieBrains;
     private Pool zombiePool;
@@ -17,7 +16,7 @@ public class ZombieManager : MonoBehaviour
     private const int MaxRagDolls = 30;
     private int _RagdollCounter;
 
-    private int RagdollCounter
+    private int ragdollCount
     {
         get
         {
@@ -33,14 +32,10 @@ public class ZombieManager : MonoBehaviour
             }    
         }
     }
-    private void Update()
-    {
-        zombiesCount = int.Parse(input.text);
-    }
     private void Start()
     {
-        RagdollCounter = 0;
-        zombiesCount = int.Parse(input.text);
+        ragdollCount = 0;
+        zombiesCount = PlayerPrefs.GetInt("zombies-count", 100);
         playerProjection = GameObject.FindWithTag("PlayerProjection").transform;
         player = GameObject.FindWithTag("Player").transform;
         spawnPoints = GetComponentsInChildren<SpawnPoint>();
@@ -59,7 +54,7 @@ public class ZombieManager : MonoBehaviour
                 spawnPoint = spawnPoints[spawnPointIdx].transform;
                 zombiePool.Get().GetComponent<Zombie.ZombieBrain>()
                     .Initialize(spawnPoint.position, transform, this);
-                RagdollCounter--;
+                ragdollCount--;
                 yield return null;
             }
             yield return null;
@@ -91,9 +86,9 @@ public class ZombieManager : MonoBehaviour
     public void DeadZombie(GameObject zombie)
     {
         MetaManager.level.scoreManager.score++;
-        if(RagdollCounter < MaxRagDolls)
+        if(ragdollCount < MaxRagDolls)
         {
-            RagdollCounter++;
+            ragdollCount++;
         }
         else
         {

@@ -9,8 +9,8 @@ namespace UI {
     
     public class UIManager : AbstractAppManagerBehaviour
     {
-        public UIDocument MainScreen;
-        public UIDocument GameScreen;
+        public UIDocument mainScreen;
+        public UIDocument gameScreen;
         [Range(-1,1)]
         public float helicopterPowerBratio;
         public VectoredFanControllerModeRatios controlModeRatios;
@@ -30,132 +30,91 @@ namespace UI {
 
         private void InitMain()
         {
-            // TODO: let's remove null checks, memorize nodes and become fail-fast instad of fail-safe
-            if (mainRoot != null)
+            var playButton = mainRoot.Q<Button>("content-play-button");
+            playButton.clicked += () =>
             {
-                var playButton = mainRoot.Q<Button>("content-play-button");
-                if (playButton != null)
+                // Debug.Log("Play Button Clicked");
+                SceneManager.LoadScene("Level A");
+                GoToGameScreen();
+            };
+
+            var zombiesCountSlider = mainRoot.Q<Slider>("zombies-count");
+            zombiesCountSlider.value = PlayerPrefs.GetInt("zombies-count", 100);
+            zombiesCountSlider.RegisterValueChangedCallback(v =>
+            {
+                int intValue = (int)Math.Round(v.newValue / 50) * 50;                
+                PlayerPrefs.SetInt("zombies-count", (int)v.newValue);
+                zombiesCountSlider.value = intValue; 
+            });
+            
+            var initialControlType = PlayerPrefs.GetString("control-type", "keybord-control");
+            var namesOfControlTypes = new List<string> { "keybord-control", "joystick-control", "sliders-control", "arrows-control" };
+
+            SelectableList selectableList = new(namesOfControlTypes.ConvertAll(id => new SelectableItem(id, initialControlType == id)));
+
+            Dictionary<string, Button> controlTypeButtonsMap = namesOfControlTypes.ToDictionary(
+                item => item,
+                item => mainRoot.Q<Button>(item)
+            );
+
+            controlTypeButtonsMap[initialControlType].AddToClassList("selected");
+
+            selectableList.Changed += (s, e) =>
+            {
+                // Debug.Log("=== selectableList changed:");
+                e.Items.ForEach(item =>
                 {
-                    playButton.clicked += () =>
+                    // Debug.Log(item.ID + " " + item.IsSelected);
+                    Button button = controlTypeButtonsMap[item.ID];
+                    if (item.IsSelected)
                     {
-                        // Debug.Log("Play Button Clicked");
-                        SceneManager.LoadScene("Level A");
-                        GoToGameScreen();
-                    };
-                }
+                        PlayerPrefs.SetString("control-type", item.ID);
+                        // Debug.Log(button + " add selected class");
+                        button.AddToClassList("selected");
+                    } else {
+                        // Debug.Log(button + " remove selected class");
+                        button.RemoveFromClassList("selected");
+                    }
+                });
+            };
 
-                var stabilizationAngularCorrectionBudgetRatioSlider = mainRoot.Q<Slider>("stabilization-angular-correction-budget-ratio");
-                if (stabilizationAngularCorrectionBudgetRatioSlider != null)
+            foreach (KeyValuePair<string, Button> entry in controlTypeButtonsMap)
+            {
+                entry.Value.clicked += () =>
                 {
-                    stabilizationAngularCorrectionBudgetRatioSlider.value = PlayerPrefs.GetFloat("stabilization-angular-correction-budget-ratio", 0.00001f);
-                    stabilizationAngularCorrectionBudgetRatioSlider.RegisterValueChangedCallback(v =>
-                    {
-                        PlayerPrefs.SetFloat("stabilization-angular-correction-budget-ratio", Mathf.Max(v.newValue, 0.00001f));
-                    });
-                }
-
-                var stabilizationGravityCorrectionBudgetRatioSlider = mainRoot.Q<Slider>("stabilization-gravity-correction-budget-ratio");
-                if (stabilizationGravityCorrectionBudgetRatioSlider != null)
-                {
-                    stabilizationGravityCorrectionBudgetRatioSlider.value = PlayerPrefs.GetFloat("stabilization-gravity-correction-budget-ratio", 0.00001f);
-                    stabilizationGravityCorrectionBudgetRatioSlider.RegisterValueChangedCallback(v =>
-                    {
-                        PlayerPrefs.SetFloat("stabilization-gravity-correction-budget-ratio", Mathf.Max(v.newValue, 0.00001f));
-                    });
-                }
-
-                var horizontalInputBudgetRatioSlider = mainRoot.Q<Slider>("horizontal-input-budget-ratio");
-                if (horizontalInputBudgetRatioSlider != null)
-                {
-                    horizontalInputBudgetRatioSlider.value = PlayerPrefs.GetFloat("horizontal-input-budget-ratio", 0.25f);
-                    horizontalInputBudgetRatioSlider.RegisterValueChangedCallback(v =>
-                    {
-                        PlayerPrefs.SetFloat("horizontal-input-budget-ratio", Mathf.Max(v.newValue, 0.00001f));
-                    });
-                }
-
-                var initialControlType = PlayerPrefs.GetString("control-type", "keybord-control");
-                var namesOfControlTypes = new List<string> { "keybord-control", "joystick-control", "sliders-control", "arrows-control" };
-
-                SelectableList selectableList = new(namesOfControlTypes.ConvertAll(id => new SelectableItem(id, initialControlType == id)));
-
-                Dictionary<string, Button> controlTypeButtonsMap = namesOfControlTypes.ToDictionary(
-                    item => item,
-                    item => mainRoot.Q<Button>(item)
-                );
-
-                controlTypeButtonsMap[initialControlType]?.AddToClassList("selected");
-
-                selectableList.Changed += (s, e) =>
-                {
-                    // Debug.Log("=== selectableList changed:");
-                    e.Items.ForEach(item =>
-                    {
-                        // Debug.Log(item.ID + " " + item.IsSelected);
-                        Button button = controlTypeButtonsMap[item.ID];
-                        if (item.IsSelected)
-                        {
-                            PlayerPrefs.SetString("control-type", item.ID);
-                            // Debug.Log(button + " add selected class");
-                            button.AddToClassList("selected");
-                        } else {
-                            // Debug.Log(button + " remove selected class");
-                            button.RemoveFromClassList("selected");
-                        }
-                    });
+                    // Debug.Log("control type button clicked: " + entry.Key);
+                    selectableList.Toggle(entry.Key);
                 };
-
-                foreach (KeyValuePair<string, Button> entry in controlTypeButtonsMap)
-                {
-                    entry.Value.clicked += () =>
-                    {
-                        // Debug.Log("control type button clicked: " + entry.Key);
-                        selectableList.Toggle(entry.Key);
-                    };
-                }
-
-                // GoToMainScreen();
             }
         }
 
         private void InitGame()
         {
-            // Debug.Log("gameRoot " + gameRoot);
-            if (gameRoot != null)
+            var toMenuButton = gameRoot.Q<Button>("to-menu-button");
+            toMenuButton.clicked += () =>
             {
-                var toMenuButton = gameRoot.Q<Button>("to-menu-button");
-                // Debug.Log("toMenuButton " + toMenuButton);
-                if (toMenuButton != null)
-                {
-                    toMenuButton.clicked += () =>
-                    {
-                        // Debug.Log("To Menu Button Clicked");
-                        SceneManager.LoadScene("Level S");
-                        GoToMainScreen();
-                    };
-                }
-
-                // GoToGameScreen();
-            }
+                // Debug.Log("To Menu Button Clicked");
+                SceneManager.LoadScene("Level S");
+                GoToMainScreen();
+            };
         }
 
-        private bool isInitialized = false; // TODO это норм?
+        private bool isInitialized = false;
 
         public void Init()
         {
             if (!isInitialized)
             {
-                isInitialized = true;
-                Debug.Log("INIT NavigationManager");
                 InitMain();
                 InitGame();
+                isInitialized = true;
             }
         }
 
         private void Awake()
         {
-            mainRoot = MainScreen.rootVisualElement;
-            gameRoot = GameScreen.rootVisualElement;
+            mainRoot = mainScreen.rootVisualElement;
+            gameRoot = gameScreen.rootVisualElement;
             helicopterPowerGauge = gameRoot.Q<ProgressBar>("helicopter-power-gauge");
             helicopterStuntGauge = gameRoot.Q<ProgressBar>("helicopter-stunt-gauge");
             helicopterTravelGauge = gameRoot.Q<ProgressBar>("helicopter-travel-gauge");
@@ -207,11 +166,11 @@ namespace UI {
 
         private void GoToMainScreen()
         {
-            if (MainScreen != null)
+            if (mainScreen != null)
             {
                 SetScreenEnableState(mainRoot, true);
             }
-            if (GameScreen != null)
+            if (gameScreen != null)
             {
                 SetScreenEnableState(gameRoot, false);
             }
@@ -219,11 +178,11 @@ namespace UI {
 
         private void GoToGameScreen()
         {
-            if (MainScreen != null && mainRoot != null)
+            if (mainScreen != null && mainRoot != null)
             {
                 SetScreenEnableState(mainRoot, false);
             }
-            if (GameScreen != null)
+            if (gameScreen != null)
             {
                 SetScreenEnableState(gameRoot, true);
             }
