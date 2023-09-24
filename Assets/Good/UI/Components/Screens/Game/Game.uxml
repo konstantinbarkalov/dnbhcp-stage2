@@ -13,6 +13,7 @@
                 </ui:VisualElement>
                 <ui:VisualElement name="row" class="main-game-container-row">
                     <ui:EnumField focusable="false" type="VectoredFanControllerMode, Assembly-CSharp" name="control-mode" style="flex-direction: column; align-items: flex-start; align-self: flex-start; justify-content: flex-start;" />
+                    <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="score" style="font-size: 36px; color: rgb(255, 255, 255); -unity-text-outline-color: rgb(0, 0, 0); text-shadow: 0 0 8px rgb(0, 0, 0); -unity-text-outline-width: 1px; -unity-font: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=faf742ce3df89547092648f47ad71b8e&amp;type=3#NotInter-Regular&apos;);" />
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="column">
@@ -23,7 +24,7 @@
         <ui:VisualElement name="footer" style="background-color: rgba(0, 0, 0, 0);">
             <ui:VisualElement name="row" class="main-game-container-row">
                 <ui:Instance template="JoyStick" name="joy-stick" style="padding-left: 32px; padding-right: 32px; padding-top: 32px; padding-bottom: 32px; display: flex; visibility: hidden;" />
-                <ui:Label tabindex="-1" display-tooltip-when-elided="true" name="debug-text-area" text="DEBUG HERE" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 16px; padding-right: 16px; padding-top: 16px; padding-bottom: 16px; background-color: rgba(0, 0, 0, 0.33); color: rgb(255, 255, 255); border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px; width: 384px; max-width: none; max-height: none; -unity-text-align: upper-left; height: 160px; align-self: auto; justify-content: flex-start; flex-grow: 1;" />
+                <ui:Label tabindex="-1" display-tooltip-when-elided="true" name="debug-text-area" text="DEBUG HERE" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 16px; padding-right: 16px; padding-top: 16px; padding-bottom: 16px; background-color: rgba(0, 0, 0, 0.33); color: rgb(255, 255, 255); border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px; width: 384px; max-width: none; max-height: none; -unity-text-align: upper-left; height: 160px; align-self: auto; justify-content: flex-start; flex-grow: 1; visibility: hidden;" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

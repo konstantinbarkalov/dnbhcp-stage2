@@ -52,22 +52,8 @@ public class ZombieManager : MonoBehaviour
             zombieCrowd = GetComponentsInChildren<ZombieBrain>();
             if(zombieCrowd.Length < zombiesCount)
             {
-                foreach(var spoint in spawnPoints)
-                {
-                    if(!spoint.Visible)
-                    {
-                        spawnPoint = spoint.transform;
-                        break;
-                    }
-                }
-
-                foreach(var spoint in spawnPoints)
-                {
-                    if(Vector3.Distance(spoint.transform.position, player.position) < Vector3.Distance(spawnPoint.position, player.position) && !spoint.Visible)
-                    {
-                        spawnPoint = spoint.transform;
-                    }
-                }
+                int spawnPointIdx = Mathf.FloorToInt(Random.value * spawnPoints.Length); 
+                spawnPoint = spawnPoints[spawnPointIdx].transform;
                 zombiePool.GetObjectPoolObject().GetComponent<ZombieBrain>()
                     .Initial(spawnPoint.position, transform, this);
                 RagdollCounter--;
@@ -101,6 +87,7 @@ public class ZombieManager : MonoBehaviour
     }
     public void DeadZombie(GameObject zombe)
     {
+        MetaManager.level.scoreManager.score++;
         if(RagdollCounter < MaxRagDolls)
         {
             RagdollCounter++;

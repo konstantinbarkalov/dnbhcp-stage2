@@ -28,6 +28,10 @@ public class DaytimeEnvironmentManagerBehaviour : AbstractLevelManagerBehaviour
         RenderSettings.fogColor = fogColorGradient.Evaluate(nighttimeRatio);
         RenderSettings.fogStartDistance = fogStartCurve.Evaluate(nighttimeRatio) * 1000;
         RenderSettings.fogEndDistance = fogEndCurve.Evaluate(nighttimeRatio) * 1000;
+        RenderSettings.ambientSkyColor = fillerColorGradient.Evaluate(nighttimeRatio) * fillerIntensityCurve.Evaluate(nighttimeRatio) * 2;
+        RenderSettings.ambientEquatorColor = fogColorGradient.Evaluate(nighttimeRatio) * fillerIntensityCurve.Evaluate(nighttimeRatio) * 2;
+        RenderSettings.ambientGroundColor = (fillerColorGradient.Evaluate(nighttimeRatio) + fogColorGradient.Evaluate(nighttimeRatio) + GetDustColor()) / 2;
+        
     }
 
     public Color GetDustColor()

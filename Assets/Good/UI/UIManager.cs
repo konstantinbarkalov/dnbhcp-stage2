@@ -26,6 +26,7 @@ namespace Good.UI {
         private ProgressBar helicopterBrakeGauge;
         private Label debugTextArea;
         private EnumField controlModeField;
+        private Label scoreLabel;
 
         private void InitMain()
         {
@@ -161,6 +162,10 @@ namespace Good.UI {
             helicopterBrakeGauge = gameRoot.Q<ProgressBar>("helicopter-brake-gauge");
             debugTextArea = gameRoot.Q<Label>("debug-text-area");
             controlModeField = gameRoot.Q<EnumField>("control-mode");
+            scoreLabel = gameRoot.Q<Label>("score");
+            Debug.Log("scoreLabel");
+            Debug.Log(scoreLabel);
+            
             Init();
             GoToMainScreen();
         }
@@ -172,6 +177,7 @@ namespace Good.UI {
         }
 
         void Update() {
+            scoreLabel.text = MetaManager.level.scoreManager.score.ToString();
             UpdateGauge();
         }
 
