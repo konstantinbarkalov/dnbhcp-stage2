@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Good/Scenes/Old Scene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Good/Level A/Level A.unity
+    path: Assets/Level A/Level A.unity
     guid: ac02bbc9660e8c140a7cab6de5cca3ae
   m_configObjects: {}

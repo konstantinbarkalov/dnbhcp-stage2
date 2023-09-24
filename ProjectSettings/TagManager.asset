@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerProjection
   - ui_root
+  - Zombie
   layers:
   - Default
   - TransparentFX
