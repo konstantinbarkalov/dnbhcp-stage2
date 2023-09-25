@@ -1301,6 +1301,11 @@ PrefabInstance:
       propertyPath: fillerLight
       value: 
       objectReference: {fileID: 2007503694}
+    - target: {fileID: 7635734143249166754, guid: b06a8420de44d2e4880bf5f6090558a9,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7744509184066656090, guid: b06a8420de44d2e4880bf5f6090558a9,
         type: 3}
       propertyPath: m_RootOrder
@@ -1979,11 +1984,6 @@ PrefabInstance:
         type: 3}
       propertyPath: metaManager
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3462220427727314193, guid: abba61c3bbfbebf4bb755049292a5d03,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 5259923855143630319, guid: abba61c3bbfbebf4bb755049292a5d03,
         type: 3}

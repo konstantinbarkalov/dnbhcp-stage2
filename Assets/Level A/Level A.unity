@@ -1789,13 +1789,24 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7665681116038815399, guid: 31dcd2327c9ec88478fb4435019552d7,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7665681116038815399, guid: 31dcd2327c9ec88478fb4435019552d7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 9167842727757144438, guid: 31dcd2327c9ec88478fb4435019552d7,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8829627150533542088, guid: 31dcd2327c9ec88478fb4435019552d7, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31dcd2327c9ec88478fb4435019552d7, type: 3}

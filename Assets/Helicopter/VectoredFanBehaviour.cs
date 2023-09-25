@@ -117,7 +117,8 @@ public class VectoredFan2Behaviour : MonoBehaviour
         audioSource.volume = (0.25f + powerRatioNonlinear2 * 0.75f) * 1/2f;
         float powerSign = Mathf.Sign(powerBratios.b + powerBratios.a);
         float patternFactor = powerRatioNonlinear1 < 1/4f ? 1/4f : powerRatioNonlinear1 < 1/3f ? 1/3f : powerRatioNonlinear1 < 1/2f ? 1/2f : powerRatioNonlinear1 < 2/3f ? 2/3f : powerRatioNonlinear1 < 3/4f ? 3/4f : 1;
-        audioSource.pitch = patternFactor * powerSign;
+        float baseTimeScalePitchFactor = MetaManager.level.timeManager.GetBaseTimeScale();
+        audioSource.pitch = patternFactor * powerSign * baseTimeScalePitchFactor;
         mainSpinningFan.angleVelocity = 360 * 4 * patternFactor * powerSign; 
     }
     private void UpdateParticles() {

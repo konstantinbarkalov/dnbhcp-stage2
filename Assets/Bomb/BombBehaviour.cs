@@ -12,9 +12,13 @@ public class BombBehaviour : MonoBehaviour
     public bool isAlarmed = false;
     void Start()
     {
+        MetaManager.level.bombManager.bombs.Add(this);
         bombBeacon.mode = BeaconMode.On;
     }
-
+    void OnDestroy()
+    {
+        MetaManager.level.bombManager.bombs.Remove(this);
+    }
     void FixedUpdate()
     {
         float alarmTime = (exlpodeTime - alarmDuration);

@@ -3,26 +3,22 @@ using UnityEngine;
 
 namespace Crowd.Zombie
 {
+    // TODO: rewrite this shit from scratch
 public class ZombieBrain : ExtendedPhysics.Damage.Receiver.ExplosionReceiverBehaviour
 {
-    [SerializeField]
-    private string CURRENT_STATE; //To show in Unity UI
-
-    [SerializeField]
-    private float DistanceToPlayer; // To use & show in Unity UI
 
     [SerializeField]
     private float hp; // To use & show in Unity UI
-    private const float MAX_HP = 100;
-    private const float PARTITION_ZONE = 30;
-    private const float BodyTimer = 3;
+    private const float maxHp = 100;
+    private const float partitionDamageThershold = 30;
+    private const float bodyTimer = 3;
     private ZombieManager zm;
     private ZombieAIBehaviour zombieAi;
     private ZombieRagdollBehaviour zombieRagdoll;
-    private DamageCalculator dc;
-    private ZombiePartition zp;
+    private DamageCalculator damageCalculator;
+    private ZombiePartition partition;
     private bool _ragdollMode;
-    private ZombieState _zState;
+    private ZombieState _state;
     private ICrowdUpdate currentBehaviour;
     private Collider collider;
     private bool isAttacking;
@@ -41,30 +37,30 @@ public class ZombieBrain : ExtendedPhysics.Damage.Receiver.ExplosionReceiverBeha
     private void InitializeFields()
     {
         zombieAi = GetComponent<ZombieAIBehaviour>();
-        zp = GetComponent<ZombiePartition>();
+        partition = GetComponent<ZombiePartition>();
         zombieRagdoll = GetComponent<ZombieRagdollBehaviour>();
         collider = GetComponent<Collider>();
-        dc = gameObject.AddComponent<DamageCalculator>();
+        damageCalculator = gameObject.AddComponent<DamageCalculator>();
     }
 
     private void SetStartSettings(Vector3 position, Transform parent)
     {
-        hp = MAX_HP;
+        hp = maxHp;
         transform.position = position;
         transform.SetParent(parent);
 
-        zp.SetToZero();
+        partition.SetToZero();
         zombieRagdoll.UpdateBones(false);
 
         collider.enabled = true;
-        ZState = ZombieState.Ai;
+        State = ZombieState.Ai;
         zombieAi.enabled = true;
         zombieRagdoll.enabled = false;
     }
 
     public void UpdatePlayerPosition(Vector3 playerPosition, Vector3 playerProjection)
     {
-        if (currentBehaviour != null && ZState != ZombieState.Dead)
+        if (currentBehaviour != null && State != ZombieState.Dead)
         {
             currentBehaviour.CrowdUpdate(playerProjection);
         }
@@ -73,10 +69,10 @@ public class ZombieBrain : ExtendedPhysics.Damage.Receiver.ExplosionReceiverBeha
             zm.HideZombie(gameObject);
         }
 
-        DistanceToPlayer = Vector3.Distance(transform.position, playerPosition);
-        if (DistanceToPlayer < 10 && ZState == ZombieState.Ai)
+        var distanceToPlayer = Vector3.Distance(transform.position, playerPosition);
+        if (distanceToPlayer < 10 && State == ZombieState.Ai)
         {
-            ZomibePlayerJump(playerPosition);
+            ZomibiePlayerJump(playerPosition);
         }
     }
 
@@ -87,9 +83,9 @@ public class ZombieBrain : ExtendedPhysics.Damage.Receiver.ExplosionReceiverBeha
 
     public void RagdollCalmedOut()
     {
-        if (ZState != ZombieState.Dead)
+        if (State != ZombieState.Dead)
         {
-            ZState = ZombieState.Ai;
+            State = ZombieState.Ai;
         }
     }
 
@@ -101,8 +97,9 @@ public class ZombieBrain : ExtendedPhysics.Damage.Receiver.ExplosionReceiverBeha
         ForceMode forceMode
     )
     {
-        float damage = dc.CalculateDamage(explosionPosition, explosionRadius);
-        ZState = StillAlive(damage) ? ZombieState.Ragdoll : ZombieState.Dead;
+        float mass = 100; // TODO: get from rigidbody
+        float damage = damageCalculator.CalculateDamage(mass, explosionForce, explosionPosition, explosionRadius, forceMode);
+        State = StillAlive(damage) ? ZombieState.Ragdoll : ZombieState.Dead;
         base.AddExplosionForce(
             explosionForce,
             explosionPosition,
@@ -112,20 +109,20 @@ public class ZombieBrain : ExtendedPhysics.Damage.Receiver.ExplosionReceiverBeha
         );
     }
 
-    public void AddZombieForce(Vector3 force)
+    public void AddZombieForce(Vector3 force) // WTF: why we need this?
     {
-        ZState = ZombieState.Ragdoll;
+        State = ZombieState.Ragdoll;
         zombieRagdoll.AddImpulse(force);
     }
 
-    private ZombieState ZState
+    private ZombieState State
     {
-        get { return _zState; }
+        get { return _state; }
         set
         {
-            if (_zState != value)
+            if (_state != value)
             {
-                _zState = value;
+                _state = value;
                 ChangeState();
             }
         }
@@ -133,7 +130,7 @@ public class ZombieBrain : ExtendedPhysics.Damage.Receiver.ExplosionReceiverBeha
 
     private void ChangeState()
     {
-        switch (ZState)
+        switch (State)
         {
             case ZombieState.Ai:
                 RagdollMode = false;
@@ -158,14 +155,14 @@ public class ZombieBrain : ExtendedPhysics.Damage.Receiver.ExplosionReceiverBeha
 
     IEnumerator ShowZombieDeath()
     {
-        yield return new WaitForSeconds(BodyTimer);
+        yield return new WaitForSeconds(bodyTimer);
         zm.HideZombie(gameObject);
     }
 
-    private void ZomibePlayerJump(Vector3 playerPosition)
+    private void ZomibiePlayerJump(Vector3 playerPosition)
     {
         isAttacking = true;
-        AddZombieForce((playerPosition - transform.position) * 2);
+        AddZombieForce((playerPosition - transform.position) * 3);
     }
 
     private enum ZombieState
@@ -202,37 +199,32 @@ public class ZombieBrain : ExtendedPhysics.Damage.Receiver.ExplosionReceiverBeha
         }
         else if (!other.gameObject.CompareTag("Zombie"))
         {
-            float damage = dc.CalculateDamage(other.impulse);
+            float damage = damageCalculator.CalculateDamage(other.impulse);
             if (!StillAlive(damage))
             {
-                ZState = ZombieState.Dead;
+                State = ZombieState.Dead;
             }
             else if (damage > 30)
             {
-                ZState = ZombieState.Ragdoll;
+                State = ZombieState.Ragdoll;
             }
         }
     }
-
-    private bool StillAlive(float damage)
+    private bool StillAlive(float damage) // WFT: Silly naming
     {
         CalculatePartition(damage);
         hp -= damage;
         return hp > 0;
     }
 
-    private void CalculatePartition(float damage)
+    private void CalculatePartition(float damage) // WFT: Silly naming
     {
-        float damagePercent = damage * 100 / MAX_HP;
-        if (damagePercent > PARTITION_ZONE)
+        float damagePercent = damage * 100 / maxHp;
+        if (damagePercent > partitionDamageThershold)
         {
-            zp.RandomPartition();
+            partition.RandomPartition();
         }
     }
 
-    private void Update()
-    {
-        CURRENT_STATE = ZState.ToString(); // To show in Unity UI
-    }
 }
 }

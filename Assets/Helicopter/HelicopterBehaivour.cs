@@ -5,5 +5,7 @@ using UnityEngine;
 public class HelicopterBehaivour : MonoBehaviour
 {
     public Rigidbody rigidBody;
-    
+    void Start() {
+        MetaManager.level.playerManager.player = this;
+    }  
 }

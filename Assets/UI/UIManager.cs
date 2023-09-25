@@ -28,6 +28,17 @@ namespace UI {
         private EnumField controlModeField;
         private Label scoreLabel;
 
+        private float Naturalize(float value, int factor) { // TODO: put to utils
+            bool isInverted = (value < 1);
+            if (isInverted) {
+                value = 1 / value;
+            }
+            value = Mathf.Round(value * factor) / factor;
+            if (isInverted) {
+                value = 1 / value;
+            }
+            return value;
+        }
         private void InitMain()
         {
             var playButton = mainRoot.Q<Button>("content-play-button");
@@ -42,11 +53,23 @@ namespace UI {
             zombiesCountSlider.value = PlayerPrefs.GetInt("zombies-count", 100);
             zombiesCountSlider.RegisterValueChangedCallback(v =>
             {
-                int intValue = (int)Math.Round(v.newValue / 50) * 50;                
+                int intValue = (int)Mathf.Round(v.newValue / 25) * 25;                
                 PlayerPrefs.SetInt("zombies-count", (int)v.newValue);
                 zombiesCountSlider.value = intValue; 
             });
             
+
+            var baseTimeScaleSlider = mainRoot.Q<Slider>("base-time-scale");
+            baseTimeScaleSlider.value = PlayerPrefs.GetFloat("base-time-scale", 1);
+            baseTimeScaleSlider.RegisterValueChangedCallback(v =>
+            {
+                float roundishValue = Naturalize(v.newValue, 6);                
+                PlayerPrefs.SetFloat("base-time-scale", v.newValue);
+                baseTimeScaleSlider.value = roundishValue;
+                MetaManager.level.timeManager.SetBaseTimeScale(roundishValue); 
+            });
+
+
             var initialControlType = PlayerPrefs.GetString("control-type", "keybord-control");
             var namesOfControlTypes = new List<string> { "keybord-control", "joystick-control", "sliders-control", "arrows-control" };
 
@@ -122,9 +145,6 @@ namespace UI {
             debugTextArea = gameRoot.Q<Label>("debug-text-area");
             controlModeField = gameRoot.Q<EnumField>("control-mode");
             scoreLabel = gameRoot.Q<Label>("score");
-            Debug.Log("scoreLabel");
-            Debug.Log(scoreLabel);
-            
             Init();
             GoToMainScreen();
         }

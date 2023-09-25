@@ -6,7 +6,10 @@ public class LevelMetaManagerBehaviour : MonoBehaviour
     public DaytimeManagerBehaviour daytimeManager;
     public DaytimeEnvironmentManagerBehaviour daytimeEnvironmentManager;
     public ElectricNetworkManagerBehaviour electricNetworkManager;
+    public PlayerManagerBehaviour playerManager;
+    public BombManagerBehaviour bombManager;
     public ScoreManagerBehaviour scoreManager;
+    public TimeManagerBehaviour timeManager;
     
     private void Awake()
     {

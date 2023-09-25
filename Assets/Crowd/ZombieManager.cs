@@ -72,11 +72,8 @@ public class ZombieManager : MonoBehaviour
                 {
                     zombie.UpdatePlayerPosition(player.position, playerProjection.position);
                 }
-                
-                yield return new WaitForSeconds(Time.fixedDeltaTime);
             }
-            yield return null;
-
+            yield return new WaitForSeconds(Time.fixedDeltaTime);
         }
     }
     public void HideZombie(GameObject zombie)

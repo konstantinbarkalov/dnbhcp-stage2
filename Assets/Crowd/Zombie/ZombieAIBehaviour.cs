@@ -84,7 +84,7 @@ public class ZombieAIBehaviour : MonoBehaviour, ICrowdUpdate
 
     private void SetRandomSpeed()
     {
-        float speed = Random.Range(5f, 10f);
+        float speed = Random.Range(2f, 8f);
         agent.speed = speed;
         animator.SetFloat("zombieSpeed", speed);
     }
